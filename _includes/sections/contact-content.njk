@@ -1,0 +1,45 @@
+<div class="page-header contact-header">
+  <div class="bg-element bg-element-1"></div>
+  <div class="bg-element bg-element-2"></div>
+  <div class="container">
+    <h1>{{ "contact.title" | i18n(currentLanguage) }}</h1>
+    <p>{{ "contact.subtitle" | i18n(currentLanguage) }}</p>
+  </div>
+</div>
+
+<section class="content-section">
+  <div class="container">
+    <div class="contact-content">
+      <p class="contact-description">{{ "contact.description" | i18n(currentLanguage) }}</p>
+      
+      <div class="contact-grid">
+        <div class="contact-email-card">
+          <div class="email-icon">✉️</div>
+          <h2>{% if currentLanguage == "en" %}Contact Us{% else %}Kontakt Oss{% endif %}</h2>
+          <a href="mailto:{{ 'contact.emailGeneral' | i18n(currentLanguage) }}" class="email-link">
+            {{ "contact.emailGeneral" | i18n(currentLanguage) }}
+          </a>
+          <p class="email-note">
+            {% if currentLanguage == "en" %}
+              We typically respond within 1-2 business days.
+            {% else %}
+              Vi svarer vanligvis innen 1-2 virkedager.
+            {% endif %}
+          </p>
+        </div>
+        
+        <div class="contact-reasons-card">
+          <h3>{{ "contact.reasons.title" | i18n(currentLanguage) }}</h3>
+          <ul class="reasons-list">
+            {% for reason in ("contact.reasons.items" | i18n(currentLanguage)) %}
+              <li>
+                <span class="reason-icon">✓</span>
+                <span class="reason-text">{{ reason }}</span>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

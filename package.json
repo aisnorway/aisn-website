@@ -1,0 +1,37 @@
+{
+  "name": "ai-safety-norway-website",
+  "version": "1.0.0",
+  "description": "Website for AI Safety Norway - Promoting research and awareness of AI safety in Norway",
+  "main": "index.js",
+  "scripts": {
+    "start": "eleventy --serve",
+    "build": "npm run clean && cross-env NODE_ENV=production eleventy",
+    "build:dev": "npm run clean && eleventy",
+    "clean": "rimraf _site",
+    "debug": "DEBUG=Eleventy* eleventy",
+    "postinstall": "node scripts/postinstall.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ai-safety-norway/website.git"
+  },
+  "keywords": [
+    "ai-safety",
+    "eleventy",
+    "static-site",
+    "norway"
+  ],
+  "author": "AI Safety Norway",
+  "license": "ISC",
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0",
+    "@11ty/eleventy-plugin-rss": "^1.2.0",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
+    "cross-env": "^7.0.3",
+    "rimraf": "^5.0.1"
+  },
+  "dependencies": {
+    "luxon": "^3.6.1"
+  }
+}

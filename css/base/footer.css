@@ -1,0 +1,137 @@
+/* ==========================================
+   Footer Styles
+   ========================================== */
+
+/**
+ * Footer container
+ */
+footer {
+  background-color: #f8fafc;
+  padding: 3rem 0;
+  border-top: 1px solid #e2e8f0;
+}
+
+/**
+ * Footer grid layout
+ */
+footer .grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2rem;
+}
+
+/**
+ * Footer headings
+ */
+footer h5 {
+  font-size: 1.1rem;
+  margin-bottom: 1.25rem;
+  color: var(--color-text);
+  font-weight: 700;
+}
+
+/**
+ * Footer links
+ */
+footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+footer ul li {
+  margin-bottom: 0.7rem;
+}
+
+footer ul li a {
+  color: var(--color-text-light);
+  text-decoration: none;
+  transition: all var(--transition-fast);
+  font-size: 0.95rem;
+}
+
+footer ul li a:hover {
+  color: var(--color-accent);
+  transform: translateX(3px);
+  display: inline-block;
+}
+
+/**
+ * Copyright text
+ */
+footer .copyright {
+  font-size: 0.9rem;
+  color: var(--color-text-light);
+  line-height: 1.5;
+}
+
+/**
+ * Social links in footer
+ */
+.social-links-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-top: 1rem;
+}
+
+.social-links-footer .social-link {
+  display: flex;
+  align-items: center;
+  color: var(--color-text);
+  text-decoration: none;
+  transition: all var(--transition-medium);
+  gap: 0.6rem;
+  font-size: 0.95rem;
+}
+
+.social-links-footer .social-link svg {
+  color: var(--color-accent);
+}
+
+.social-links-footer .social-link:hover {
+  color: var(--color-accent);
+  transform: translateX(3px);
+}
+
+/**
+ * Responsive adjustments
+ */
+@media (max-width: 768px) {
+  footer {
+    padding: 2.5rem 0;
+  }
+  
+  footer .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .social-links-footer {
+    gap: 0.6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  footer {
+    padding: 2rem 0;
+  }
+  
+  footer .grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  footer h5 {
+    margin-bottom: 1rem;
+  }
+  
+  .social-links-footer {
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+  }
+  
+  .social-links-footer .social-link:hover {
+    transform: translateY(-2px);
+  }
+} 

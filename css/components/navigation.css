@@ -1,0 +1,640 @@
+/* ==========================================
+   Navigation Component
+   ==========================================
+   This file contains all styling related to the site navigation:
+   - Header styling (default, scrolled, and homepage variants)
+   - Main navigation items and dropdowns
+   - Contact button
+   - Language switcher
+   - Mobile responsiveness
+   ========================================== */
+
+/* ==========================================================================
+   Header Styles
+   ========================================================================== */
+
+/**
+ * Base header styling
+ * 
+ * Uses a gradient background that fades to transparent for a smooth transition
+ * to content below. Consistent height maintained across all pages.
+ */
+header {
+  background-color: transparent;
+  background-image: linear-gradient(to bottom, rgba(240, 253, 250, 0.8) 0%, rgba(240, 249, 255, 0.5) 70%, transparent 100%);
+  border-bottom: none;
+  padding: 1rem var(--content-padding-h);
+  position: relative;
+  z-index: 100; /* Higher z-index to stay above hero */
+  transition: all var(--transition-medium);
+  width: 100%;
+  height: var(--header-height);
+  display: flex;
+  align-items: center;
+}
+
+/**
+ * Scrolled header styling
+ * 
+ * Adds backdrop blur and shadow for better readability when the 
+ * header overlays content during scrolling.
+ */
+header.scrolled {
+  background-color: rgba(255, 255, 255, 0.95);
+  background-image: none;
+  box-shadow: var(--shadow-sm);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 0.8rem var(--content-padding-h);
+  height: var(--header-height);
+}
+
+/**
+ * Homepage header styling
+ * 
+ * Absolute positioning to overlay the hero section with a gradient
+ * that smoothly fades to transparent.
+ */
+body.home header {
+  background-color: transparent;
+  background-image: linear-gradient(to bottom, rgba(240, 253, 250, 0.8) 0%, rgba(240, 249, 255, 0.3) 80%, transparent 100%);
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+  padding: 1rem var(--content-padding-h);
+  box-shadow: none;
+  border-bottom: none;
+  height: var(--header-height);
+  display: flex;
+  align-items: center;
+}
+
+/**
+ * Homepage scrolled header styling
+ * 
+ * Special treatment for the header on homepage when scrolled.
+ */
+body.home header.scrolled {
+  background-color: rgba(255, 255, 255, 0.95);
+  background-image: none;
+  box-shadow: var(--shadow-sm);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 0.8rem var(--content-padding-h);
+  height: var(--header-height);
+}
+
+/**
+ * Header container
+ * 
+ * Centers and constrains header content with proper alignment.
+ */
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  max-width: var(--container-max-width);
+  height: 100%;
+  padding: 0 var(--content-padding-h);
+}
+
+/**
+ * Site title/logo
+ * 
+ * Main site branding with consistent sizing.
+ */
+header h1 {
+  margin-bottom: 0;
+  margin-top: 0;
+  flex-shrink: 0;
+  font-size: 1.3rem;
+  line-height: 1.3;
+}
+
+header h1 a {
+  color: var(--color-text);
+  text-decoration: none;
+  font-size: 1.3rem;
+  font-weight: 700;
+  position: relative;
+  z-index: 10;
+  text-shadow: 0 1px 3px rgba(255, 255, 255, 0.7);
+}
+
+/* Logo Styling */
+.site-logo a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: var(--color-text);
+}
+
+.logo-image {
+  height: 40px;
+  width: auto;
+  margin-right: 0.75rem;
+}
+
+.logo-text {
+  font-size: 1.4rem;
+  font-weight: 700;
+  font-family: var(--font-heading);
+}
+
+@media (max-width: 768px) {
+  .logo-image {
+    height: 34px;
+  }
+  
+  .logo-text {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo-image {
+    height: 30px;
+  }
+  
+  .logo-text {
+    font-size: 1.1rem;
+  }
+  
+  /* Add this class to base.njk if you want to hide text on mobile */
+  .logo-text-hide-mobile {
+    display: none;
+  }
+}
+
+/* ==========================================================================
+   Main Navigation
+   ========================================================================== */
+
+/**
+ * Navigation container
+ */
+.main-nav {
+  display: block;
+  position: relative;
+}
+
+/**
+ * Navigation list
+ * 
+ * Contains all navigation items with consistent spacing.
+ */
+.main-nav ul {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 0.6rem; /* Keep spacing between standard nav items */
+  height: 2.4rem; /* Set a consistent height for the entire navigation */
+}
+
+/**
+ * Navigation item
+ * 
+ * Base styling for each navigation menu item.
+ */
+.main-nav .nav-item {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  height: 100%; /* Fill the height of the parent for alignment */
+}
+
+/**
+ * Contact button nav item
+ * 
+ * Special spacing for the contact button container
+ */
+.main-nav .contact-button-item {
+  margin-left: 0.6rem; /* Add extra spacing between Resources and Contact */
+}
+
+/**
+ * Navigation bridge
+ * 
+ * Creates invisible area to connect dropdown to its trigger,
+ * preventing the dropdown from closing when moving the mouse between them.
+ */
+.main-nav .nav-item::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 15px;
+  z-index: 999;
+}
+
+/**
+ * Navigation link
+ * 
+ * Styling for nav menu links with consistent height and alignment.
+ */
+.main-nav .nav-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 0.9rem;
+  color: var(--color-text);
+  font-weight: 500;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all var(--transition-medium);
+  position: relative;
+  border-radius: var(--radius-md);
+  line-height: 1;
+  height: 2.2rem; /* Consistent height matching other elements */
+}
+
+/**
+ * Dropdown indicator
+ * 
+ * Adds caret to items with dropdowns.
+ */
+.main-nav .nav-link::after {
+  content: " ▾";
+  font-size: 0.65rem;
+  vertical-align: middle;
+  margin-left: 4px;
+  opacity: 0.7;
+  transition: transform var(--transition-medium);
+}
+
+/**
+ * Navigation link hover
+ */
+.main-nav .nav-link:hover {
+  color: var(--color-accent);
+  background-color: rgba(20, 184, 166, 0.04);
+}
+
+/**
+ * Dropdown arrow animation
+ * 
+ * Rotates arrow on hover to indicate interactive state.
+ */
+.main-nav .nav-item:hover .nav-link::after {
+  transform: rotate(180deg);
+  opacity: 1;
+}
+
+/* ==========================================================================
+   Dropdown Menus
+   ========================================================================== */
+
+/**
+ * Dropdown container
+ * 
+ * Styling for dropdown menus with subtle shadow and blur effects.
+ */
+.main-nav .dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  transform: none;
+  min-width: 220px;
+  background-color: white;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15), 0 3px 10px rgba(0, 0, 0, 0.05);
+  display: none;
+  z-index: 1000;
+  overflow: hidden;
+  transition: all var(--transition-medium);
+  border: 1px solid rgba(235, 235, 235, 0.8);
+  padding: 8px 0;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.95);
+}
+
+/**
+ * Dropdown pointer
+ * 
+ * Adds triangle pointer to dropdown for visual connection to trigger.
+ */
+.main-nav .dropdown::before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  left: 25px;
+  transform: rotate(45deg);
+  width: 16px;
+  height: 16px;
+  background-color: white;
+  border-left: 1px solid rgba(235, 235, 235, 0.8);
+  border-top: 1px solid rgba(235, 235, 235, 0.8);
+  z-index: 1001;
+  box-shadow: -2px -2px 5px rgba(0, 0, 0, 0.03);
+}
+
+/**
+ * Dropdown animation
+ * 
+ * Shows dropdown on hover with smooth animation.
+ */
+.main-nav .nav-item:hover .dropdown {
+  display: block;
+  animation: fadeInDown 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+/**
+ * Dropdown links
+ * 
+ * Styling for links inside dropdowns with consistent sizing and spacing.
+ */
+.main-nav .dropdown a {
+  display: block;
+  width: 100%;
+  padding: 10px 20px;
+  color: var(--color-text);
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+  position: relative;
+  z-index: 1002;
+  background-color: transparent;
+  border-radius: var(--radius-sm);
+  margin: 3px 8px;
+  width: calc(100% - 16px);
+  font-weight: 500;
+}
+
+/**
+ * Dropdown item separator
+ */
+.main-nav .dropdown a:not(:last-child) {
+  margin-bottom: 3px;
+}
+
+/**
+ * Dropdown link hover
+ * 
+ * Enhanced hover state with subtle gradient and movement.
+ */
+.main-nav .dropdown a:hover {
+  background: linear-gradient(90deg, rgba(20, 184, 166, 0.08) 0%, rgba(14, 165, 233, 0.08) 100%);
+  color: var(--color-accent);
+  padding-left: 25px;
+  box-shadow: 0 2px 8px rgba(20, 184, 166, 0.1);
+}
+
+/* ==========================================================================
+   Contact Button
+   ========================================================================== */
+
+/**
+ * Contact button
+ *
+ * Primary action button with gradient background and consistent alignment.
+ */
+.main-nav .nav-button {
+  padding: 0 1.2rem;
+  background: linear-gradient(90deg, var(--color-accent) 0%, #0ea5e9 100%);
+  color: white !important;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  text-decoration: none;
+  transition: all var(--transition-medium);
+  box-shadow: 0 4px 12px rgba(20, 184, 166, 0.25);
+  margin-left: 0;
+  position: relative;
+  overflow: hidden;
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.2rem; /* Consistent height matching other elements */
+  line-height: 1;
+}
+
+/**
+ * Contact button shine effect
+ * 
+ * Animated diagonal shine effect for subtle visual interest.
+ */
+.main-nav .nav-button::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.3) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: rotate(45deg);
+  animation: navShine 6s infinite;
+  z-index: -1;
+}
+
+@keyframes navShine {
+  0% {
+    transform: translateX(-100%) rotate(45deg);
+  }
+  20%, 100% {
+    transform: translateX(100%) rotate(45deg);
+  }
+}
+
+/**
+ * Contact button hover
+ * 
+ * Elevated appearance on hover with reversed gradient.
+ */
+.main-nav .nav-button:hover {
+  background: linear-gradient(90deg, #0ea5e9 0%, var(--color-accent) 100%);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(20, 184, 166, 0.35);
+}
+
+/**
+ * Contact button hover shine effect
+ */
+.main-nav .nav-button:hover::before {
+  animation-duration: 3s;
+}
+
+/**
+ * Contact button active state
+ */
+.main-nav .nav-button:active {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(20, 184, 166, 0.25);
+}
+
+/* ==========================================================================
+   Language Switcher
+   ========================================================================== */
+
+/**
+ * Language switcher container
+ */
+.main-nav .nav-item.language-switcher {
+  margin-left: 0.8rem;
+  display: flex;
+  align-items: center;
+  height: 100%; /* Ensure full height for alignment */
+}
+
+/**
+ * Language switcher button
+ * 
+ * Flag button with consistent sizing and alignment.
+ */
+.main-nav .language-switcher .lang-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 0.6rem;
+  font-size: 1.2rem;
+  text-decoration: none;
+  border-radius: var(--radius-md);
+  transition: all var(--transition-medium);
+  background-color: transparent;
+  line-height: 1;
+  height: 2.2rem; /* Consistent height matching other elements */
+}
+
+/**
+ * Language switcher hover
+ */
+.main-nav .language-switcher .lang-button:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+  transform: scale(1.1);
+}
+
+/* ==========================================================================
+   Responsive Navigation
+   ========================================================================== */
+
+/**
+ * Tablet breakpoint (<=768px)
+ * 
+ * Optimized for tablet-sized devices with horizontal layout
+ * but adjusted spacing and sizing.
+ */
+@media (max-width: 768px) {
+  /* Header adjustments */
+  header {
+    height: auto;
+    min-height: var(--header-height);
+    padding: 0.8rem;
+  }
+  
+  /* Container adjustments */
+  header .container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0;
+    width: 100%;
+  }
+  
+  /* Site title adjustments */
+  header h1 {
+    margin: 0;
+    width: auto;
+  }
+  
+  /* Navigation layout */
+  .main-nav {
+    order: 3; /* Push navigation to the bottom */
+    width: 100%;
+    margin-top: 0.8rem;
+  }
+  
+  /* Navigation list */
+  .main-nav ul {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+    margin-top: 0;
+    gap: 0.5rem;
+  }
+  
+  /* Navigation items */
+  .main-nav .nav-item {
+    width: auto;
+    margin-bottom: 0.4rem;
+  }
+  
+  /* Navigation links */
+  .main-nav .nav-link {
+    width: auto;
+    padding: 0.6rem 0.8rem;
+    font-size: 0.95rem;
+  }
+  
+  /* Contact button */
+  .main-nav .nav-button {
+    margin: 0;
+    padding: 0.6rem 1rem;
+  }
+  
+  /* Language switcher */
+  .main-nav .nav-item.language-switcher {
+    margin-left: 0.4rem;
+  }
+  
+  .main-nav .language-switcher .lang-button {
+    padding: 0.4rem 0.5rem;
+  }
+  
+  /* Contact button nav item responsive adjustment */
+  .main-nav .contact-button-item {
+    margin-left: 0.5rem; /* Slightly reduced spacing for tablets */
+  }
+}
+
+/**
+ * Mobile breakpoint (<=480px)
+ * 
+ * Further adjustments for smaller mobile screens.
+ */
+@media (max-width: 480px) {
+  /* Reduced padding */
+  header {
+    padding: 0.6rem;
+  }
+  
+  /* Tighter spacing */
+  header .container {
+    gap: 0.5rem;
+  }
+  
+  /* Smaller text and padding */
+  .main-nav .nav-link {
+    padding: 0.5rem 0.6rem;
+    font-size: 0.9rem;
+  }
+  
+  .main-nav .nav-button {
+    padding: 0.5rem 0.8rem;
+    font-size: 0.9rem;
+  }
+  
+  /* Navigation list */
+  .main-nav ul {
+    gap: 0.4rem; /* Reduced from previous value to maintain consistent spacing */
+  }
+  
+  /* Contact button nav item responsive adjustment */
+  .main-nav .contact-button-item {
+    margin-left: 0.4rem; /* Slightly reduced spacing for mobile */
+  }
+} 

@@ -1,0 +1,463 @@
+/* ==========================================
+   Newsletter Page Styles
+   ========================================== */
+
+/* Newsletter Content Section - Main content container for newsletter pages */
+.newsletter-content-section {
+  padding: 0 0 5rem;
+  background-color: white;
+  margin-top: -40px; /* Creates overlap with header section for smooth transition */
+  position: relative;
+  z-index: 10; /* Ensures content appears above the header curve */
+}
+
+/* Post container - Main container for individual post pages */
+.post-container {
+  padding: 0 0 5rem;
+  background-color: white;
+  margin-top: -40px; /* Creates overlap with header section for smooth transition */
+  position: relative;
+  z-index: 10; /* Ensures content appears above the header curve */
+}
+
+/* Individual newsletter/post page styles */
+.post-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 0;
+  line-height: 1.8;
+  font-size: 1.1rem;
+  color: var(--color-text);
+}
+
+.post-content h2 {
+  font-size: 1.8rem;
+  margin: 2.5rem 0 1.2rem;
+  color: var(--color-text-dark);
+}
+
+.post-content h3 {
+  font-size: 1.4rem;
+  margin: 2rem 0 1rem;
+  color: var(--color-text-dark);
+}
+
+.post-content p {
+  margin-bottom: 1.5rem;
+}
+
+.post-content ul, 
+.post-content ol {
+  margin-bottom: 1.5rem;
+  padding-left: 1.5rem;
+}
+
+.post-content li {
+  margin-bottom: 0.5rem;
+}
+
+/* Post image styling */
+.post .post-image {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto 2rem;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.post .post-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Post footer with back link */
+.post-footer {
+  max-width: 800px;
+  margin: 3rem auto 0;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  color: var(--color-accent);
+  font-weight: 500;
+  text-decoration: none;
+  transition: all var(--transition-fast);
+}
+
+.back-link:hover {
+  color: var(--color-accent-hover);
+  transform: translateX(-4px);
+}
+
+/* Increase spacing between navbar and newsletter content */
+main.default-container h1 {
+  margin-top: 2.5rem; /* Adds extra space at the top of newsletter pages */
+  margin-bottom: 1rem;
+  font-size: 2.4rem;
+  line-height: 1.3;
+}
+
+/* Post content metadata styling */
+.post-content-meta {
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--color-border);
+  font-size: 0.95rem;
+  color: var(--color-text-light);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+}
+
+.post-author {
+  font-weight: 500;
+  color: var(--color-text);
+}
+
+.post-date {
+  display: inline-flex;
+  align-items: center;
+}
+
+.post-date:before {
+  content: "📅";
+  margin-right: 0.5rem;
+  font-size: 0.9rem;
+}
+
+/* Post metadata styling */
+.post-meta {
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+  color: #fff;
+  opacity: 0.9;
+  background-color: rgba(0, 0, 0, 0.2);
+  display: inline-block;
+  padding: 0.4rem 1rem;
+  border-radius: var(--radius-md);
+  font-weight: 500;
+}
+
+.post-meta time, .post-meta a {
+  color: #fff;
+  font-weight: 500;
+}
+
+/* Newsletter List Grid - Responsive grid layout for newsletter cards */
+.newsletter-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 2rem;
+  margin: 0.5rem 0 2rem;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 1.5rem;
+}
+
+/* Newsletter Card */
+.newsletter-card {
+  background-color: white;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-medium);
+  border: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.newsletter-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--color-accent);
+}
+
+/* Newsletter Image */
+.newsletter-image {
+  width: 100%;
+  height: 110px;
+  overflow: hidden;
+  position: relative;
+  background-color: #f1f5f9;
+}
+
+.newsletter-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-medium);
+}
+
+.newsletter-card:hover .newsletter-image img {
+  transform: scale(1.05);
+}
+
+/* Newsletter Content */
+.newsletter-content {
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+/* Newsletter Date */
+.newsletter-date {
+  font-size: 0.85rem;
+  color: var(--color-accent);
+  margin-bottom: 0.7rem;
+  font-weight: 500;
+}
+
+/* Newsletter Title */
+.newsletter-content h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  line-height: 1.3;
+}
+
+.newsletter-content h3 a {
+  color: var(--color-text);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.newsletter-content h3 a:hover {
+  color: var(--color-accent);
+}
+
+/* Newsletter Meta */
+.newsletter-meta {
+  font-size: 0.9rem;
+  color: var(--color-text-light);
+  margin-bottom: 1rem;
+}
+
+/* Newsletter Excerpt */
+.newsletter-excerpt {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  color: var(--color-text);
+  flex-grow: 1;
+  hyphens: auto;
+  word-break: normal;
+  overflow-wrap: break-word;
+}
+
+/* Read More Link */
+.read-more {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-accent);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  margin-top: auto;
+  transition: all var(--transition-fast);
+}
+
+.read-more:hover {
+  color: var(--color-accent-hover);
+  transform: translateX(4px);
+}
+
+/* Newsletter Page Intro Text */
+.newsletter-intro {
+  max-width: 850px;
+  margin: 0 auto 2.5rem;
+  text-align: center;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--color-text);
+  padding: 0 2rem;
+}
+
+/* Example Newsletter Styles */
+.example-newsletter {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: white;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+}
+
+.newsletter-header {
+  margin-bottom: 2rem;
+}
+
+.newsletter-header h2 {
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-text);
+  line-height: 1.2;
+}
+
+.newsletter-featured-image {
+  margin-bottom: 2rem;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.newsletter-featured-image img {
+  width: 100%;
+  height: auto;
+}
+
+.newsletter-full-content {
+  line-height: 1.8;
+  font-size: 1.05rem;
+  color: var(--color-text);
+}
+
+.newsletter-full-content h2 {
+  font-size: 1.8rem;
+  margin: 2rem 0 1rem;
+  color: var(--color-text-dark);
+}
+
+.newsletter-full-content h3 {
+  font-size: 1.4rem;
+  margin: 1.8rem 0 0.8rem;
+  color: var(--color-text-dark);
+}
+
+.newsletter-full-content p {
+  margin-bottom: 1.5rem;
+}
+
+.newsletter-full-content ul, 
+.newsletter-full-content ol {
+  margin-bottom: 1.5rem;
+  padding-left: 1.5rem;
+}
+
+.newsletter-full-content li {
+  margin-bottom: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .newsletter-content-section,
+  .post-container {
+    padding: 0 0 3rem;
+    margin-top: -30px;
+  }
+  
+  main.default-container h1 {
+    margin-top: 2rem;
+    font-size: 2rem;
+  }
+  
+  .newsletter-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .newsletter-intro {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    padding: 0 1rem;
+  }
+  
+  .newsletter-content {
+    padding: 1.5rem;
+  }
+  
+  .newsletter-content h3 {
+    font-size: 1.2rem;
+  }
+  
+  .example-newsletter {
+    padding: 1.5rem;
+  }
+  
+  .newsletter-header h2 {
+    font-size: 1.8rem;
+  }
+  
+  .newsletter-image {
+    height: 100px;
+  }
+  
+  .post-content {
+    padding: 1.5rem;
+    font-size: 1rem;
+  }
+  
+  .post-content h2 {
+    font-size: 1.6rem;
+  }
+  
+  .post-content h3 {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .newsletter-content-section,
+  .post-container {
+    padding: 0 0 2rem;
+    margin-top: -25px;
+  }
+  
+  main.default-container h1 {
+    margin-top: 1.5rem;
+    font-size: 1.8rem;
+  }
+  
+  .newsletter-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 0 1rem;
+  }
+  
+  .newsletter-image {
+    height: 180px;
+  }
+  
+  .newsletter-content {
+    padding: 1.2rem;
+  }
+  
+  .newsletter-content h3 {
+    font-size: 1.1rem;
+  }
+  
+  .newsletter-excerpt {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+  
+  .newsletter-header h2 {
+    font-size: 1.6rem;
+  }
+  
+  .newsletter-full-content {
+    font-size: 1rem;
+  }
+  
+  .newsletter-intro {
+    font-size: 0.95rem;
+  }
+  
+  .post-content {
+    padding: 1rem;
+    font-size: 0.95rem;
+  }
+  
+  .post-content h2 {
+    font-size: 1.4rem;
+  }
+  
+  .post-content h3 {
+    font-size: 1.2rem;
+  }
+} 

@@ -1,0 +1,50 @@
+{# 
+  Individual post/article template - used for newsletters
+  This template extends the base layout and includes metadata, formatting for individual posts.
+#}
+{% extends "base.njk" %}
+
+{% block content %}
+<div class="page-header">
+  <div class="bg-element bg-element-1"></div>
+  <div class="bg-element bg-element-2"></div>
+  <div class="container">
+    <h1>{{ title }}</h1>
+    <div class="post-meta">
+      <time datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time>
+      {% if author %} • {{ author }}{% endif %}
+    </div>
+  </div>
+</div>
+
+<div class="post-container">
+  <div class="container">
+    <article class="post" lang="{{ currentLanguage }}">
+      {% if image %}
+        <div class="post-image">
+          <img src="{{ image }}" alt="{{ title }}" onerror="this.src='/img/articles/placeholder.jpg'">
+        </div>
+      {% endif %}
+
+      <div class="post-content">
+        <div class="post-content-meta">
+          {% if author %}<span class="post-author">{{ "newsletter.by" | i18n(currentLanguage, "By") }} {{ author }}</span>{% endif %}
+          <span class="post-date">{{ page.date | readableDate }}</span>
+        </div>
+        
+        {% if description %}
+          <p class="post-description"><em>{{ description }}</em></p>
+        {% endif %}
+        
+        {{ content | safe }}
+      </div>
+      
+      <div class="post-footer">
+        <a href="{{ langUtils.localizeUrl('newsletter', currentLanguage) }}" class="back-link">
+          ← {{ "newsletter.backToNewsletter" | i18n(currentLanguage, "Back to newsletter") }}
+        </a>
+      </div>
+    </article>
+  </div>
+</div>
+{% endblock %} 

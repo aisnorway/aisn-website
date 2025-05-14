@@ -1,0 +1,126 @@
+{% macro localizeUrl(url, lang) %}
+  {# 
+    Generate a language-specific URL path
+    
+    @param {string} url - The path without language prefix
+    @param {string} lang - The language code (e.g., 'en', 'no')
+    @returns {string} - A properly formatted URL path with language prefix
+  #}
+  {% set cleanUrl = url | trim %}
+  
+  {# Redirect removed pages to about page #}
+  {% if cleanUrl == 'research' or cleanUrl == 'policy' or cleanUrl == 'articles' %}
+    {% set cleanUrl = 'about' %}
+  {% endif %}
+  
+  {% if cleanUrl == '' %}
+    /{{ lang }}/
+  {% else %}
+    {# Special cases for Norwegian localized URLs #}
+    {% if lang == 'no' %}
+      {% if cleanUrl == 'contact' %}
+        /{{ lang }}/kontakt/
+      {% elif cleanUrl == 'about' %}
+        /{{ lang }}/om-oss/
+      {% elif cleanUrl == 'quotes' %}
+        /{{ lang }}/sitater/
+      {% elif cleanUrl == 'newsletter' %}
+        /{{ lang }}/nyhetsbrev/
+      {% else %}
+        /{{ lang }}/{{ cleanUrl }}/
+      {% endif %}
+    {% else %}
+      /{{ lang }}/{{ cleanUrl }}/
+    {% endif %}
+  {% endif %}
+{% endmacro %}
+
+{% macro getAlternateUrl(currentUrl, currentLang, targetLang) %}
+  {# 
+    Get the equivalent URL in another language
+    
+    @param {string} currentUrl - The current page URL
+    @param {string} currentLang - The current language code
+    @param {string} targetLang - The target language code
+    @returns {string} - The equivalent URL in the target language
+  #}
+  {# Handle redirects for removed pages #}
+  {% if currentUrl.includes('/research/') or currentUrl.includes('/policy/') or 
+        currentUrl.includes('/forskning/') or currentUrl.includes('/politikk/') %}
+    {% if targetLang == 'no' %}
+      /no/om-oss/
+    {% else %}
+      /en/about/
+    {% endif %}
+  {% else %}
+    {# Special cases for Norwegian to English URL mappings #}
+    {% if currentLang == 'no' and targetLang == 'en' %}
+      {% if currentUrl.includes('/kontakt/') %}
+        {{ currentUrl | replace('/no/kontakt/', '/en/contact/') }}
+      {% elif currentUrl.includes('/om-oss/') %}
+        {{ currentUrl | replace('/no/om-oss/', '/en/about/') }}
+      {% elif currentUrl.includes('/sitater/') %}
+        {{ currentUrl | replace('/no/sitater/', '/en/quotes/') }}
+      {% elif currentUrl.includes('/nyhetsbrev/') %}
+        {# Default handling for newsletter list page #}
+        {{ currentUrl | replace('/no/nyhetsbrev/', '/en/newsletter/') }}
+      {% elif currentUrl.includes('/artikler/') %}
+        {# Handle individual newsletter articles - extract slug from URL #}
+        {% set articleSlug = currentUrl | replace('/no/artikler/', '') | replace('/', '') %}
+        /en/articles/{{ articleSlug }}/
+      {% else %}
+        {{ currentUrl | replace('/' + currentLang + '/', '/' + targetLang + '/') }}
+      {% endif %}
+    {# Special cases for English to Norwegian URL mappings #}
+    {% elif currentLang == 'en' and targetLang == 'no' %}
+      {% if currentUrl.includes('/contact/') %}
+        {{ currentUrl | replace('/en/contact/', '/no/kontakt/') }}
+      {% elif currentUrl.includes('/about/') %}
+        {{ currentUrl | replace('/en/about/', '/no/om-oss/') }}
+      {% elif currentUrl.includes('/quotes/') %}
+        {{ currentUrl | replace('/en/quotes/', '/no/sitater/') }}
+      {% elif currentUrl.includes('/newsletter/') %}
+        {# Default handling for newsletter list page #}
+        {{ currentUrl | replace('/en/newsletter/', '/no/nyhetsbrev/') }}
+      {% elif currentUrl.includes('/articles/') %}
+        {# Handle individual newsletter articles - extract slug from URL #}
+        {% set articleSlug = currentUrl | replace('/en/articles/', '') | replace('/', '') %}
+        /no/artikler/{{ articleSlug }}/
+      {% else %}
+        {{ currentUrl | replace('/' + currentLang + '/', '/' + targetLang + '/') }}
+      {% endif %}
+    {% elif currentUrl.startsWith('/' + currentLang + '/') %}
+      {{ currentUrl | replace('/' + currentLang + '/', '/' + targetLang + '/') }}
+    {% elif currentUrl == '/' + currentLang + '/' or currentUrl == '/' + currentLang %}
+      /{{ targetLang }}/
+    {% else %}
+      /{{ targetLang }}/{{ currentUrl | replace('^/', '') }}
+    {% endif %}
+  {% endif %}
+{% endmacro %}
+
+{% macro languageSwitcher(currentUrl, currentLang) %}
+  {# 
+    Generate a language switcher UI element
+    
+    @param {string} currentUrl - The current page URL
+    @param {string} currentLang - The current language code
+    @returns {string} - HTML for the language switcher link
+  #}
+  {% if currentLang == "en" %}
+    {% set targetLang = "no" %}
+    {% set targetLabel = "Norsk" %}
+    {% set targetFlag = "🇳🇴" %}
+  {% else %}
+    {% set targetLang = "en" %}
+    {% set targetLabel = "English" %}
+    {% set targetFlag = "🇬🇧" %}
+  {% endif %}
+  
+  {# Use the getAlternateUrl function to determine the correct alternate URL #}
+  {% set alternateUrl = getAlternateUrl(currentUrl, currentLang, targetLang) %}
+  
+  <a href="{{ alternateUrl }}" lang="{{ targetLang }}" class="lang-button" aria-label="Switch to {{ targetLabel }}">
+    {{ targetFlag }}
+  </a>
+{% endmacro %} 

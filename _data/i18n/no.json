@@ -1,0 +1,177 @@
+{
+  "site": {
+    "title": "AI Safety Norway",
+    "description": "Arbeider for trygg og fordelaktig AI i Norge"
+  },
+  "nav": {
+    "about": "Om oss",
+    "aboutUs": "Om oss",
+    "resources": "Ressurser",
+    "research": "Forskning",
+    "policy": "Politikk",
+    "newsletter": "Nyhetsbrev",
+    "contact": "Kontakt"
+  },
+  "footer": {
+    "quickLinks": "Hurtiglenker",
+    "home": "Hjem",
+    "connect": "Kontakt",
+    "followUs": "Følg oss på sosiale medier.",
+    "copyright": "Alle rettigheter forbeholdt."
+  },
+  "common": {
+    "getInvolved": "Bli involvert",
+    "learnMore": "Lær mer",
+    "viewAll": "Vis alle",
+    "missingTranslation": {
+      "title": "Siden er ikke tilgjengelig på norsk",
+      "message": "Vi beklager, men denne siden er foreløpig ikke tilgjengelig på norsk. Vi jobber med å oversette alt innholdet vårt.",
+      "viewAlternate": "Se på engelsk",
+      "returnHome": "Gå tilbake til forsiden"
+    },
+    "location": "Sted",
+    "time": "Tid",
+    "register": "Registrer deg"
+  },
+  "languageSwitcher": {
+    "changeLanguage": "Bytt språk",
+    "english": "Engelsk",
+    "norwegian": "Norsk"
+  },
+  "home": {
+    "hero": {
+      "title": "Vi former fremtiden for AI-sikkerhet i Norge",
+      "description": "Vi samler ledende forskere, beslutningstakere og bransjeeksperter for å sikre at kunstig intelligens utvikles på en trygg måte og kommer hele menneskeheten til gode. Bli med oss i arbeidet for en fremtid der AI er en positiv kraft for samfunnet.",
+      "aboutButton": "Vår misjon",
+      "involvedButton": "Bli involvert"
+    },
+    "problem": {
+      "title": "Utfordringen vi står overfor",
+      "description": "AI-selskaper konkurrerer om å bygge kunstig superintelligens (ASI) - systemer som er mer intelligente enn hele menneskeheten kombinert. For øyeblikket finnes det ingen metode for å begrense eller kontrollere AI-systemer som er smartere enn mennesker. Hvis disse selskapene lykkes, vil konsekvensene være katastrofale. Ledende AI-forskere, verdensledere og til og med administrerende direktører i AI-selskaper advarer om at dette kan føre til menneskehetens utslettelse.",
+      "highlights": {
+        "race": {
+          "title": "Akselererende utvikling",
+          "description": "Ledende AI-laboratorier bygger raskt stadig kraftigere systemer uten tilstrekkelige sikkerhetstiltak."
+        },
+        "risk": {
+          "title": "Eksistensiell trussel",
+          "description": "Avansert AI kan utgjøre en enestående risiko gjennom feilinnretting med menneskelige verdier."
+        },
+        "impact": {
+          "title": "Mangel på tilsyn",
+          "description": "Dagens rammeverk er utilstrekkelige for å styre stadig kraftigere AI-systemer."
+        }
+      },
+      "points": [
+        {
+          "title": "Ukontrollert utvikling",
+          "description": "Store AI-laboratorier utvikler raskt stadig mer kapable systemer uten tilstrekkelige sikkerhetstiltak eller tilsyn."
+        },
+        {
+          "title": "Katastrofale risikoer",
+          "description": "Avanserte AI-systemer kan utgjøre eksistensielle trusler gjennom utilsiktede konsekvenser eller feilinnrettede mål."
+        },
+        {
+          "title": "Mangel på styring",
+          "description": "Dagens regulatoriske rammeverk er utilstrekkelige for å adressere de unike utfordringene som avansert AI utgjør."
+        }
+      ]
+    },
+    "quotes": {
+      "title": "Hva ledere sier om AI-sikkerhet",
+      "items": [
+        {
+          "content": "Utvikling av overmennskelig maskinintellekt er sannsynligvis den største trusselen mot menneskehetens fortsatte eksistens.",
+          "author": "Sam Altman",
+          "title": "Administrerende direktør, OpenAI"
+        },
+        {
+          "content": "Min vurdering er at sjansen for at noe går virkelig katastrofalt galt på et nivå som truer menneskelig sivilisasjon kan være et sted mellom 10 og 25 prosent.",
+          "author": "Dario Amodei",
+          "title": "Medgründer og adm. direktør, Anthropic"
+        },
+        {
+          "content": "Vi ser den mest destruktive kraften i historien her. Vi vil ha noe som er smartere enn det smarteste mennesket.",
+          "author": "Elon Musk",
+          "title": "Adm. direktør, Tesla, SpaceX og xAI"
+        },
+        {
+          "content": "Utviklingen av full kunstig intelligens kan bety slutten for menneskeheten... Den ville ta av på egen hånd og omdesigne seg selv i stadig økende tempo.",
+          "author": "Stephen Hawking",
+          "title": "Fysiker og kosmolog"
+        }
+      ]
+    },
+    "solution": {
+      "title": "Vår tilnærming",
+      "description": "Vi trenger sterkere regulatoriske rammeverk sammenlignbart med andre høyrisikoindustrier for å sikre at AI-utvikling fortsetter på en trygg og fordelaktig måte.",
+      "points": [
+        {
+          "title": "Robust regulering",
+          "description": "Arbeider for omfattende regulatoriske rammeverk som sikrer trygghet samtidig som de muliggjør fordelaktig innovasjon."
+        },
+        {
+          "title": "Teknisk forskning",
+          "description": "Støtter forskning innen AI-innretting, tolkbarhet og robusthet for å gjøre AI-systemer tryggere."
+        },
+        {
+          "title": "Internasjonal koordinering",
+          "description": "Arbeider for å bygge global konsensus og koordinert handling innen AI-sikkerhet og styring."
+        }
+      ]
+    }
+  },
+  "about": {
+    "title": "Om AI Safety Norway",
+    "subtitle": "Arbeider for å sikre trygg og fordelaktig AI-utvikling gjennom forskning, politikk og samfunnsengasjement",
+    "mission": {
+      "title": "Vår misjon",
+      "content": "AI Safety Norway ble grunnlagt med misjonen om å redusere katastrofale og eksistensielle risikoer fra stadig mer kraftfulle AI-systemer. Vi samler eksperter fra ulike disipliner for å adressere både de tekniske og styringsmessige utfordringene ved avansert AI."
+    },
+    "approach": {
+      "title": "Vår tilnærming",
+      "content": "Vi mener at arbeidet med AI-sikkerhet krever en tverrfaglig tilnærming som kombinerer grundig teknisk forskning, gjennomtenkt politikkutvikling og bredt samfunnsengasjement. Vårt arbeid er styrt av følgende prinsipper:"
+    },
+    "team": {
+      "title": "Vårt team",
+      "content": "Vårt team samler eksperter som er engasjert i å sikre at AI-systemer utvikles trygt og ansvarlig til nytte for menneskeheten. Ta gjerne direkte kontakt med oss."
+    },
+    "contactButton": "Ta kontakt",
+    "values": {
+      "title": "Våre verdier"
+    }
+  },
+  "contact": {
+    "title": "Kontakt oss",
+    "subtitle": "Ta kontakt med vårt team",
+    "description": "Har du spørsmål om AI-sikkerhet eller er interessert i å samarbeide? Vi vil gjerne høre fra deg.",
+    "emailGeneral": "kontakt@aisafety.no",
+    "emailMedia": "media@aisafety.no",
+    "emailCollaboration": "collaborate@aisafety.no",
+    "reasons": {
+      "title": "Ta kontakt for:",
+      "items": [
+        "Informasjon om AI-sikkerhet",
+        "Potensielle samarbeid",
+        "Foredrags- og presentasjonsforespørsler",
+        "Bidragsmuligheter",
+        "Forskningsforespørsler"
+      ]
+    }
+  },
+  "newsletter": {
+    "title": "Nyhetsbrev og innsikt",
+    "subtitle": "Perspektiver på AI-sikkerhet, styring og fremtiden for kunstig intelligens",
+    "readMore": "Les mer",
+    "backToNewsletter": "Tilbake til nyhetsbrev",
+    "by": "Av",
+    "example": {
+      "title": "Eksempel på nyhetsbrevtittel",
+      "date": "1. januar 2024",
+      "author": "Forfatternavn",
+      "excerpt": "Dette er et kort utdrag fra nyhetsbrevet som oppsummerer hovedpunktene og lokker leserne til å klikke videre for å lese hele nyhetsbrevet.",
+      "content": "Dette er det fullstendige innholdet i nyhetsbrevet. Erstatt dette med det faktiske innholdet i nyhetsbrevet ditt, som kan inkludere flere avsnitt, overskrifter, lenker og andre elementer etter behov.\n\nDu kan formatere dette innholdet med markdown eller HTML avhengig av nettstedets konfigurasjon.\n\nDette er en plassholder for et fullstendig nyhetsbrev som vanligvis ville være flere avsnitt langt og dekke et bestemt emne relatert til AI-sikkerhet, styring, forskning eller politikk.",
+      "image": "/img/articles/placeholder.jpg"
+    }
+  }
+} 

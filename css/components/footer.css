@@ -1,0 +1,106 @@
+/* ==========================================
+   Footer Component
+   ========================================== */
+
+/* Footer Base Styles */
+body > footer {
+  background-color: var(--header-footer-bg);
+  padding: 3rem var(--content-padding-h) 2rem;
+  margin-top: 4rem;
+  position: relative;
+  border-top: 1px solid var(--color-border);
+}
+
+/* Footer Container */
+footer .container {
+  max-width: var(--container-max-width);
+}
+
+/* Footer Grid Layout */
+footer .grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* Footer Column */
+footer .grid > div {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Footer Column Headings */
+footer h5 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-text);
+  font-weight: 600;
+  font-family: var(--heading-font-family);
+}
+
+/* Footer Links List */
+footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Footer Link Items */
+footer ul li {
+  margin-bottom: 0.5rem;
+}
+
+/* Footer Links */
+footer ul li a {
+  color: var(--color-text);
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color var(--transition-fast);
+}
+
+/* Footer Link Hover */
+footer ul li a:hover {
+  color: var(--color-accent);
+  text-decoration: underline;
+}
+
+/* Footer Text */
+footer p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+/* Copyright Text */
+footer p.copyright {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--color-border);
+  font-size: 0.85rem;
+  opacity: 0.7;
+  text-align: center;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  footer .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem 1rem;
+  }
+  
+  footer .grid > div {
+    padding-bottom: 1rem;
+  }
+  
+  footer ul {
+    margin-bottom: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  footer .grid {
+    grid-template-columns: 1fr;
+  }
+} 

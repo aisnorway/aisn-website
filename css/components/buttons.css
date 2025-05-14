@@ -1,0 +1,108 @@
+/* ==========================================
+   Button Styles
+   ========================================== */
+
+/* Base Button Styles */
+a[role="button"],
+button {
+  display: inline-block;
+  background-color: var(--color-accent);
+  color: var(--color-primary-inverse);
+  padding: 0.7rem 1.5rem;
+  border-radius: var(--radius-md);
+  font-weight: 500;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  transition: all var(--transition-medium);
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+/* Button Hover State */
+a[role="button"]:hover,
+button:hover {
+  background-color: var(--color-accent-hover);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-accent);
+}
+
+/* Button Active State */
+a[role="button"]:active,
+button:active {
+  transform: translateY(0);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Secondary Button */
+a[role="button"].secondary,
+button.secondary {
+  background-color: transparent;
+  color: var(--color-accent);
+  border: 2px solid var(--color-accent);
+  box-shadow: none;
+}
+
+/* Secondary Button Hover */
+a[role="button"].secondary:hover,
+button.secondary:hover {
+  background-color: rgba(20, 184, 166, 0.08);
+  color: var(--color-accent-hover);
+  border-color: var(--color-accent-hover);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Button with Icon */
+a[role="button"].with-icon,
+button.with-icon {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Button Sizes */
+a[role="button"].small,
+button.small {
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+}
+
+a[role="button"].large,
+button.large {
+  padding: 0.8rem 2rem;
+  font-size: 1.1rem;
+}
+
+/* Contact Button - Special Case */
+.contact-btn a {
+  background-color: var(--color-accent);
+  color: white !important;
+  padding: 0.7rem 1.3rem;
+  border-radius: var(--radius-md);
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  transform: translateY(0);
+  transition: all var(--transition-medium);
+  box-shadow: var(--shadow-sm);
+}
+
+.contact-btn a:hover {
+  background-color: var(--color-accent-hover);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-accent);
+}
+
+/* Mobile Responsive Adjustments */
+@media (max-width: 768px) {
+  a[role="button"],
+  button {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+  }
+  
+  .contact-btn a {
+    padding: 0.6rem 1.2rem;
+  }
+} 

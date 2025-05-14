@@ -1,0 +1,491 @@
+/* ==========================================
+   Hero Section
+   ========================================== */
+
+/**
+ * Hero Base - Main hero section styling
+ * 
+ * The hero section uses a gradient background with decorative elements
+ * and a smooth transition from the navbar.
+ */
+.hero {
+  position: relative;
+  padding: 7rem 0 8rem;
+  text-align: left;
+  overflow: hidden;
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  z-index: 1;
+  width: 100%;
+  background-color: var(--card-tint-4);
+  background-image: linear-gradient(135deg, var(--card-tint-3), var(--card-tint-4));
+  border-top: none;
+}
+
+/**
+ * Hero Background - Creates subtle gradient patterns
+ * 
+ * This pseudo-element adds radial gradients for visual depth
+ * without interfering with text readability.
+ */
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.7;
+  z-index: -1;
+  background-image: 
+    radial-gradient(circle at 20% 30%, rgba(236, 253, 245, 0.8) 0%, transparent 40%),
+    radial-gradient(circle at 80% 60%, rgba(240, 249, 255, 0.8) 0%, transparent 50%);
+}
+
+/**
+ * Navbar-to-Hero Gradient Transition
+ * 
+ * Creates a smooth transition from the navbar to the hero section
+ * by using a gradient overlay at the top of the hero.
+ */
+.hero::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background-image: linear-gradient(to bottom, 
+    rgba(240, 253, 250, 0.9) 0%, 
+    rgba(236, 253, 245, 0.5) 50%, 
+    transparent 100%);
+  z-index: 2;
+}
+
+/**
+ * Bottom Curve - Creates a curved transition to the content below
+ * 
+ * SVG element that creates a gentle curve at the bottom of the hero section,
+ * providing a smooth transition to the following content.
+ */
+.hero .curve-bottom {
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+}
+
+.hero .curve-bottom path {
+  fill: var(--color-background);
+}
+
+/**
+ * Hero Content Container - Centers and constrains the hero content
+ */
+.hero .container {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  z-index: 3;
+  padding-left: var(--content-padding-h);
+  padding-right: var(--content-padding-h);
+  text-align: left;
+}
+
+/**
+ * Hero Title - Main heading with gradient text effect
+ */
+.hero h1 {
+  font-size: 3.6rem;
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 2.5rem;
+  background: linear-gradient(120deg, #0f172a 0%, #334155 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  position: relative;
+  z-index: 3;
+  animation: fadeInUp 0.8s ease forwards;
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+  letter-spacing: -0.03em;
+}
+
+/**
+ * Hero Title Underline - Animated accent line under the title
+ */
+.hero h1::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 0;
+  transform: none;
+  width: 120px;
+  height: 5px;
+  background: linear-gradient(90deg, var(--color-accent) 0%, #38bdf8 100%);
+  border-radius: 3px;
+  animation: lineExpandLeft 1.2s ease forwards 0.5s;
+  box-shadow: 0 2px 10px rgba(20, 184, 166, 0.4);
+}
+
+/**
+ * Hero Description - Subtitle text with animated entrance
+ */
+.hero p {
+  font-size: 1.4rem;
+  max-width: 750px;
+  margin: 0 0 2.5rem;
+  position: relative;
+  z-index: 3;
+  opacity: 0;
+  animation: fadeInUp 0.8s ease forwards 0.3s;
+  line-height: 1.6;
+  color: #334155;
+}
+
+/**
+ * Hero Description Highlight Effect
+ * 
+ * Creates highlighted background sections for the hero subtitle
+ * with proper text-wrapping behavior.
+ */
+.hero p span {
+  background: linear-gradient(120deg, rgba(236, 253, 245, 0.7) 0%, rgba(224, 242, 254, 0.7) 100%);
+  padding: 0.2rem 0.6rem;
+  margin: 0 -0.1rem;
+  border-radius: var(--radius-sm);
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+  line-height: 1.9;
+  display: inline;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  border-bottom: 2px solid rgba(20, 184, 166, 0.2);
+  transition: all var(--transition-medium);
+}
+
+.hero p span:hover {
+  background: linear-gradient(120deg, rgba(236, 253, 245, 0.9) 0%, rgba(224, 242, 254, 0.9) 100%);
+  border-bottom: 2px solid rgba(20, 184, 166, 0.5);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+}
+
+/**
+ * Hero Button - Call-to-action button styling
+ */
+.hero p > a[role="button"] {
+  padding: 1rem 2.2rem;
+  font-size: 1.1rem;
+  margin-top: 1.5rem;
+  border-radius: var(--radius-md);
+  letter-spacing: 0.03em;
+  position: relative;
+  overflow: hidden;
+  transition: all var(--transition-medium);
+  z-index: 3;
+  box-shadow: 0 10px 25px rgba(20, 184, 166, 0.25);
+  font-weight: 600;
+  background: linear-gradient(90deg, var(--color-accent) 0%, #0ea5e9 100%);
+  border: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/**
+ * Hero Button Shine Effect - Adds animated shine to the button
+ */
+.hero p > a[role="button"]::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.3) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: rotate(45deg);
+  animation: shine 4s infinite;
+  z-index: -1;
+}
+
+/**
+ * Hero Button Hover - Enhanced hover effect
+ */
+.hero p > a[role="button"]:hover {
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 15px 30px rgba(20, 184, 166, 0.4);
+  background: linear-gradient(90deg, #0ea5e9 0%, var(--color-accent) 100%);
+}
+
+/**
+ * Hero Button Hover Shine Effect - Faster animation on hover
+ */
+.hero p > a[role="button"]:hover::before {
+  animation-duration: 2s;
+}
+
+/**
+ * Hero Button Active - Click effect
+ */
+.hero p > a[role="button"]:active {
+  transform: translateY(-2px) scale(1.01);
+  box-shadow: 0 8px 15px rgba(20, 184, 166, 0.3);
+}
+
+/* ==========================================
+   Decorative Elements - Visual enhancements
+   ========================================== */
+
+/**
+ * Enhanced Orbs & Decorative Elements
+ */
+.hero .orb-top {
+  position: absolute;
+  top: 15%;
+  right: 10%;
+  width: 120px;
+  height: 120px;
+  background: radial-gradient(circle, rgba(20, 184, 166, 0.25) 0%, rgba(20, 184, 166, 0.05) 70%);
+  border-radius: 50%;
+  z-index: 2;
+  animation: floatingOrb 10s ease-in-out infinite;
+  filter: blur(5px);
+}
+
+.hero .orb-large {
+  position: absolute;
+  bottom: 25%;
+  left: 10%;
+  width: 250px;
+  height: 250px;
+  background: radial-gradient(circle, rgba(56, 189, 248, 0.2) 0%, rgba(56, 189, 248, 0.03) 70%);
+  border-radius: 50%;
+  z-index: 2;
+  animation: floatingOrb 15s ease-in-out infinite reverse;
+  filter: blur(8px);
+}
+
+.hero .margin-decoration-left {
+  position: absolute;
+  top: 30%;
+  left: 5%;
+  width: 50px;
+  height: 300px;
+  background: linear-gradient(180deg, var(--color-accent) 0%, transparent 100%);
+  opacity: 0.1;
+  border-radius: 30px;
+  transform: rotate(15deg);
+  z-index: 1;
+  animation: rotateSlowly 20s linear infinite;
+}
+
+.hero .margin-decoration-right {
+  position: absolute;
+  bottom: 15%;
+  right: 5%;
+  width: 150px;
+  height: 150px;
+  background: linear-gradient(45deg, #0ea5e9 0%, var(--color-accent) 100%);
+  opacity: 0.1;
+  border-radius: 30px;
+  transform: rotate(30deg);
+  z-index: 1;
+  animation: rotateSlowly 30s linear infinite reverse;
+}
+
+@keyframes rotateSlowly {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/**
+ * Floating Orb - Gentle floating movement for orbs
+ */
+@keyframes floatingOrb {
+  0%, 100% {
+    transform: translateY(0) translateX(0) scale(1);
+    opacity: 0.7;
+  }
+  50% {
+    transform: translateY(-30px) translateX(15px) scale(1.1);
+    opacity: 1;
+  }
+}
+
+/* ==========================================
+   Animations
+   ========================================== */
+
+/**
+ * Fade In Up - Animate elements from below
+ */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/**
+ * Line Expand Left - Animate underline expansion
+ */
+@keyframes lineExpandLeft {
+  from {
+    width: 0;
+  }
+  to {
+    width: 120px;
+  }
+}
+
+/**
+ * Shine - Animated shine effect for buttons
+ */
+@keyframes shine {
+  0% {
+    transform: translateX(-100%) rotate(45deg);
+  }
+  20%, 100% {
+    transform: translateX(100%) rotate(45deg);
+  }
+}
+
+/* ==========================================
+   Responsive Adjustments
+   ========================================== */
+
+/**
+ * Tablet Breakpoint
+ */
+@media (max-width: 768px) {
+  .hero {
+    padding: 6rem 0 6rem;
+    min-height: 60vh;
+    text-align: center;
+  }
+  
+  .hero .container {
+    text-align: center;
+    padding: 0 1.5rem;
+  }
+  
+  .hero .curve-bottom {
+    bottom: -1px;
+    height: 40px;
+  }
+  
+  .hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .hero h1::after {
+    bottom: -12px;
+    height: 4px;
+    width: 80px;
+  }
+  
+  .hero h2::after {
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    bottom: -10px;
+  }
+  
+  .hero p {
+    font-size: 1.1rem;
+    margin: 0 auto 1.5rem;
+    line-height: 1.5;
+  }
+  
+  .hero p > a[role="button"] {
+    margin-top: 1rem;
+    padding: 0.8rem 1.6rem;
+    font-size: 1rem;
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .hero .orb-top,
+  .hero .orb-large {
+    opacity: 0.5;
+    filter: blur(20px);
+  }
+  
+  .hero .margin-decoration-left,
+  .hero .margin-decoration-right {
+    opacity: 0.05;
+  }
+  
+  @keyframes lineExpandLeft {
+    from {
+      width: 0;
+    }
+    to {
+      width: 60px;
+    }
+  }
+}
+
+/**
+ * Mobile Breakpoint
+ */
+@media (max-width: 480px) {
+  .hero {
+    padding: 5rem 0 5rem;
+    min-height: 50vh;
+  }
+  
+  .hero .container {
+    padding: 0 1rem;
+  }
+  
+  .hero h1 {
+    font-size: 2rem;
+    line-height: 1.2;
+    margin-bottom: 1.8rem;
+  }
+  
+  .hero p {
+    font-size: 1rem;
+    margin-bottom: 1.2rem;
+  }
+  
+  .hero p span {
+    padding: 0.15rem 0.4rem;
+    line-height: 1.7;
+  }
+  
+  .hero p > a[role="button"] {
+    font-size: 0.95rem;
+    padding: 0.7rem 1.4rem;
+    margin-top: 0.8rem;
+    letter-spacing: 0.5px;
+  }
+  
+  .hero .curve-bottom {
+    height: 30px;
+  }
+  
+  .hero .orb-top,
+  .hero .orb-large,
+  .hero .margin-decoration-left,
+  .hero .margin-decoration-right {
+    display: none;
+  }
+} 

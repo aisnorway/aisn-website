@@ -1,0 +1,429 @@
+{
+  "site": {
+    "title": "AI Safety Norway",
+    "description": "Working toward safe and beneficial AI in Norway"
+  },
+  "nav": {
+    "about": "About",
+    "aboutUs": "About Us",
+    "resources": "Resources",
+    "research": "Research",
+    "policy": "Policy",
+    "newsletter": "Newsletter",
+    "contact": "Contact"
+  },
+  "footer": {
+    "quickLinks": "Quick Links",
+    "home": "Home",
+    "connect": "Connect",
+    "followUs": "Follow us on social media.",
+    "copyright": "All rights reserved."
+  },
+  "common": {
+    "getInvolved": "Get Involved",
+    "learnMore": "Learn more",
+    "viewAll": "View all",
+    "missingTranslation": {
+      "title": "Page Not Available in English",
+      "message": "We're sorry, but this page is not yet available in English. We're working on translating all our content.",
+      "viewAlternate": "View in Norwegian",
+      "returnHome": "Return to Homepage"
+    },
+    "location": "Location",
+    "time": "Time",
+    "register": "Register Now"
+  },
+  "languageSwitcher": {
+    "changeLanguage": "Change language",
+    "english": "English",
+    "norwegian": "Norwegian"
+  },
+  "home": {
+    "hero": {
+      "title": "Shaping the Future of AI Safety in Norway",
+      "description": "We bring together leading researchers, policymakers, and industry experts to ensure artificial intelligence is developed safely and benefits all of humanity. Join us in building a future where AI serves as a force for good.",
+      "aboutButton": "Our Mission",
+      "involvedButton": "Get Involved"
+    },
+    "problem": {
+      "title": "The Challenge We Face",
+      "description": "AI companies are racing to build Artificial Superintelligence (ASI) - systems more intelligent than all of humanity combined. Currently, no method exists to contain or control smarter-than-human AI systems. If these companies succeed, the consequences would be catastrophic. Top AI scientists, world leaders, and even AI company CEOs themselves warn this could lead to human extinction.",
+      "highlights": {
+        "race": {
+          "title": "Accelerating Development",
+          "description": "Leading AI labs are rapidly building increasingly powerful systems without adequate safety measures."
+        },
+        "risk": {
+          "title": "Existential Threat",
+          "description": "Advanced AI could pose unprecedented risks through misalignment with human values."
+        },
+        "impact": {
+          "title": "Lack of Oversight",
+          "description": "Current frameworks are insufficient to govern increasingly powerful AI systems."
+        }
+      },
+      "points": [
+        {
+          "title": "Uncontrolled Development",
+          "description": "Major AI labs are rapidly developing increasingly capable systems without adequate safety measures or oversight."
+        },
+        {
+          "title": "Catastrophic Risks",
+          "description": "Advanced AI systems could pose existential threats through unintended consequences or misaligned goals."
+        },
+        {
+          "title": "Lack of Governance",
+          "description": "Current regulatory frameworks are insufficient to address the unique challenges posed by advanced AI."
+        }
+      ]
+    },
+    "quotes": {
+      "title": "What Leaders Say About AI Safety",
+      "items": [
+        {
+          "content": "Development of superhuman machine intelligence (SMI) is probably the greatest threat to the continued existence of humanity.",
+          "author": "Sam Altman",
+          "title": "CEO, OpenAI"
+        },
+        {
+          "content": "My chance that something goes really quite catastrophically wrong on the scale of human civilization might be somewhere between 10 per cent and 25 per cent.",
+          "author": "Dario Amodei",
+          "title": "Co-founder & CEO, Anthropic"
+        },
+        {
+          "content": "We are seeing the most destructive force in history here. We will have something that is smarter than the smartest human.",
+          "author": "Elon Musk",
+          "title": "CEO, Tesla, SpaceX & xAI"
+        },
+        {
+          "content": "The development of full artificial intelligence could spell the end of the human race... It would take off on its own, and re-design itself at an ever increasing rate.",
+          "author": "Stephen Hawking",
+          "title": "Physicist & Cosmologist"
+        }
+      ]
+    },
+    "solution": {
+      "title": "Our Approach",
+      "description": "We need stronger regulatory frameworks comparable to other high-risk industries to ensure AI development proceeds safely and beneficially.",
+      "points": [
+        {
+          "title": "Robust Regulation",
+          "description": "Advocating for comprehensive regulatory frameworks that ensure safety while enabling beneficial innovation."
+        },
+        {
+          "title": "Technical Research",
+          "description": "Supporting research into AI alignment, interpretability, and robustness to make AI systems safer."
+        },
+        {
+          "title": "International Coordination",
+          "description": "Working to build global consensus and coordinated action on AI safety and governance."
+        }
+      ]
+    },
+    "focusAreas": {
+      "title": "Our Key Focus Areas",
+      "areas": [
+        {
+          "icon": "🔬",
+          "title": "Technical Safety Research",
+          "description": "Developing robust methods to ensure AI systems behave as intended, remain under human control, and align with human values as they become more capable.",
+          "link": "research",
+          "linkText": "Explore Research →"
+        },
+        {
+          "icon": "📝",
+          "title": "Policy Development",
+          "description": "Working with Norwegian and international policymakers to create effective governance frameworks that promote safety while enabling beneficial AI innovation.",
+          "link": "policy",
+          "linkText": "View Policy Work →"
+        },
+        {
+          "icon": "🌐",
+          "title": "Community Building",
+          "description": "Fostering a vibrant community of researchers, engineers, and policymakers committed to addressing the critical challenges of AI safety and alignment.",
+          "link": "contact",
+          "linkText": "Join Community →"
+        }
+      ]
+    },
+    "latestArticles": {
+      "title": "Latest Insights",
+      "description": "Stay informed with our latest research, analysis, and community updates on AI safety and governance.",
+      "viewAll": "View all newsletters →",
+      "items": [
+        {
+          "date": "July 24, 2024",
+          "title": "Interpretability in Large Language Models: Current Approaches and Future Directions",
+          "excerpt": "As language models become more complex and powerful, understanding their internal decision-making processes becomes increasingly important for safety. This article explores the state of the art in interpretability research and outlines promising directions for future work.",
+          "url": "/en/articles/interpretability-in-llms",
+          "author": "Dr. Magnus Olsen",
+          "readTime": "8 min read",
+          "image": "/img/articles/interpretability.jpg"
+        },
+        {
+          "date": "June 15, 2024",
+          "title": "Norway's Role in International AI Governance",
+          "excerpt": "This article examines how Norway, with its strong democratic traditions and technological expertise, can contribute to the global conversation on AI governance. We explore opportunities for Norway to shape international standards and foster cooperation.",
+          "url": "/en/articles/norway-ai-governance",
+          "author": "Sofie Bergström",
+          "readTime": "6 min read",
+          "image": "/img/articles/norway-governance.jpg"
+        },
+        {
+          "date": "May 28, 2024",
+          "title": "Building Trust in AI Systems: A Norwegian Perspective",
+          "excerpt": "How can we ensure that AI systems are trustworthy and aligned with Norwegian values? This article discusses practical approaches to building and verifying trust in AI systems, with a focus on transparency and human oversight.",
+          "url": "/en/articles/trust-in-ai",
+          "author": "Dr. Lars Thorsen",
+          "readTime": "7 min read",
+          "image": "/img/articles/trust-ai.jpg"
+        }
+      ]
+    },
+    "upcomingEvents": {
+      "title": "Upcoming Events",
+      "description": "Join us at our upcoming events to learn more about AI safety and connect with like-minded individuals.",
+      "viewAll": "View all events →",
+      "items": [
+        {
+          "date": "August 15, 2024",
+          "title": "AI Safety Workshop: Alignment Fundamentals",
+          "location": "University of Oslo, Oslo",
+          "time": "10:00 - 16:00",
+          "description": "A hands-on workshop introducing key concepts in AI alignment. Suitable for technical professionals and researchers.",
+          "url": "/en/events/alignment-workshop"
+        },
+        {
+          "date": "September 5, 2024",
+          "title": "Public Lecture: AI Governance in the Nordic Context",
+          "location": "Oslo Science Park",
+          "time": "18:00 - 20:00",
+          "description": "Sofie Bergström discusses the unique position of Nordic countries in shaping responsible AI governance frameworks.",
+          "url": "/en/events/nordic-ai-governance"
+        }
+      ]
+    },
+    "getInvolved": {
+      "title": "Get Involved",
+      "description": "There are many ways to contribute to our mission of ensuring safe and beneficial AI development:",
+      "areas": [
+        {
+          "icon": "👥",
+          "title": "Join Our Community",
+          "description": "Connect with researchers, policymakers, and enthusiasts working on AI safety in Norway.",
+          "link": "contact",
+          "linkText": "Connect with us →"
+        },
+        {
+          "icon": "🤝",
+          "title": "Collaborate",
+          "description": "Partner with us on research projects, policy initiatives, or community events.",
+          "link": "contact",
+          "linkText": "Explore collaboration →"
+        },
+        {
+          "icon": "📚",
+          "title": "Learn More",
+          "description": "Access our resources and research on AI safety, governance, and alignment.",
+          "link": "resources",
+          "linkText": "Browse resources →"
+        }
+      ]
+    }
+  },
+  "about": {
+    "title": "About AI Safety Norway",
+    "subtitle": "Working to ensure safe and beneficial AI development through research, policy, and community engagement",
+    "mission": {
+      "title": "Our Mission",
+      "content": "AI Safety Norway was founded with the mission to reduce catastrophic and existential risks from increasingly powerful AI systems. We bring together experts from diverse disciplines to address both the technical and governance challenges of advanced AI."
+    },
+    "approach": {
+      "title": "Our Approach",
+      "content": "We believe that addressing AI safety requires a multidisciplinary approach combining rigorous technical research, thoughtful policy development, and broad community engagement. Our work is guided by the following principles:"
+    },
+    "team": {
+      "title": "Our Team",
+      "content": "Our team brings together experts committed to ensuring AI systems are developed safely and responsibly for the benefit of humanity. Feel free to reach out to us directly."
+    },
+    "contactButton": "Get in Touch",
+    "values": {
+      "title": "Our Values"
+    }
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "Get in touch with our team",
+    "description": "Have questions about AI safety or interested in collaborating? We'd love to hear from you.",
+    "emailGeneral": "kontakt@aisafety.no",
+    "emailMedia": "media@aisafety.no",
+    "emailCollaboration": "collaborate@aisafety.no",
+    "reasons": {
+      "title": "Reach Out For:",
+      "items": [
+        "Information about AI safety",
+        "Potential collaborations",
+        "Speaking engagements",
+        "Contribution opportunities",
+        "Research inquiries"
+      ]
+    }
+  },
+  "research": {
+    "title": "Our Research Focus",
+    "subtitle": "Addressing technical challenges to build AI systems that are robust, beneficial, and aligned with human values",
+    "technical": {
+      "title": "Technical Safety",
+      "description": "We focus on developing and evaluating methods for building robust, reliable, and controllable AI systems:",
+      "areas": [
+        {
+          "title": "Robustness Testing",
+          "description": "Exploring techniques to make AI systems resistant to adversarial inputs and distribution shifts"
+        },
+        {
+          "title": "Interpretability",
+          "description": "Developing methods to understand the internal workings of complex neural networks"
+        },
+        {
+          "title": "Verification",
+          "description": "Creating frameworks to provide formal guarantees about AI system behavior"
+        },
+        {
+          "title": "Anomaly Detection",
+          "description": "Building systems that can detect when they're operating outside their design parameters"
+        }
+      ]
+    },
+    "alignment": {
+      "title": "Alignment Research",
+      "description": "Ensuring AI systems understand and act according to human values and intentions:",
+      "areas": [
+        {
+          "title": "Value Learning",
+          "description": "Methods for inferring and representing human preferences"
+        },
+        {
+          "title": "Goal Structure",
+          "description": "Designing AI systems with goals that remain stable under self-improvement"
+        },
+        {
+          "title": "Human Feedback",
+          "description": "Incorporating human feedback effectively while minimizing feedback loops"
+        },
+        {
+          "title": "Inner Alignment",
+          "description": "Ensuring that learned algorithms actually optimize for their specified objective"
+        }
+      ]
+    },
+    "strategic": {
+      "title": "Strategic Research",
+      "description": "Analyzing the broader landscape of AI development:",
+      "areas": [
+        {
+          "title": "AI Governance Models",
+          "description": "Evaluating different approaches to governing advanced AI"
+        },
+        {
+          "title": "Risk Assessment",
+          "description": "Developing frameworks for evaluating catastrophic and existential risks"
+        },
+        {
+          "title": "Ethics & Philosophy",
+          "description": "Exploring foundational questions about value alignment and safety"
+        },
+        {
+          "title": "International Coordination",
+          "description": "Studying mechanisms for global cooperation on AI development"
+        }
+      ]
+    },
+    "contactButton": "Collaborate With Us"
+  },
+  "policy": {
+    "title": "AI Safety Policy & Governance",
+    "subtitle": "Developing frameworks and recommendations to ensure AI systems are developed safely and aligned with human values",
+    "research": {
+      "title": "Policy Research",
+      "description": "Effective policy and governance are crucial for navigating the development and deployment of advanced AI safely. Our policy work focuses on:",
+      "areas": [
+        {
+          "title": "International Coordination",
+          "description": "Promoting frameworks for global cooperation on AI safety"
+        },
+        {
+          "title": "Governance Mechanisms",
+          "description": "Researching effective oversight systems for advanced AI"
+        },
+        {
+          "title": "National Policies",
+          "description": "Developing recommendations for Norwegian AI governance"
+        },
+        {
+          "title": "Risk Assessment",
+          "description": "Creating frameworks to evaluate potential risks from AI systems"
+        }
+      ]
+    },
+    "initiatives": {
+      "title": "Current Initiatives",
+      "description": "Our policy team is currently working on several key initiatives:",
+      "areas": [
+        {
+          "title": "Policy Briefs",
+          "description": "Creating accessible analyses of AI safety challenges for policymakers"
+        },
+        {
+          "title": "Expert Workshops",
+          "description": "Bringing together researchers and policymakers to develop practical solutions"
+        },
+        {
+          "title": "Stakeholder Engagement",
+          "description": "Engaging with government, industry, and civil society on AI governance"
+        },
+        {
+          "title": "International Collaboration",
+          "description": "Partnering with global organizations to develop coordinated approaches"
+        }
+      ]
+    },
+    "keyAreas": {
+      "title": "Key Policy Areas",
+      "description": "We believe several policy domains are particularly important for ensuring safe AI development:",
+      "areas": [
+        {
+          "title": "Research Governance",
+          "description": "Establishing norms and guidelines for safe AI research"
+        },
+        {
+          "title": "Deployment Oversight",
+          "description": "Creating mechanisms to evaluate AI systems before wide deployment"
+        },
+        {
+          "title": "International Standards",
+          "description": "Developing shared standards for AI safety and alignment"
+        },
+        {
+          "title": "Institutional Design",
+          "description": "Building institutions capable of effectively governing advanced AI"
+        }
+      ]
+    },
+    "contactButton": "Connect With Our Policy Team"
+  },
+  "newsletter": {
+    "title": "Newsletter & Insights",
+    "subtitle": "Perspectives on AI safety, governance, and the future of artificial intelligence",
+    "readMore": "Read more",
+    "backToNewsletter": "Back to newsletter",
+    "by": "By",
+    "example": {
+      "title": "Example Newsletter Title",
+      "date": "January 1, 2024",
+      "author": "Author Name",
+      "excerpt": "This is a brief excerpt from the newsletter that summarizes its main points and entices readers to click through to read the full piece.",
+      "content": "This is the full content of the newsletter. Replace this with the actual content of your newsletter, which can include multiple paragraphs, headings, links, and other elements as needed.\n\nYou can format this content with markdown or HTML depending on your site's configuration.\n\nThis is a placeholder for a full-length newsletter that would typically be several paragraphs long and cover a specific topic related to AI safety, governance, research, or policy.",
+      "image": "/img/articles/placeholder.jpg"
+    }
+  }
+} 

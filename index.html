@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>AI Safety Norway</title>
+  <meta name="robots" content="noindex">
+  <!-- Canonical and alternate language links for SEO -->
+  <link rel="canonical" href="https://aisafety.no/no/">
+  <link rel="alternate" hreflang="en" href="https://aisafety.no/en/">
+  <link rel="alternate" hreflang="no" href="https://aisafety.no/no/">
+  <link rel="alternate" hreflang="x-default" href="https://aisafety.no/no/">
+  <script>
+    // Intelligent language redirection script
+    // Redirects users based on:
+    // 1. Previously stored preference
+    // 2. Browser language
+    // 3. Default language (Norwegian)
+    (function() {
+      // Default language
+      var defaultLang = 'no'; 
+      
+      // Try to get stored preference
+      var storedLang = localStorage.getItem('preferredLanguage');
+      
+      // If no stored preference, check browser language
+      if (!storedLang) {
+        var browserLang = (navigator.language || navigator.userLanguage || '').split('-')[0];
+        // Set to English for English users, Norwegian for everyone else (as Norwegian is default)
+        storedLang = (browserLang === 'en') ? 'en' : defaultLang;
+      }
+      
+      // Redirect to appropriate language path
+      window.location.href = '/' + storedLang + '/';
+    })();
+  </script>
+</head>
+<body>
+  <h1>Redirecting...</h1>
+  <p>If you are not redirected automatically, follow these links:</p>
+  <ul>
+    <li><a href="/no/">Norsk</a></li>
+    <li><a href="/en/">English</a></li>
+  </ul>
+</body>
+</html> 

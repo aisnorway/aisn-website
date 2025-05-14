@@ -1,0 +1,235 @@
+/* ==========================================
+   Quotes Component Styles
+   Shared styles for all quote components across the site
+   ========================================== */
+
+/**
+ * Base Quote Card Styles
+ * These styles are shared between homepage and quotes page
+ */
+.quote-card,
+.quote-card-large {
+  background-color: white;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  position: relative;
+  transition: all var(--transition-medium);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.quote-card:hover,
+.quote-card-large:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--color-accent);
+}
+
+.quote-content {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+.quote-content::before {
+  content: """;
+  position: absolute;
+  left: -0.5rem;
+  top: -1rem;
+  font-size: 5rem;
+  line-height: 1;
+  color: var(--color-accent);
+  opacity: 0.3;
+  font-family: Georgia, serif;
+}
+
+.quote-content p {
+  line-height: 1.6;
+  color: var(--color-text);
+  font-style: italic;
+  hyphens: auto;
+  word-break: normal;
+  overflow-wrap: break-word;
+}
+
+.quote-attribution {
+  display: flex;
+  align-items: center;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  padding-top: 1.2rem;
+}
+
+.quote-author {
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+  color: var(--color-text);
+}
+
+.quote-title {
+  color: var(--color-text-light);
+  line-height: 1.4;
+}
+
+.quote-date-source {
+  color: var(--color-text-light);
+  margin-top: 0.75rem;
+  font-style: normal;
+}
+
+.quote-date-source a {
+  color: var(--color-accent);
+  text-decoration: none;
+  transition: color var(--transition-medium);
+}
+
+.quote-date-source a:hover {
+  color: var(--color-accent-hover);
+  text-decoration: underline;
+}
+
+/**
+ * Homepage Quote Specific Styles
+ */
+.quote-card {
+  padding: 2rem;
+}
+
+.quote-card .quote-content p {
+  font-size: 1rem;
+}
+
+.quote-card .quote-author {
+  font-size: 1.1rem;
+}
+
+.quote-card .quote-title {
+  font-size: 0.9rem;
+}
+
+.quote-card .quote-date-source {
+  font-size: 0.8rem;
+}
+
+/**
+ * Quotes Section for Homepage
+ */
+.quotes-section {
+  padding: 4rem 0;
+  background-color: var(--card-tint-3);
+  position: relative;
+  overflow: hidden;
+}
+
+.quotes-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 70% 20%, rgba(240, 249, 255, 0.8) 0%, transparent 60%);
+  z-index: 0;
+}
+
+.quotes-section .container {
+  position: relative;
+  z-index: 1;
+}
+
+/**
+ * Quotes Section Header
+ */
+.quotes-section h2 {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  background: linear-gradient(120deg, var(--color-text) 0%, var(--color-accent) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  position: relative;
+}
+
+.quotes-section h2::after {
+  content: '';
+  position: absolute;
+  bottom: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--color-accent) 0%, #38bdf8 100%);
+  border-radius: 2px;
+}
+
+/**
+ * Quotes Grid
+ */
+.quotes-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+/**
+ * Quotes CTA Button
+ */
+.quotes-cta {
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+}
+
+.quotes-cta a {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  background: white;
+  color: var(--color-text);
+  border: 2px solid var(--color-accent);
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  text-decoration: none;
+  text-align: center;
+  transition: all var(--transition-medium);
+  box-shadow: var(--shadow-sm);
+}
+
+.quotes-cta a:hover {
+  background-color: var(--color-accent);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+/**
+ * Responsive Adjustments
+ */
+@media (max-width: 768px) {
+  .quotes-section {
+    padding: 3rem 0;
+  }
+  
+  .quotes-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .quote-card {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .quotes-section h2 {
+    font-size: 2rem;
+  }
+  
+  .quote-content p {
+    font-size: 0.95rem;
+  }
+} 

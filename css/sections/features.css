@@ -1,0 +1,216 @@
+/* ==========================================
+   Features Section
+   ========================================== */
+
+/* Focus Areas Section */
+.focus-areas-section {
+  padding: 5rem 0;
+  position: relative;
+  overflow: hidden;
+  background-color: var(--card-tint-1);
+  z-index: 1;
+  width: 100%;
+}
+
+/* Focus Areas Background Element */
+.focus-areas-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(140deg, rgba(240, 253, 250, 0.7) 0%, rgba(240, 249, 255, 0.7) 100%);
+  z-index: -1;
+}
+
+/* Focus Areas Container */
+.focus-areas-section .container {
+  position: relative;
+  max-width: var(--container-max-width);
+  z-index: 2;
+  padding-left: var(--content-padding-h);
+  padding-right: var(--content-padding-h);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Focus Areas Title */
+.focus-areas-section h2 {
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  position: relative;
+}
+
+/* Focus Areas Title Underline */
+.focus-areas-section h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background-color: var(--color-accent);
+}
+
+/* Focus Areas Grid */
+.focus-areas-section .grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+/* Focus Area Card */
+.focus-areas-section .grid > div > article {
+  background-color: white;
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  position: relative;
+  transition: all var(--transition-medium);
+  box-shadow: var(--shadow-sm);
+  height: 100%;
+}
+
+/* Focus Area Card Title */
+.focus-areas-section .grid > div > article h4 {
+  font-size: 1.4rem;
+  margin-bottom: 1.2rem;
+  position: relative;
+  padding-bottom: 1rem;
+  color: var(--color-text);
+}
+
+/* Focus Area Card Title Underline */
+.focus-areas-section .grid > div > article h4::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 3rem;
+  height: 3px;
+  background-color: var(--color-accent);
+  transition: width var(--transition-medium);
+}
+
+/* Focus Area Card Text */
+.focus-areas-section .grid > div > article p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  color: var(--color-text);
+}
+
+/* Focus Area Card Link */
+.focus-areas-section .grid > div > article a {
+  color: var(--color-accent);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  display: inline-flex;
+  align-items: center;
+  transition: all var(--transition-fast);
+}
+
+/* Focus Area Card Link Arrow */
+.focus-areas-section .grid > div > article a::after {
+  content: '→';
+  margin-left: 5px;
+  transition: transform var(--transition-fast);
+}
+
+/* Focus Area Card Hover */
+.focus-areas-section .grid > div > article:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Focus Area Card Hover Title Underline */
+.focus-areas-section .grid > div > article:hover h4::after {
+  width: 5rem;
+}
+
+/* Focus Area Card Hover Link */
+.focus-areas-section .grid > div > article:hover a {
+  color: var(--color-accent-hover);
+}
+
+/* Focus Area Card Hover Link Arrow */
+.focus-areas-section .grid > div > article:hover a::after {
+  transform: translateX(3px);
+}
+
+/* Focus Area Card Color Variations */
+.focus-areas-section .grid > div:nth-child(1) > article {
+  border-top: 4px solid var(--color-accent);
+}
+
+.focus-areas-section .grid > div:nth-child(2) > article {
+  border-top: 4px solid #0ea5e9;
+}
+
+.focus-areas-section .grid > div:nth-child(3) > article {
+  border-top: 4px solid #8b5cf6;
+}
+
+/* Circle Decorations */
+.focus-areas-section .circle-decoration {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.1;
+  z-index: -1;
+}
+
+.focus-areas-section .circle-1 {
+  width: 300px;
+  height: 300px;
+  background-color: var(--color-accent);
+  top: -100px;
+  right: -100px;
+}
+
+.focus-areas-section .circle-2 {
+  width: 500px;
+  height: 500px;
+  background-color: #0ea5e9;
+  bottom: -200px;
+  left: -200px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+  .focus-areas-section .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .focus-areas-section {
+    padding: 3rem 0;
+  }
+  
+  .focus-areas-section h2 {
+    font-size: 1.8rem;
+  }
+  
+  .focus-areas-section .grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .focus-areas-section .grid > div > article {
+    padding: 1.5rem;
+  }
+  
+  .focus-areas-section .circle-decoration {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .focus-areas-section {
+    padding: 2rem 0;
+  }
+} 

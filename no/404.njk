@@ -1,0 +1,67 @@
+---
+permalink: /no/404.html
+layout: base.njk
+title: "Side ikke funnet"
+pageClass: error-page
+lang: no
+---
+
+{% set currentLang = "no" %}
+{% set isLanguageMismatch = false %}
+{% set possibleLang = null %}
+
+<script>
+  // Set the language correctly on this page
+  document.documentElement.lang = "no";
+</script>
+
+<div class="page-header">
+  <div class="bg-element bg-element-1"></div>
+  <div class="bg-element bg-element-2"></div>
+  <div class="container">
+    <h1>404 - Side ikke funnet</h1>
+  </div>
+</div>
+
+<section class="content-section">
+  <div class="container">
+    <p>Vi kunne ikke finne siden du leter etter.</p>
+    
+    <div id="translation-mismatch" style="display: none;">
+      <p>Denne siden kan være tilgjengelig på et annet språk.</p>
+      <div id="alternate-link-container"></div>
+    </div>
+    
+    <p>
+      <a href="/no/" class="button">Gå tilbake til forsiden</a>
+    </p>
+  </div>
+</section>
+
+<script>
+  // Check if page exists in another language
+  const currentPath = window.location.pathname;
+  
+  // Create English equivalent path
+  const enPath = currentPath.replace('/no/', '/en/');
+  
+  // Check if English version exists
+  fetch(enPath, { method: 'HEAD' })
+    .then(response => {
+      if (response.status !== 404) {
+        // Show translation mismatch message
+        document.getElementById('translation-mismatch').style.display = 'block';
+        
+        // Create link to English version
+        const container = document.getElementById('alternate-link-container');
+        const link = document.createElement('a');
+        link.href = enPath;
+        link.className = 'button';
+        link.textContent = "View in English";
+        container.appendChild(link);
+      }
+    })
+    .catch(() => {
+      // Do nothing if fetch fails
+    });
+</script> 

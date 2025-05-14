@@ -1,0 +1,280 @@
+{# 
+  About page template - used by both language versions
+  This template extends the base layout and includes about page content.
+  Language-specific content comes from i18n translation files.
+#}
+{% extends "base.njk" %}
+
+{% block content %}
+<div class="page-header about-header">
+  <div class="bg-element bg-element-1"></div>
+  <div class="bg-element bg-element-2"></div>
+  <div class="container">
+    <div class="header-content">
+      <div class="header-text">
+        <h1>{{ "about.title" | i18n(currentLanguage) }}</h1>
+        <p>{{ "about.subtitle" | i18n(currentLanguage) }}</p>
+      </div>
+      <div class="header-visual">
+        <div class="visual-element"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="mission-section">
+  <div class="container">
+    <div class="mission-content">
+      <div class="mission-icon-container">
+        <div class="mission-icon">🎯</div>
+      </div>
+      <div class="mission-text">
+        <h2>{{ "about.mission.title" | i18n(currentLanguage) }}</h2>
+        <p>{{ "about.mission.content" | i18n(currentLanguage) }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="values-section">
+  <div class="container">
+    <h2>{{ "about.values.title" | i18n(currentLanguage) }}</h2>
+    
+    <div class="values-grid">
+      <!-- Fixed values access - 3 cards in 1 row -->
+      {% if currentLanguage == "en" %}
+        {% for value in [
+          {
+            "title": "Long-term Thinking",
+            "description": "We prioritize the long-term flourishing of humanity over short-term gains, considering the welfare of future generations in our work."
+          },
+          {
+            "title": "Scientific Rigor",
+            "description": "We maintain high standards for research quality, emphasizing methodological soundness, reproducibility, and intellectual honesty."
+          },
+          {
+            "title": "Collaborative Approach",
+            "description": "We work cooperatively across disciplines, organizations, and countries to address the global challenge of AI safety."
+          }
+        ] %}
+          <div class="value-card">
+            <h3>{{ value.title }}</h3>
+            <p>{{ value.description }}</p>
+          </div>
+        {% endfor %}
+      {% else %}
+        {% for value in [
+          {
+            "title": "Langsiktig tenkning",
+            "description": "Vi prioriterer menneskehetens langsiktige utvikling framfor kortsiktige gevinster, og tar hensyn til framtidige generasjoners velferd i vårt arbeid."
+          },
+          {
+            "title": "Vitenskapelig stringens",
+            "description": "Vi opprettholder høye standarder for forskningskvalitet, med vekt på metodisk soliditet, reproduserbarhet og intellektuell ærlighet."
+          },
+          {
+            "title": "Samarbeidende tilnærming",
+            "description": "Vi arbeider kooperativt på tvers av disipliner, organisasjoner og land for å adressere den globale utfordringen med AI-sikkerhet."
+          }
+        ] %}
+          <div class="value-card">
+            <h3>{{ value.title }}</h3>
+            <p>{{ value.description }}</p>
+          </div>
+        {% endfor %}
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+<section class="approach-section">
+  <div class="container">
+    <div class="approach-content">
+      <div class="approach-text">
+        <h2>{{ "about.approach.title" | i18n(currentLanguage) }}</h2>
+        <p>{{ "about.approach.content" | i18n(currentLanguage) }}</p>
+      </div>
+      
+      <div class="principles-list">
+        <ul>
+          <!-- Fixed principles with hardcoded data -->
+          {% if currentLanguage == "en" %}
+            {% for principle in [
+              "Evidence-based research that addresses key technical and governance questions",
+              "Collaborative engagement with researchers, policymakers, and industry partners",
+              "Long-term thinking about the trajectory of AI development and its implications",
+              "Practical solutions that can be implemented by researchers, companies, and policymakers"
+            ] %}
+              <li>
+                <span class="principle-marker"></span>
+                <span class="principle-text">{{ principle }}</span>
+              </li>
+            {% endfor %}
+          {% else %}
+            {% for principle in [
+              "Evidensbasert forskning som adresserer sentrale tekniske og forvaltningsmessige spørsmål",
+              "Samarbeidende engasjement med forskere, beslutningstakere og industripartnere",
+              "Langsiktig tenkning om banen for AI-utvikling og dens implikasjoner",
+              "Praktiske løsninger som kan implementeres av forskere, selskaper og beslutningstakere"
+            ] %}
+              <li>
+                <span class="principle-marker"></span>
+                <span class="principle-text">{{ principle }}</span>
+              </li>
+            {% endfor %}
+          {% endif %}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="team-section">
+  <div class="container">
+    <div class="team-header">
+      <h2>{{ "about.team.title" | i18n(currentLanguage) }}</h2>
+    </div>
+    
+    <div class="team-grid">
+      <!-- Real team members from AI Safety Norway -->
+      {% if currentLanguage == "en" %}
+        {% for member in [
+          {
+            "name": "William Wale",
+            "title": "Executive Director",
+            "email": "william.wale@aisafety.no",
+            "linkedin": "https://www.linkedin.com/in/william-wale-0a178b362/",
+            "image": "/img/team/william.jpg"
+          },
+          {
+            "name": "Marius Binner",
+            "title": "Operations Director",
+            "email": "marius.binner@aisafety.no",
+            "linkedin": "https://www.linkedin.com/in/marius-binner/",
+            "image": "/img/team/marius.jpg"
+          },
+          {
+            "name": "Sigurd Bakken-Snekkevik",
+            "title": "Finance Director",
+            "email": "sigurd.snekkevik@aisafety.no",
+            "linkedin": "https://www.linkedin.com/in/sigurd-bakken-snekkevik-977b78214/",
+            "image": "/img/team/sigurd.jpg"
+          },
+          {
+            "name": "Christian Kårbø Engelsen",
+            "title": "Technology Director",
+            "email": "christian.engelsen@aisafety.no",
+            "linkedin": "https://www.linkedin.com/in/christian-k%C3%A5rb%C3%B8-engelsen-7a07941aa/",
+            "image": "/img/team/christian.jpg"
+          },
+          {
+            "name": "Joakim Hauger Sunde",
+            "title": "Research Director",
+            "email": "joakim.sunde@aisafety.no",
+            "linkedin": "https://www.linkedin.com/in/joakim-sunde-825a5b148/",
+            "image": "/img/team/joakim.jpg"
+          },
+          {
+            "name": "Tolga Bilge",
+            "title": "AI Policy Advisor",
+            "email": "tolga.bilge@aisafety.no",
+            "linkedin": "https://www.linkedin.com/in/tolga-bilge/",
+            "image": "/img/team/tolga.jpg"
+          }
+        ] %}
+          <div class="team-member">
+            <div class="team-member-image">
+              <img src="{{ member.image }}" alt="{{ member.name }}" onerror="this.src='/img/team/placeholder.jpg'">
+            </div>
+            <div class="team-member-content">
+              <div class="team-member-info">
+                <h3 class="team-member-name">{{ member.name }}</h3>
+                <p class="team-member-title">{{ member.title }}</p>
+              </div>
+              <div class="team-member-contact">
+                {% if member.email %}
+                  <a href="mailto:{{ member.email }}" class="contact-link email" title="{{ member.email }}"></a>
+                {% endif %}
+                {% if member.linkedin %}
+                  <a href="{{ member.linkedin }}" class="contact-link linkedin" target="_blank" rel="noopener" title="LinkedIn Profile"></a>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      {% else %}
+        {% for member in [
+          {
+            "name": "William Wale",
+            "title": "Administrerende direktør",
+            "email": "william.wale@aisafety.no",
+            "linkedin": "https://www.linkedin.com/in/william-wale-0a178b362/",
+            "image": "/img/team/william.jpg"
+          },
+          {
+            "name": "Marius Binner",
+            "title": "Driftsdirektør",
+            "email": "marius.binner@aisafety.no",
+            "linkedin": "https://www.linkedin.com/in/marius-binner/",
+            "image": "/img/team/marius.jpg"
+          },
+          {
+            "name": "Sigurd Bakken-Snekkevik",
+            "title": "Finansdirektør",
+            "email": "sigurd.snekkevik@aisafety.no",
+            "linkedin": "https://www.linkedin.com/in/sigurd-bakken-snekkevik-977b78214/",
+            "image": "/img/team/sigurd.jpg"
+          },
+          {
+            "name": "Christian Kårbø Engelsen",
+            "title": "Teknologidirektør",
+            "email": "christian.engelsen@aisafety.no",
+            "linkedin": "https://www.linkedin.com/in/christian-k%C3%A5rb%C3%B8-engelsen-7a07941aa/",
+            "image": "/img/team/christian.jpg"
+          },
+          {
+            "name": "Joakim Hauger Sunde",
+            "title": "Forskningsdirektør",
+            "email": "joakim.sunde@aisafety.no",
+            "linkedin": "https://www.linkedin.com/in/joakim-sunde-825a5b148/",
+            "image": "/img/team/joakim.jpg"
+          },
+          {
+            "name": "Tolga Bilge",
+            "title": "Rådgiver for KI-politikk",
+            "email": "tolga.bilge@aisafety.no",
+            "linkedin": "https://www.linkedin.com/in/tolga-bilge/",
+            "image": "/img/team/tolga.jpg"
+          }
+        ] %}
+          <div class="team-member">
+            <div class="team-member-image">
+              <img src="{{ member.image }}" alt="{{ member.name }}" onerror="this.src='/img/team/placeholder.jpg'">
+            </div>
+            <div class="team-member-content">
+              <div class="team-member-info">
+                <h3 class="team-member-name">{{ member.name }}</h3>
+                <p class="team-member-title">{{ member.title }}</p>
+              </div>
+              <div class="team-member-contact">
+                {% if member.email %}
+                  <a href="mailto:{{ member.email }}" class="contact-link email" title="{{ member.email }}"></a>
+                {% endif %}
+                {% if member.linkedin %}
+                  <a href="{{ member.linkedin }}" class="contact-link linkedin" target="_blank" rel="noopener" title="LinkedIn Profil"></a>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      {% endif %}
+    </div>
+    
+    <div class="cta-container">
+      <a href="{{ langUtils.localizeUrl('contact', currentLanguage) }}" role="button" class="cta-button">
+        {{ "about.contactButton" | i18n(currentLanguage) }}
+      </a>
+    </div>
+  </div>
+</section>
+{% endblock %} 

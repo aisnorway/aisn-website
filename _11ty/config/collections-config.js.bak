@@ -1,0 +1,28 @@
+/**
+ * Collections Configuration for Eleventy
+ * Defines how content is grouped and organized
+ */
+
+module.exports = function(eleventyConfig) {
+  /**
+   * Create a collection of blog posts from the /posts/ directory
+   * Sorts posts by date in descending order (newest first)
+   */
+  eleventyConfig.addCollection("posts", function(collectionApi) {
+    // Get all markdown files from the 'posts' directory
+    return collectionApi.getFilteredByGlob("posts/**/*.md")
+      .sort(function(a, b) {
+        // Sort by date in descending order (newest first)
+        return b.date - a.date;
+      });
+  });
+  
+  /**
+   * Create a collection of featured posts (those with featured: true in frontmatter)
+   */
+  eleventyConfig.addCollection("featuredPosts", function(collectionApi) {
+    return collectionApi.getAll()
+      .filter(item => item.data.featured)
+      .sort((a, b) => b.date - a.date);
+  });
+}; 

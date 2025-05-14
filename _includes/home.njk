@@ -1,0 +1,10 @@
+{# 
+  Home page template - used by both language versions
+  This template extends the base layout and includes the home page content.
+  Language-specific content comes from i18n translation files.
+#}
+{% extends "base.njk" %}
+
+{% block content %}
+  {% include "sections/home-content.njk" %}
+{% endblock %} 

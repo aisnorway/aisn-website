@@ -1,0 +1,137 @@
+<!doctype html>
+{% set currentLanguage = lang | default("no") %}
+{% import "helpers/language-utils.njk" as langUtils %}
+
+<html lang="{{ currentLanguage }}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title or "AI Safety Norway" }}</title>
+    <meta name="description" content="{{ description or "site.description" | i18n(currentLanguage) }}">
+    
+    <!-- Primary Meta Tags -->
+    <meta name="author" content="AI Safety Norway">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://aisafety.no{{ page.url }}">
+    <meta property="og:title" content="{{ title or "AI Safety Norway" }}">
+    <meta property="og:description" content="{{ description or "site.description" | i18n(currentLanguage) }}">
+    <meta property="og:image" content="https://aisafety.no/img/social-share-image.jpg">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://aisafety.no{{ page.url }}">
+    <meta name="twitter:title" content="{{ title or "AI Safety Norway" }}">
+    <meta name="twitter:description" content="{{ description or "site.description" | i18n(currentLanguage) }}">
+    <meta name="twitter:image" content="https://aisafety.no/img/social-share-image.jpg">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@latest/css/pico.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/main.css">
+    
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    
+    <!-- 
+      Fix for the gap at the top of the page:
+      Overrides the PicoCSS default padding on main elements
+      which was causing unwanted space at the top of the page.
+      This ensures the hero section on the homepage extends to the top.
+    -->
+    <style>
+      body > main {
+        padding-block-start: 0 !important;
+        padding-block: 0 var(--pico-block-spacing-vertical) !important;
+      }
+    </style>
+    
+    <!-- Language alternates for SEO -->
+    <link rel="alternate" hreflang="no" href="https://aisafety.no{{ langUtils.getAlternateUrl(page.url, currentLanguage, 'no') }}" />
+    <link rel="alternate" hreflang="en" href="https://aisafety.no{{ langUtils.getAlternateUrl(page.url, currentLanguage, 'en') }}" />
+    <link rel="alternate" hreflang="x-default" href="https://aisafety.no/no/" />
+    <link rel="canonical" href="https://aisafety.no{{ page.url }}" />
+  </head>
+  <body {% if pageClass %}class="{{ pageClass }}"{% endif %}>
+    <header>
+      <div class="container">
+        <h1 class="site-logo">
+          <a href="{{ langUtils.localizeUrl('', currentLanguage) }}">
+            <img src="/img/logo/logo.png" alt="AI Safety Norway" class="logo-image">
+            <span class="logo-text">AI Safety Norway</span>
+          </a>
+        </h1>
+        <nav class="main-nav">
+          <ul>
+            <li class="nav-item">
+              <span class="nav-link">{{ "nav.about" | i18n(currentLanguage) }}</span>
+              <div class="dropdown">
+                <a href="{{ langUtils.localizeUrl('about', currentLanguage) }}">{{ "nav.aboutUs" | i18n(currentLanguage) }}</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <span class="nav-link">{{ "nav.resources" | i18n(currentLanguage) }}</span>
+              <div class="dropdown">
+                <a href="{{ langUtils.localizeUrl('newsletter', currentLanguage) }}">{{ "nav.newsletter" | i18n(currentLanguage) }}</a>
+                <a href="{{ langUtils.localizeUrl('quotes', currentLanguage) }}">{% if currentLanguage == "en" %}Expert Quotes{% else %}Ekspertuttalelser{% endif %}</a>
+              </div>
+            </li>
+            <li class="nav-item contact-button-item">
+              <a href="{{ langUtils.localizeUrl('contact', currentLanguage) }}" class="nav-button">{{ "nav.contact" | i18n(currentLanguage) }}</a>
+            </li>
+            <li class="nav-item language-switcher">
+              {{ langUtils.languageSwitcher(page.url, currentLanguage) }}
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main {% if not pageClass or pageClass != 'home' %}class="default-container"{% endif %}>
+      {% block content %}
+        {{ content | safe }}
+      {% endblock %}
+    </main>
+    <footer>
+      <div class="container">
+        <div class="grid">
+          <div>
+            <h5>{{ "footer.quickLinks" | i18n(currentLanguage) }}</h5>
+            <ul>
+              <li><a href="{{ langUtils.localizeUrl('', currentLanguage) }}">{{ "footer.home" | i18n(currentLanguage) }}</a></li>
+              <li><a href="{{ langUtils.localizeUrl('about', currentLanguage) }}">{{ "nav.about" | i18n(currentLanguage) }}</a></li>
+              <li><a href="{{ langUtils.localizeUrl('newsletter', currentLanguage) }}">{{ "nav.newsletter" | i18n(currentLanguage) }}</a></li>
+              <li><a href="{{ langUtils.localizeUrl('quotes', currentLanguage) }}">{% if currentLanguage == "en" %}Expert Quotes{% else %}Ekspertuttalelser{% endif %}</a></li>
+              <li><a href="{{ langUtils.localizeUrl('contact', currentLanguage) }}">{{ "nav.contact" | i18n(currentLanguage) }}</a></li>
+            </ul>
+          </div>
+          <div>
+            <h5>{{ "footer.connect" | i18n(currentLanguage) }}</h5>
+            <p>{{ "footer.followUs" | i18n(currentLanguage) }}</p>
+            <div class="social-links-footer">
+              <a href="https://x.com/AISafetyNorway" target="_blank" rel="noopener" class="social-link" title="Twitter" aria-label="Twitter">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg>
+                <span>Twitter</span>
+              </a>
+              <a href="https://www.linkedin.com/company/ai-safety-norway/" target="_blank" rel="noopener" class="social-link" title="LinkedIn" aria-label="LinkedIn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"></path></svg>
+                <span>LinkedIn</span>
+              </a>
+            </div>
+          </div>
+          <div>
+            <h5>AI Safety Norway</h5>
+            <p class="copyright">&copy; AI Safety Norway. <br>{{ "footer.copyright" | i18n(currentLanguage) }}</p>
+          </div>
+        </div> 
+      </div>
+    </footer>
+    <script src="/js/main.js"></script>
+  </body>
+</html> 

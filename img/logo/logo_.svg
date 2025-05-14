@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="120" height="40" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Simple placeholder logo - Replace with your actual SVG content -->
+  <rect x="5" y="5" width="30" height="30" rx="4" fill="#14B8A6"/>
+  <path d="M45 10L55 20L45 30" stroke="#14B8A6" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M65 10L75 20L65 30" stroke="#14B8A6" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M85 10L95 20L85 30" stroke="#14B8A6" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+</svg> 

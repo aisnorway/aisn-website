@@ -1,0 +1,156 @@
+/* ==========================================
+   Responsive Utilities
+   ========================================== */
+
+/* --- Responsive Visibility Classes --- */
+.hide-on-mobile {
+  display: inherit;
+}
+
+.show-on-mobile {
+  display: none;
+}
+
+.hide-on-tablet {
+  display: inherit;
+}
+
+.show-on-tablet {
+  display: none;
+}
+
+.hide-on-desktop {
+  display: none;
+}
+
+.show-on-desktop {
+  display: inherit;
+}
+
+/* --- Responsive Breakpoints --- */
+/* Tablet (768px and below) */
+@media (max-width: 768px) {
+  .hide-on-tablet {
+    display: none !important;
+  }
+  
+  .show-on-tablet {
+    display: inherit !important;
+  }
+  
+  /* Container padding adjustments */
+  .container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+  
+  /* Reduce section spacing */
+  section {
+    margin-bottom: calc(var(--section-spacing) * 0.8);
+    padding: 2.5rem 0;
+  }
+}
+
+/* Mobile (480px and below) */
+@media (max-width: 480px) {
+  .hide-on-mobile {
+    display: none !important;
+  }
+  
+  .show-on-mobile {
+    display: inherit !important;
+  }
+  
+  /* Container padding adjustments */
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  /* Further reduce section spacing */
+  section {
+    margin-bottom: calc(var(--section-spacing) * 0.6);
+    padding: 2rem 0;
+  }
+}
+
+/* --- Responsive Text Alignment --- */
+@media (max-width: 768px) {
+  .text-center-tablet {
+    text-align: center !important;
+  }
+  
+  .text-left-tablet {
+    text-align: left !important;
+  }
+  
+  .text-right-tablet {
+    text-align: right !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .text-center-mobile {
+    text-align: center !important;
+  }
+  
+  .text-left-mobile {
+    text-align: left !important;
+  }
+  
+  .text-right-mobile {
+    text-align: right !important;
+  }
+}
+
+/* --- Responsive Spacing --- */
+@media (max-width: 768px) {
+  .mb-reduced-tablet {
+    margin-bottom: calc(var(--section-spacing) * 0.7) !important;
+  }
+  
+  .mt-reduced-tablet {
+    margin-top: calc(var(--section-spacing) * 0.7) !important;
+  }
+  
+  .py-reduced-tablet {
+    padding-top: calc(var(--section-spacing) * 0.7) !important;
+    padding-bottom: calc(var(--section-spacing) * 0.7) !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .mb-reduced-mobile {
+    margin-bottom: calc(var(--section-spacing) * 0.5) !important;
+  }
+  
+  .mt-reduced-mobile {
+    margin-top: calc(var(--section-spacing) * 0.5) !important;
+  }
+  
+  .py-reduced-mobile {
+    padding-top: calc(var(--section-spacing) * 0.5) !important;
+    padding-bottom: calc(var(--section-spacing) * 0.5) !important;
+  }
+}
+
+/* --- Responsive Flex Direction --- */
+@media (max-width: 768px) {
+  .flex-column-tablet {
+    flex-direction: column !important;
+  }
+  
+  .flex-row-tablet {
+    flex-direction: row !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .flex-column-mobile {
+    flex-direction: column !important;
+  }
+  
+  .flex-row-mobile {
+    flex-direction: row !important;
+  }
+} 

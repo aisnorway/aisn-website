@@ -1,0 +1,58 @@
+<div class="page-header">
+  <div class="bg-element bg-element-1"></div>
+  <div class="bg-element bg-element-2"></div>
+  <div class="container">
+    <h1>{{ "newsletter.title" | i18n(currentLanguage) }}</h1>
+    <p>{{ "newsletter.subtitle" | i18n(currentLanguage) }}</p>
+  </div>
+</div>
+
+<section class="newsletter-content-section">
+  <div class="container">
+    {% if currentLanguage == "en" %}
+      {% set newsletterCollection = collections.enNewsletter %}
+    {% else %}
+      {% set newsletterCollection = collections.noNewsletter %}
+    {% endif %}
+
+    {% if newsletterCollection and newsletterCollection.length > 0 %}
+      <div class="newsletter-list">
+        <div class="newsletter-grid">
+          {% for article in newsletterCollection %}
+            <div class="newsletter-card">
+              <div class="newsletter-image">
+                <img src="{{ article.data.image }}" alt="{{ article.data.title }}" onerror="this.src='/img/articles/placeholder.jpg'">
+              </div>
+              <div class="newsletter-content">
+                <span class="newsletter-date">{{ article.date | readableDate }}</span>
+                <h3><a href="{{ article.url }}">{{ article.data.title }}</a></h3>
+                <p class="newsletter-meta">{{ article.data.author }}</p>
+                <p class="newsletter-excerpt">{{ article.data.description }}</p>
+                <a href="{{ article.url }}" class="read-more">{{ "newsletter.readMore" | i18n(currentLanguage) }} →</a>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    {% else %}
+      <div class="example-newsletter">
+        <div class="newsletter-header">
+          <h2>{{ "newsletter.example.title" | i18n(currentLanguage) }}</h2>
+          <p class="newsletter-meta">{{ "newsletter.example.date" | i18n(currentLanguage) }} • {{ "newsletter.example.author" | i18n(currentLanguage) }}</p>
+        </div>
+        
+        <div class="newsletter-featured-image">
+          <img src="{{ 'newsletter.example.image' | i18n(currentLanguage) }}" alt="{{ 'newsletter.example.title' | i18n(currentLanguage) }}">
+        </div>
+        
+        <div class="newsletter-excerpt">
+          <p><em>{{ "newsletter.example.excerpt" | i18n(currentLanguage) }}</em></p>
+        </div>
+        
+        <div class="newsletter-full-content">
+          <p>{{ "newsletter.example.content" | i18n(currentLanguage) | safe }}</p>
+        </div>
+      </div>
+    {% endif %}
+  </div>
+</section> 

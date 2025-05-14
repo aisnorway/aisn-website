@@ -1,0 +1,10 @@
+{# 
+  Newsletter page template - used by both language versions
+  This template extends the base layout and includes the shared newsletter content section.
+  Language-specific content comes from i18n translation files.
+#}
+{% extends "base.njk" %}
+
+{% block content %}
+  {% include "sections/newsletter-content.njk" %}
+{% endblock %} 

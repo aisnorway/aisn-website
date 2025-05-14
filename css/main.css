@@ -1,0 +1,80 @@
+/* ==========================================
+   AI Safety Norway - Main Stylesheet
+   ==========================================
+   Core stylesheet that imports all modular CSS components
+   ========================================== */
+
+/* === Core Styles (critical path) === */
+/* These styles should load first */
+@import 'base/variables.css';    /* CSS variables */
+@import 'base/reset.css';        /* Normalize/reset */
+@import 'base/typography.css';   /* Typography rules */
+@import 'base/layout.css';       /* Core layout */
+@import 'base/footer.css';       /* Footer styles */
+
+/* === Components === */
+/* Reusable UI elements */
+@import 'components/navigation.css';
+@import 'components/buttons.css';
+@import 'components/cards.css';
+@import 'components/quotes.css';  /* Expert quotes component */
+
+/* === Section Styles === */
+/* Styles for specific page sections */
+@import 'sections/hero.css';
+@import 'sections/features.css';
+
+/* === Page-specific Styles === */
+/* Styles that only apply to specific pages */
+@import 'pages/home.css';
+@import 'pages/about.css';       /* About page styles */
+@import 'pages/contact.css';
+@import 'pages/quotes.css';      /* Quotes page styles */
+@import 'pages/newsletter.css';  /* Newsletter page styles */
+@import 'pages/post.css';        /* Individual post/article styles */
+
+/* === Utilities === */
+/* Helpers and utility classes - load last */
+@import 'utils/responsive.css';
+
+/* ==========================================================================
+   Language-specific styles
+   ========================================================================== */
+
+/* Styles that might need to be adjusted for specific languages */
+html[lang="no"] {
+  /* Norwegian-specific styles if needed */
+}
+
+html[lang="en"] {
+  /* English-specific styles if needed */
+}
+
+/* Language switcher styles */
+.language-switcher {
+  display: flex;
+  align-items: center;
+}
+
+.lang-button {
+  font-size: 1.2rem;
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  background-color: transparent;
+  transition: background-color 0.2s ease;
+}
+
+.lang-button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* ==========================================================================
+   Custom overrides - add any custom overrides here to ensure precedence
+   ==========================================================================
+   
+   NOTE: The primary PicoCSS padding fix has been moved to an inline style 
+   in _includes/base.njk for maximum override specificity.
+   
+   See the <style> tag in base.njk which fixes the top padding/margin gap
+   by setting padding-block-start: 0 !important.
+   ========================================================================== */ 

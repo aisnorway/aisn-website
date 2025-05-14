@@ -1,0 +1,232 @@
+/* ==========================================
+   Layout Styles
+   ========================================== */
+
+/* Base Layout */
+body {
+  background-color: var(--color-background);
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: var(--pico-font-family);
+  color: var(--color-text);
+  line-height: var(--pico-line-height);
+}
+
+/* Main Content Area */
+main {
+  flex: 1 0 auto;
+  width: 100%;
+  padding: 0;
+  overflow: visible;
+  overflow-x: hidden;
+}
+
+/* Standard Container */
+.container {
+  max-width: var(--container-max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--content-padding-h);
+  padding-right: var(--content-padding-h);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Default Container (for non-home pages) */
+.default-container {
+  max-width: var(--container-max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--content-padding-h);
+  padding-right: var(--content-padding-h);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Section Styles */
+section {
+  margin-bottom: var(--section-spacing);
+  position: relative;
+}
+
+/* Full-width Section - extends edge to edge */
+section.full-width {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  padding: 4rem 0;
+  overflow: hidden;
+}
+
+/* Non-full-width sections get standard padding */
+section:not(.full-width) {
+  padding: 4rem var(--content-padding-h);
+}
+
+/* Full-width section inner container (for centered content) */
+section.full-width .container {
+  padding-left: var(--content-padding-h);
+  padding-right: var(--content-padding-h);
+}
+
+/* Grid Layout */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 2.5rem;
+}
+
+/* Common Grid Column Spans */
+.col-12 {
+  grid-column: span 12;
+}
+
+.col-6 {
+  grid-column: span 6;
+}
+
+.col-4 {
+  grid-column: span 4;
+}
+
+.col-3 {
+  grid-column: span 3;
+}
+
+/* Two-column Grid */
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.5rem;
+}
+
+/* Three-column Grid */
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+}
+
+/* Four-column Grid */
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2.5rem;
+}
+
+/* Card Styles */
+.card {
+  background: white;
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-medium);
+  border: 1px solid var(--color-border);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--color-accent);
+}
+
+/* Responsive Layout Adjustments */
+@media (max-width: 1024px) {
+  .grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .col-3 {
+    grid-column: span 6;
+  }
+  
+  section.full-width {
+    padding: 3.5rem 0;
+  }
+  
+  section:not(.full-width) {
+    padding: 3.5rem var(--content-padding-h);
+  }
+}
+
+@media (max-width: 768px) {
+  section:not(.full-width) {
+    padding: 3rem var(--content-padding-h);
+  }
+  
+  section.full-width {
+    padding: 3rem 0;
+  }
+  
+  .grid-3,
+  .grid-2 {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .col-6,
+  .col-4 {
+    grid-column: span 12;
+  }
+  
+  .card {
+    padding: 1.5rem;
+  }
+  
+  /* Disable hover effects for touch devices */
+  .touch-device {
+    transform: none !important;
+  }
+  
+  /* Make all interactive elements have larger touch targets */
+  button, 
+  a[role="button"],
+  .nav-link,
+  .dropdown a,
+  .read-more {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Improve form controls for touch */
+  input, 
+  select, 
+  textarea {
+    min-height: 44px;
+  }
+  
+  /* Add visible focus styles for accessibility */
+  a:focus,
+  button:focus,
+  input:focus,
+  textarea:focus,
+  select:focus {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+  }
+}
+
+@media (max-width: 480px) {
+  section:not(.full-width) {
+    padding: 2rem var(--content-padding-h);
+  }
+  
+  section.full-width {
+    padding: 2rem 0;
+  }
+  
+  .grid-4 {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .card {
+    padding: 1.25rem;
+  }
+} 

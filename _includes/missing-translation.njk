@@ -1,0 +1,31 @@
+{% extends "base.njk" %}
+
+{% block content %}
+<div class="page-header">
+  <div class="bg-element bg-element-1"></div>
+  <div class="bg-element bg-element-2"></div>
+  <div class="container">
+    <h1>{{ "common.missingTranslation.title" | i18n(currentLanguage) }}</h1>
+  </div>
+</div>
+
+<section class="content-section">
+  <div class="container">
+    <p>{{ "common.missingTranslation.message" | i18n(currentLanguage) }}</p>
+    
+    {% if alternateLanguageUrl %}
+    <p>
+      <a href="{{ alternateLanguageUrl }}" class="button">
+        {{ "common.missingTranslation.viewAlternate" | i18n(currentLanguage) }}
+      </a>
+    </p>
+    {% endif %}
+    
+    <p>
+      <a href="{{ langUtils.localizeUrl('', currentLanguage) }}" class="button outline">
+        {{ "common.missingTranslation.returnHome" | i18n(currentLanguage) }}
+      </a>
+    </p>
+  </div>
+</section>
+{% endblock %} 

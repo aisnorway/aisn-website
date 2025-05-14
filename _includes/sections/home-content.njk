@@ -1,0 +1,235 @@
+<section class="hero full-width">
+  <div class="orb-top"></div>
+  <div class="orb-large"></div>
+  <div class="margin-decoration-left"></div>
+  <div class="margin-decoration-right"></div>
+  <div class="container">
+    <div class="hero-text">
+      <h1>{{ "home.hero.title" | i18n(currentLanguage) }}</h1>
+      <p>{{ "home.hero.description" | i18n(currentLanguage) }}</p>
+      <div class="hero-ctas">
+        <a href="{{ langUtils.localizeUrl('about', currentLanguage) }}" role="button">{{ "home.hero.aboutButton" | i18n(currentLanguage) }}</a>
+        <a href="{{ langUtils.localizeUrl('contact', currentLanguage) }}" role="button" class="outline">{{ "home.hero.involvedButton" | i18n(currentLanguage) }}</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="problem-section full-width">
+  <div class="container">
+    <h2>{{ "home.problem.title" | i18n(currentLanguage) }}</h2>
+    
+    <div class="problem-overview">
+      <div class="problem-highlights">
+        <div class="highlight-card">
+          <div class="highlight-icon">🔬</div>
+          <h3>{{ "home.problem.highlights.race.title" | i18n(currentLanguage) }}</h3>
+          <p>{{ "home.problem.highlights.race.description" | i18n(currentLanguage) }}</p>
+        </div>
+        
+        <div class="highlight-card">
+          <div class="highlight-icon">⚠️</div>
+          <h3>{{ "home.problem.highlights.risk.title" | i18n(currentLanguage) }}</h3>
+          <p>{{ "home.problem.highlights.risk.description" | i18n(currentLanguage) }}</p>
+        </div>
+        
+        <div class="highlight-card">
+          <div class="highlight-icon">🌐</div>
+          <h3>{{ "home.problem.highlights.impact.title" | i18n(currentLanguage) }}</h3>
+          <p>{{ "home.problem.highlights.impact.description" | i18n(currentLanguage) }}</p>
+        </div>
+      </div>
+      
+      <div class="problem-explanation">
+        <p>{{ "home.problem.description" | i18n(currentLanguage) }}</p>
+      </div>
+    </div>
+    
+    <div class="card-grid">
+      {% for point in i18n_[currentLanguage].home.problem.points %}
+        <div class="feature-card">
+          <h3>{{ point.title }}</h3>
+          <p>{{ point.description }}</p>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="quotes-section full-width">
+  <div class="container">
+    <h2>{{ "home.quotes.title" | i18n(currentLanguage) }}</h2>
+    
+    <div class="quotes-grid">
+      <!-- Fixed quotes access - 3 in a row -->
+      {% if currentLanguage == "en" %}
+        {% for quote in [
+          {
+            "content": "Development of superhuman machine intelligence (SMI) is probably the greatest threat to the continued existence of humanity.",
+            "author": "Sam Altman",
+            "title": "CEO, OpenAI",
+            "date": "Feb 2015",
+            "source": "https://blog.samaltman.com/machine-intelligence-part-1"
+          },
+          {
+            "content": "My chance that something goes really quite catastrophically wrong on the scale of human civilization might be somewhere between 10 per cent and 25 per cent.",
+            "author": "Dario Amodei",
+            "title": "Co-founder & CEO, Anthropic",
+            "date": "Oct 2023",
+            "source": "https://noahpinion.substack.com/p/interview-dario-amodei-ceo-of-anthropic"
+          },
+          {
+            "content": "It's coming, either way it's coming very soon and I'm not sure society's quite ready for that yet.",
+            "author": "Demis Hassabis",
+            "title": "CEO, Google DeepMind; Nobel Prize Winner",
+            "date": "Apr 2024",
+            "source": "https://www.ndtv.com/science/google-deepmind-ceo-on-what-keeps-him-up-at-night-agi-is-coming-societys-not-ready-8245874"
+          }
+        ] %}
+          <div class="quote-card">
+            <div class="quote-content">
+              <p>{{ quote.content }}</p>
+              <div class="quote-date-source">{{ quote.date }} - <a href="{{ quote.source }}" target="_blank" rel="noopener noreferrer">Source</a></div>
+            </div>
+            <div class="quote-attribution">
+              <div>
+                <div class="quote-author">{{ quote.author }}</div>
+                <div class="quote-title">{{ quote.title }}</div>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      {% else %}
+        {% for quote in [
+          {
+            "content": "Utvikling av overmennskelig maskinintellekt er sannsynligvis den største trusselen mot menneskehetens fortsatte eksistens.",
+            "author": "Sam Altman",
+            "title": "Administrerende direktør, OpenAI",
+            "date": "Feb 2015",
+            "source": "https://blog.samaltman.com/machine-intelligence-part-1"
+          },
+          {
+            "content": "Min vurdering er at sjansen for at noe går virkelig katastrofalt galt på et nivå som truer den menneskelige sivilisasjon, kan være et sted mellom 10 og 25 prosent.",
+            "author": "Dario Amodei",
+            "title": "Medgründer og adm. direktør, Anthropic",
+            "date": "Okt 2023",
+            "source": "https://noahpinion.substack.com/p/interview-dario-amodei-ceo-of-anthropic"
+          },
+          {
+            "content": "Det kommer, uansett kommer det veldig snart, og jeg er ikke sikker på at samfunnet er helt klar for det ennå.",
+            "author": "Demis Hassabis",
+            "title": "Administrerende direktør, Google DeepMind; Nobelprisvinner",
+            "date": "Apr 2024",
+            "source": "https://www.ndtv.com/science/google-deepmind-ceo-on-what-keeps-him-up-at-night-agi-is-coming-societys-not-ready-8245874"
+          }
+        ] %}
+          <div class="quote-card">
+            <div class="quote-content">
+              <p>{{ quote.content }}</p>
+              <div class="quote-date-source">{{ quote.date }} - <a href="{{ quote.source }}" target="_blank" rel="noopener noreferrer">Kilde</a></div>
+            </div>
+            <div class="quote-attribution">
+              <div>
+                <div class="quote-author">{{ quote.author }}</div>
+                <div class="quote-title">{{ quote.title }}</div>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      {% endif %}
+    </div>
+    
+    <div class="quotes-cta">
+      <a href="{{ langUtils.localizeUrl('quotes', currentLanguage) }}" class="btn btn-outline">
+        {% if currentLanguage == "en" %}View More Quotes{% else %}Se flere sitater{% endif %}
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="solution-section">
+  <div class="container">
+    <h2>{{ "home.solution.title" | i18n(currentLanguage) }}</h2>
+    <div class="post-content">
+      <p class="highlighted-text">{{ "home.solution.description" | i18n(currentLanguage) }}</p>
+    </div>
+    <div class="card-grid">
+      {% for point in i18n_[currentLanguage].home.solution.points %}
+        <div class="feature-card">
+          <h3>{{ point.title }}</h3>
+          <p>{{ point.description }}</p>
+        </div>
+      {% endfor %}
+    </div>
+    
+    <div class="approach-cta">
+      <a href="{{ langUtils.localizeUrl('about', currentLanguage) }}" role="button" class="approach-button">
+        {% if currentLanguage == "en" %}Learn More About Our Work{% else %}Lær mer om vårt arbeid{% endif %}
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="latest-newsletter-section full-width">
+  <div class="container">
+    <h2>{% if currentLanguage == "en" %}Latest Newsletter{% else %}Nyeste nyhetsbrev{% endif %}</h2>
+    
+    <div class="latest-article">
+      {% if currentLanguage == "en" %}
+        {% set newsletterPath = "en/newsletter/" %}
+        {% set articlesUrl = "/en/articles/" %}
+      {% else %}
+        {% set newsletterPath = "no/nyhetsbrev/" %}
+        {% set articlesUrl = "/no/artikler/" %}
+      {% endif %}
+      
+      {% set latestArticle = collections.all | getNewestItemByBasePath(newsletterPath) %}
+      
+      {% if latestArticle %}
+        <div class="article-card">
+          {% if latestArticle.data.image %}
+          <div class="article-image">
+            <img src="{{ latestArticle.data.image }}" alt="{{ latestArticle.data.title }}">
+          </div>
+          {% endif %}
+          <div class="article-content">
+            {% if latestArticle.date %}
+              <div class="article-date">{{ latestArticle.date | dateDisplay('dd LLL yyyy') }}</div>
+            {% endif %}
+            
+            <h3>{{ latestArticle.data.title }}</h3>
+            
+            {% if latestArticle.data.author %}
+              <div class="article-author">{{ latestArticle.data.author }}</div>
+            {% endif %}
+            
+            <div class="article-excerpt">
+              <p>{{ latestArticle.data.description }}</p>
+            </div>
+            
+            <div class="article-actions">
+              <a href="{{ latestArticle.url }}" class="read-more-link">
+                {% if currentLanguage == "en" %}Read more{% else %}Les mer{% endif %}
+                <span class="arrow-icon">→</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      {% else %}
+        <p class="no-articles">
+          {% if currentLanguage == "en" %}
+            No newsletter articles are currently available.
+          {% else %}
+            Ingen nyhetsbrevartikler er tilgjengelige for øyeblikket.
+          {% endif %}
+        </p>
+      {% endif %}
+    </div>
+    
+    <div class="newsletter-cta">
+      <a href="{{ langUtils.localizeUrl('newsletter', currentLanguage) }}" class="btn btn-outline">
+        {% if currentLanguage == "en" %}View All Newsletters{% else %}Se alle nyhetsbrev{% endif %}
+      </a>
+    </div>
+  </div>
+</section> 
