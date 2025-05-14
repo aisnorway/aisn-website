@@ -15,8 +15,6 @@ The website has undergone significant improvements:
 - **Usability Improvements**: Fixed display issues and improved responsive layout
 - **Deployment**: Set up automatic deployment via GitHub Pages with custom domain aisafety.no
 
-See [CHANGES.md](CHANGES.md) for a detailed changelog.
-
 ## 📋 Project Structure
 
 ```
@@ -25,18 +23,25 @@ See [CHANGES.md](CHANGES.md) for a detailed changelog.
 │   │   ├── collections-config.js
 │   │   ├── filters-config.js
 │   │   ├── i18n-config.js
-│   │   └── markdown-config.js
+│   │   ├── markdown-config.js
+│   │   └── optimization-config.js
 │   └── translation-helper.js
 ├── _data/                  # Global data files
 │   └── i18n/               # Translation files
 │       ├── en.json         # English translations
 │       └── no.json         # Norwegian translations
 ├── _includes/              # Template components
+│   ├── helpers/            # Helper templates
+│   │   └── language-utils.njk
 │   ├── sections/           # Page section components
+│   │   ├── contact-content.njk
+│   │   ├── home-content.njk
+│   │   └── newsletter-content.njk
 │   ├── about.njk
 │   ├── base.njk            # Base template
 │   ├── contact.njk
 │   ├── home.njk
+│   ├── missing-translation.njk
 │   ├── newsletter.njk
 │   ├── post.njk            # Individual newsletter article template
 │   └── quotes.njk
@@ -52,21 +57,36 @@ See [CHANGES.md](CHANGES.md) for a detailed changelog.
 │   │   ├── post.css        # Individual article styles
 │   │   └── quotes.css      # Quotes page styles
 │   ├── sections/           # Section styles
+│   ├── utils/              # Utility styles
 │   └── main.css            # Main stylesheet (imports others)
 ├── en/                     # English content
 │   ├── pages/              # English pages
-│   └── newsletter/         # English newsletter articles
+│   ├── newsletter/         # English newsletter articles
+│   ├── 404.njk            # English 404 page
+│   └── index.md           # English index page
 ├── js/                     # JavaScript
-│   └── main.js             # Main JavaScript file
+│   ├── main.js             # Main JavaScript file
+│   └── debug.js            # Debugging utilities
 ├── no/                     # Norwegian content
 │   ├── pages/              # Norwegian pages
-│   └── nyhetsbrev/         # Norwegian newsletter articles
+│   ├── nyhetsbrev/         # Norwegian newsletter articles
+│   ├── 404.njk            # Norwegian 404 page
+│   └── index.md           # Norwegian index page
+├── pages/                  # Shared page templates
+│   ├── about.md
+│   ├── contact.md
+│   └── newsletter.md
 ├── img/                    # Image assets
-│   ├── articles/           # Article images
-│   ├── team/               # Team member photos
-│   └── logo/               # Site logo
+├── scripts/                # Build and utility scripts
+├── .github/                # GitHub configuration
+│   └── workflows/          # GitHub Actions workflows
+│       └── build-deploy.yml # Deployment workflow
 ├── .eleventy.js            # Eleventy configuration
 ├── index.html              # Site entry point
+├── sitemap.njk             # Sitemap generator
+├── robots.txt              # Robots control file
+├── site.webmanifest        # Web app manifest
+├── CNAME                   # Custom domain config for GitHub Pages
 ├── package.json            # Project dependencies
 └── README.md               # This file
 ```
@@ -167,8 +187,6 @@ image: "/img/articles/your-featured-image.jpg"  # Featured image path
 Article content goes here in Markdown format.
 ```
 
-For more information about newsletter article styling and best practices, see the detailed [Newsletter Guide](docs/newsletter-guide.md) documentation.
-
 ### Adding Images in Articles
 
 To include images in your article content, use standard Markdown syntax:
@@ -211,17 +229,16 @@ The site includes a PNG logo in the header. To update it:
 
 ## 📚 Documentation
 
-For more detailed documentation:
+**Note:** The following documentation files are mentioned in this README but are currently missing from the repository:
 
-- [CHANGES.md](CHANGES.md) - Detailed list of recent changes and improvements
-- [DEVELOPMENT.md](DEVELOPMENT.md) - Developer guide with technical details
-- [CONTRIBUTING.md](CONTRIBUTING.md) - Guide for contributors
-- [docs/i18n-guide.md](docs/i18n-guide.md) - Guide for internationalizing content
-- [docs/updating-logo.md](docs/updating-logo.md) - Instructions for updating the logo
+- CHANGES.md - Detailed list of recent changes and improvements
+- DEVELOPMENT.md - Developer guide with technical details
+- CONTRIBUTING.md - Guide for contributors
+- docs/i18n-guide.md - Guide for internationalizing content
+- docs/updating-logo.md - Instructions for updating the logo
+- docs/newsletter-guide.md - Guide for newsletter article styling
 
-## 🤝 Contributing
-
-See [CONTRIBUTING.md](CONTRIBUTING.md) for details on the contribution workflow, coding standards, and pull request process.
+Consider creating these documentation files to improve project maintainability.
 
 ## 📄 License
 
