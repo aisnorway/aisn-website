@@ -147,6 +147,15 @@
 }
 
 /**
+ * Hero CTAs - Container for hero buttons
+ */
+.hero-ctas {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+/**
  * Hero Description Highlight Effect
  * 
  * Creates highlighted background sections for the hero subtitle
@@ -440,6 +449,11 @@
       width: 60px;
     }
   }
+  
+  .hero-ctas {
+    flex-direction: column;
+    gap: 1rem;
+  }
 }
 
 /**
@@ -487,5 +501,14 @@
   .hero .margin-decoration-left,
   .hero .margin-decoration-right {
     display: none;
+  }
+  
+  .hero-ctas {
+    margin-top: 1.5rem;
+  }
+  
+  .hero-ctas a[role="button"] {
+    width: 100%;
+    text-align: center;
   }
 } 
