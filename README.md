@@ -92,8 +92,8 @@ The site is built with multilingual support from the ground up:
 
 1. Clone the repository
    ```bash
-   git clone https://github.com/ai-safety-norway/website.git
-   cd ai-safety-norway-website
+   git clone https://github.com/aisnorway/aisn-website.git
+   cd aisn-website
    ```
 
 2. Install dependencies
@@ -137,7 +137,7 @@ To set up the DNS records for your domain, add these records at your domain regi
 | A     | @             | 185.199.109.153           |
 | A     | @             | 185.199.110.153           |
 | A     | @             | 185.199.111.153           |
-| CNAME | www           | ai-safety-norway.github.io |
+| CNAME | www           | aisnorway.github.io       |
 
 ## 📝 Content Management
 
