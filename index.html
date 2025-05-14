@@ -29,8 +29,11 @@
         storedLang = (browserLang === 'en') ? 'en' : defaultLang;
       }
       
+      // Get the base URL (hostname and any base path)
+      var baseUrl = window.location.origin;
+      
       // Redirect to appropriate language path
-      window.location.href = '/' + storedLang + '/';
+      window.location.replace(baseUrl + '/' + storedLang + '/');
     })();
   </script>
 </head>
