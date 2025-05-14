@@ -3,7 +3,9 @@ permalink: /sitemap.xml
 eleventyExcludeFromCollections: true
 ---
 <?xml version="1.0" encoding="utf-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" 
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 {%- for page in collections.all %}
 {%- if not page.data.excludeFromSitemap %}
   <url>
@@ -23,6 +25,13 @@ eleventyExcludeFromCollections: true
     
     <changefreq>{{ page.data.sitemapChangefreq | default("monthly") }}</changefreq>
     <priority>{{ page.data.sitemapPriority | default(0.8) }}</priority>
+    
+    {%- if page.data.image %}
+    <image:image>
+      <image:loc>https://aisafety.no{{ page.data.image }}</image:loc>
+      <image:title>{{ page.data.title }}</image:title>
+    </image:image>
+    {%- endif %}
   </url>
 {%- endif %}
 {%- endfor %}

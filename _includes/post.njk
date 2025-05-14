@@ -4,6 +4,9 @@
 #}
 {% extends "base.njk" %}
 
+{% set pageType = "article" %}
+{% set keywords = "AI safety, artificial intelligence, AI alignment, AI research, " + title %}
+
 {% block content %}
 <div class="page-header">
   <div class="bg-element bg-element-1"></div>
@@ -19,21 +22,24 @@
 
 <div class="post-container">
   <div class="container">
-    <article class="post" lang="{{ currentLanguage }}">
+    <article class="post" lang="{{ currentLanguage }}" itemscope itemtype="https://schema.org/Article">
+      <meta itemprop="headline" content="{{ title }}">
+      <meta itemprop="author" content="{{ author }}">
+      <meta itemprop="datePublished" content="{{ page.date | htmlDateString }}">
       {% if image %}
         <div class="post-image">
-          <img src="{{ image }}" alt="{{ title }}" onerror="this.src='/img/articles/placeholder.jpg'">
+          <img src="{{ image }}" alt="{{ title }}" itemprop="image" onerror="this.src='/img/articles/placeholder.jpg'">
         </div>
       {% endif %}
 
-      <div class="post-content">
+      <div class="post-content" itemprop="articleBody">
         <div class="post-content-meta">
-          {% if author %}<span class="post-author">{{ "newsletter.by" | i18n(currentLanguage, "By") }} {{ author }}</span>{% endif %}
-          <span class="post-date">{{ page.date | readableDate }}</span>
+          {% if author %}<span class="post-author">{{ "newsletter.by" | i18n(currentLanguage, "By") }} <span itemprop="author">{{ author }}</span></span>{% endif %}
+          <span class="post-date"><time itemprop="datePublished" datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time></span>
         </div>
         
         {% if description %}
-          <p class="post-description"><em>{{ description }}</em></p>
+          <p class="post-description" itemprop="description"><em>{{ description }}</em></p>
         {% endif %}
         
         {{ content | safe }}

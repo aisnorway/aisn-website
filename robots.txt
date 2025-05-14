@@ -2,4 +2,9 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://aisafety.no/sitemap.xml 
+# Sitemaps
+Sitemap: https://aisafety.no/sitemap-index.xml
+Sitemap: https://aisafety.no/sitemap.xml
+
+# Crawl delay to avoid overwhelming the server
+Crawl-delay: 1 

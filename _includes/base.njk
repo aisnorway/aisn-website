@@ -1,31 +1,37 @@
 <!doctype html>
 {% set currentLanguage = lang | default("no") %}
 {% import "helpers/language-utils.njk" as langUtils %}
+{% import "helpers/seo-helpers.njk" as seo %}
 
 <html lang="{{ currentLanguage }}">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ title or "AI Safety Norway" }}</title>
-    <meta name="description" content="{{ description or "site.description" | i18n(currentLanguage) }}">
+    <title>{{ title or "AI Safety Norway" }}{% if title and title != "AI Safety Norway" %} | AI Safety Norway{% endif %}</title>
     
-    <!-- Primary Meta Tags -->
-    <meta name="author" content="AI Safety Norway">
-    <meta name="robots" content="index, follow">
+    <!-- SEO Meta Tags -->
+    {{ seo.generateMetaTags(pageType) }}
     
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://aisafety.no{{ page.url }}">
-    <meta property="og:title" content="{{ title or "AI Safety Norway" }}">
-    <meta property="og:description" content="{{ description or "site.description" | i18n(currentLanguage) }}">
-    <meta property="og:image" content="https://aisafety.no/img/social-share-image.jpg">
+    <!-- Structured Data -->
+    {% if pageType %}
+      {{ seo.pageType(pageType) }}
+    {% endif %}
     
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://aisafety.no{{ page.url }}">
-    <meta name="twitter:title" content="{{ title or "AI Safety Norway" }}">
-    <meta name="twitter:description" content="{{ description or "site.description" | i18n(currentLanguage) }}">
-    <meta name="twitter:image" content="https://aisafety.no/img/social-share-image.jpg">
+    <!-- Schema.org structured data for Organization -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "AI Safety Norway",
+      "url": "https://aisafety.no",
+      "logo": "https://aisafety.no/img/logo/logo.png",
+      "description": "{{ "site.description" | i18n(currentLanguage) }}",
+      "sameAs": [
+        "https://x.com/AISafetyNorway",
+        "https://www.linkedin.com/company/ai-safety-norway/"
+      ]
+    }
+    </script>
     
     <!-- Stylesheets -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@latest/css/pico.min.css" />

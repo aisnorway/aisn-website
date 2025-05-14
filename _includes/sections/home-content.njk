@@ -1,40 +1,40 @@
-<section class="hero full-width">
+<section class="hero full-width" aria-labelledby="hero-heading">
   <div class="orb-top"></div>
   <div class="orb-large"></div>
   <div class="margin-decoration-left"></div>
   <div class="margin-decoration-right"></div>
   <div class="container">
     <div class="hero-text">
-      <h1>{{ "home.hero.title" | i18n(currentLanguage) }}</h1>
+      <h1 id="hero-heading">{{ "home.hero.title" | i18n(currentLanguage) }}</h1>
       <p>{{ "home.hero.description" | i18n(currentLanguage) }}</p>
       <div class="hero-ctas">
-        <a href="{{ langUtils.localizeUrl('about', currentLanguage) }}" role="button">{{ "home.hero.aboutButton" | i18n(currentLanguage) }}</a>
-        <a href="{{ langUtils.localizeUrl('contact', currentLanguage) }}" role="button" class="outline">{{ "home.hero.involvedButton" | i18n(currentLanguage) }}</a>
+        <a href="{{ langUtils.localizeUrl('about', currentLanguage) }}" role="button" aria-label="{{ "home.hero.aboutButton" | i18n(currentLanguage) }}">{{ "home.hero.aboutButton" | i18n(currentLanguage) }}</a>
+        <a href="{{ langUtils.localizeUrl('contact', currentLanguage) }}" role="button" class="outline" aria-label="{{ "home.hero.involvedButton" | i18n(currentLanguage) }}">{{ "home.hero.involvedButton" | i18n(currentLanguage) }}</a>
       </div>
     </div>
   </div>
 </section>
 
-<section class="problem-section full-width">
+<section class="problem-section full-width" aria-labelledby="problem-heading">
   <div class="container">
-    <h2>{{ "home.problem.title" | i18n(currentLanguage) }}</h2>
+    <h2 id="problem-heading">{{ "home.problem.title" | i18n(currentLanguage) }}</h2>
     
     <div class="problem-overview">
       <div class="problem-highlights">
         <div class="highlight-card">
-          <div class="highlight-icon">🔬</div>
+          <div class="highlight-icon" aria-hidden="true">🔬</div>
           <h3>{{ "home.problem.highlights.race.title" | i18n(currentLanguage) }}</h3>
           <p>{{ "home.problem.highlights.race.description" | i18n(currentLanguage) }}</p>
         </div>
         
         <div class="highlight-card">
-          <div class="highlight-icon">⚠️</div>
+          <div class="highlight-icon" aria-hidden="true">⚠️</div>
           <h3>{{ "home.problem.highlights.risk.title" | i18n(currentLanguage) }}</h3>
           <p>{{ "home.problem.highlights.risk.description" | i18n(currentLanguage) }}</p>
         </div>
         
         <div class="highlight-card">
-          <div class="highlight-icon">🌐</div>
+          <div class="highlight-icon" aria-hidden="true">🌐</div>
           <h3>{{ "home.problem.highlights.impact.title" | i18n(currentLanguage) }}</h3>
           <p>{{ "home.problem.highlights.impact.description" | i18n(currentLanguage) }}</p>
         </div>
@@ -47,18 +47,18 @@
     
     <div class="card-grid">
       {% for point in i18n_[currentLanguage].home.problem.points %}
-        <div class="feature-card">
+        <article class="feature-card">
           <h3>{{ point.title }}</h3>
           <p>{{ point.description }}</p>
-        </div>
+        </article>
       {% endfor %}
     </div>
   </div>
 </section>
 
-<section class="quotes-section full-width">
+<section class="quotes-section full-width" aria-labelledby="quotes-heading">
   <div class="container">
-    <h2>{{ "home.quotes.title" | i18n(currentLanguage) }}</h2>
+    <h2 id="quotes-heading">{{ "home.quotes.title" | i18n(currentLanguage) }}</h2>
     
     <div class="quotes-grid">
       <!-- Fixed quotes access - 3 in a row -->
@@ -86,18 +86,18 @@
             "source": "https://www.ndtv.com/science/google-deepmind-ceo-on-what-keeps-him-up-at-night-agi-is-coming-societys-not-ready-8245874"
           }
         ] %}
-          <div class="quote-card">
+          <blockquote class="quote-card">
             <div class="quote-content">
               <p>{{ quote.content }}</p>
               <div class="quote-date-source">{{ quote.date }} - <a href="{{ quote.source }}" target="_blank" rel="noopener noreferrer">Source</a></div>
             </div>
-            <div class="quote-attribution">
+            <footer class="quote-attribution">
               <div>
-                <div class="quote-author">{{ quote.author }}</div>
+                <cite class="quote-author">{{ quote.author }}</cite>
                 <div class="quote-title">{{ quote.title }}</div>
               </div>
-            </div>
-          </div>
+            </footer>
+          </blockquote>
         {% endfor %}
       {% else %}
         {% for quote in [
@@ -123,18 +123,18 @@
             "source": "https://www.ndtv.com/science/google-deepmind-ceo-on-what-keeps-him-up-at-night-agi-is-coming-societys-not-ready-8245874"
           }
         ] %}
-          <div class="quote-card">
+          <blockquote class="quote-card">
             <div class="quote-content">
               <p>{{ quote.content }}</p>
               <div class="quote-date-source">{{ quote.date }} - <a href="{{ quote.source }}" target="_blank" rel="noopener noreferrer">Kilde</a></div>
             </div>
-            <div class="quote-attribution">
+            <footer class="quote-attribution">
               <div>
-                <div class="quote-author">{{ quote.author }}</div>
+                <cite class="quote-author">{{ quote.author }}</cite>
                 <div class="quote-title">{{ quote.title }}</div>
               </div>
-            </div>
-          </div>
+            </footer>
+          </blockquote>
         {% endfor %}
       {% endif %}
     </div>

@@ -85,6 +85,30 @@ module.exports = function(eleventyConfig) {
   // eleventyConfig.addPassthroughCopy("admin"); // Example for Netlify CMS admin folder
 
   // ==================================================================
+  // SEO Specific Configuration
+  // ==================================================================
+  // Add custom filter for SEO-friendly slugs
+  eleventyConfig.addFilter("slugify", function(str) {
+    if (!str) return "";
+    return str
+      .toLowerCase()
+      .replace(/[^\w\s-]/g, "")
+      .replace(/[\s_-]+/g, "-")
+      .replace(/^-+|-+$/g, "");
+  });
+
+  // Add custom filter to get the absolute URL
+  eleventyConfig.addFilter("absoluteUrl", function(url) {
+    return `https://aisafety.no${url}`;
+  });
+
+  // Format date for SEO and sitemap purposes
+  eleventyConfig.addFilter("toISOString", function(date) {
+    if (!date) return new Date().toISOString();
+    return new Date(date).toISOString();
+  });
+
+  // ==================================================================
   // Internationalization (i18n) Configuration
   // ==================================================================
   i18nConfig(eleventyConfig);

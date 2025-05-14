@@ -1,0 +1,137 @@
+{% macro pageType(type) %}
+  {% if type == "article" %}
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "{{ title }}",
+      "description": "{{ description }}",
+      "image": "{{ image or 'https://aisafety.no/img/social-share-image.jpg' }}",
+      "author": {
+        "@type": "Person",
+        "name": "{{ author }}"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "AI Safety Norway",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://aisafety.no/img/logo/logo.png"
+        }
+      },
+      "datePublished": "{{ page.date | toISOString }}",
+      "dateModified": "{{ (page.data.modified or page.date) | toISOString }}",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://aisafety.no{{ page.url }}"
+      }
+    }
+    </script>
+  {% elif type == "faq" %}
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {% for faq in faqs %}
+        {
+          "@type": "Question",
+          "name": "{{ faq.question }}",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "{{ faq.answer }}"
+          }
+        }{% if not loop.last %},{% endif %}
+        {% endfor %}
+      ]
+    }
+    </script>
+  {% elif type == "person" %}
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "{{ person.name }}",
+      "jobTitle": "{{ person.title }}",
+      "description": "{{ person.bio }}",
+      "image": "{{ person.image }}",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "AI Safety Norway"
+      }
+    }
+    </script>
+  {% elif type == "event" %}
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Event",
+      "name": "{{ event.title }}",
+      "description": "{{ event.description }}",
+      "startDate": "{{ event.startDate | toISOString }}",
+      "endDate": "{{ event.endDate | toISOString }}",
+      "location": {
+        "@type": "Place",
+        "name": "{{ event.location }}",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "{{ event.city }}",
+          "addressCountry": "Norway"
+        }
+      },
+      "organizer": {
+        "@type": "Organization",
+        "name": "AI Safety Norway",
+        "url": "https://aisafety.no"
+      }
+    }
+    </script>
+  {% elif type == "breadcrumbs" %}
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {% for crumb in breadcrumbs %}
+        {
+          "@type": "ListItem",
+          "position": {{ loop.index }},
+          "name": "{{ crumb.name }}",
+          "item": "{{ crumb.url }}"
+        }{% if not loop.last %},{% endif %}
+        {% endfor %}
+      ]
+    }
+    </script>
+  {% endif %}
+{% endmacro %}
+
+{% macro generateMetaTags(pagetype='website') %}
+  {% set currentUrl = 'https://aisafety.no' + page.url %}
+  {% set pageImage = image | default('https://aisafety.no/img/social-share-image.jpg') %}
+  
+  <!-- Basic Meta Tags -->
+  <meta name="description" content="{{ description or "site.description" | i18n(currentLanguage) }}">
+  <meta name="author" content="{{ author or 'AI Safety Norway' }}">
+  <meta name="robots" content="index, follow">
+  <meta name="keywords" content="{{ keywords or 'AI safety, artificial intelligence risk, Norwegian AI research, AI alignment, AI ethics, existential risk, AI regulation, machine learning safety, AI governance, Norway tech policy' }}">
+  
+  <!-- Open Graph Tags -->
+  <meta property="og:title" content="{{ title or 'AI Safety Norway' }}{% if title and title != 'AI Safety Norway' %} | AI Safety Norway{% endif %}">
+  <meta property="og:description" content="{{ description or "site.description" | i18n(currentLanguage) }}">
+  <meta property="og:image" content="{{ pageImage }}">
+  <meta property="og:url" content="{{ currentUrl }}">
+  <meta property="og:type" content="{{ pagetype }}">
+  <meta property="og:locale" content="{% if currentLanguage == 'en' %}en_US{% else %}nb_NO{% endif %}">
+  <meta property="og:site_name" content="AI Safety Norway">
+  
+  <!-- Twitter Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ title or 'AI Safety Norway' }}{% if title and title != 'AI Safety Norway' %} | AI Safety Norway{% endif %}">
+  <meta name="twitter:description" content="{{ description or "site.description" | i18n(currentLanguage) }}">
+  <meta name="twitter:image" content="{{ pageImage }}">
+  <meta name="twitter:site" content="@AISafetyNorway">
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="{{ currentUrl }}">
+{% endmacro %} 
