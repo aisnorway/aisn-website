@@ -4,36 +4,53 @@
   <meta charset="utf-8">
   <title>AI Safety Norway</title>
   <meta name="robots" content="noindex">
+
+  <!-- Immediate meta redirect to default language as a fallback -->
+  <meta http-equiv="refresh" content="0;url=/no/">
+  
   <!-- Canonical and alternate language links for SEO -->
   <link rel="canonical" href="https://aisafety.no/no/">
   <link rel="alternate" hreflang="en" href="https://aisafety.no/en/">
   <link rel="alternate" hreflang="no" href="https://aisafety.no/no/">
   <link rel="alternate" hreflang="x-default" href="https://aisafety.no/no/">
+  
   <script>
-    // Intelligent language redirection script
-    // Redirects users based on:
-    // 1. Previously stored preference
-    // 2. Browser language
-    // 3. Default language (Norwegian)
-    (function() {
-      // Default language
-      var defaultLang = 'no'; 
-      
-      // Try to get stored preference
-      var storedLang = localStorage.getItem('preferredLanguage');
-      
-      // If no stored preference, check browser language
-      if (!storedLang) {
-        var browserLang = (navigator.language || navigator.userLanguage || '').split('-')[0];
-        // Set to English for English users, Norwegian for everyone else (as Norwegian is default)
-        storedLang = (browserLang === 'en') ? 'en' : defaultLang;
+    // Try to do language detection and redirection
+    document.addEventListener('DOMContentLoaded', function() {
+      try {
+        // Default language
+        var defaultLang = 'no'; 
+        
+        // Try to get stored preference
+        var storedLang = localStorage.getItem('preferredLanguage');
+        
+        // If no stored preference, check browser language
+        if (!storedLang) {
+          var browserLang = (navigator.language || navigator.userLanguage || '').split('-')[0];
+          // Set to English for English users, Norwegian for everyone else
+          storedLang = (browserLang === 'en') ? 'en' : defaultLang;
+        }
+        
+        // Redirect to appropriate language path
+        window.location.href = '/' + storedLang + '/';
+      } catch (e) {
+        // If any error occurs, redirect to default language
+        window.location.href = '/no/';
       }
-      
-      // Get the base URL (hostname and any base path)
-      var baseUrl = window.location.origin;
-      
-      // Redirect to appropriate language path
-      window.location.replace(baseUrl + '/' + storedLang + '/');
+    });
+  </script>
+  
+  <!-- Immediate redirect script that runs before DOMContentLoaded -->
+  <script>
+    (function() {
+      try {
+        var defaultLang = 'no';
+        var browserLang = (navigator.language || navigator.userLanguage || '').split('-')[0];
+        var lang = (browserLang === 'en') ? 'en' : defaultLang;
+        window.location.replace('/' + lang + '/');
+      } catch (e) {
+        // Fallback to meta refresh
+      }
     })();
   </script>
 </head>
