@@ -43,13 +43,13 @@
   "home": {
     "hero": {
       "title": "Vi former fremtiden for AI-sikkerhet i Norge",
-      "description": "Vi samler ledende forskere, beslutningstakere og bransjeeksperter for å sikre at kunstig intelligens utvikles på en trygg måte og kommer hele menneskeheten til gode. Bli med oss i arbeidet for en fremtid der AI er en positiv kraft for samfunnet.",
+      "description": "Vi samler forskere, beslutningstakere og bransjeeksperter for å sikre at kunstig intelligens utvikles på en trygg måte og kommer menneskeheten til gode. Bli med i arbeidet for en fremtid der AI er en positiv kraft for samfunnet.",
       "aboutButton": "Vår misjon",
       "involvedButton": "Bli involvert"
     },
     "problem": {
       "title": "Utfordringen vi står overfor",
-      "description": "AI-selskaper konkurrerer om å bygge kunstig superintelligens (ASI) - systemer som er mer intelligente enn hele menneskeheten kombinert. For øyeblikket finnes det ingen metode for å begrense eller kontrollere AI-systemer som er smartere enn mennesker. Hvis disse selskapene lykkes, vil konsekvensene være katastrofale. Ledende AI-forskere, verdensledere og til og med administrerende direktører i AI-selskaper advarer om at dette kan føre til menneskehetens utslettelse.",
+      "description": "AI-selskaper konkurrerer om å bygge kunstig superintelligens (ASI) - systemer som er mer intelligente enn hele menneskeheten kombinert. For øyeblikket finnes det ingen metode for å begrense eller kontrollere AI-systemer som er smartere enn mennesker. Hvis disse selskapene lykkes, vil konsekvensene være katastrofale. Ledende AI-forskere, verdensledere og til og med administrerende direktører i AI-selskapene selv, advarer om at dette kan føre til menneskehetens utslettelse.",
       "highlights": {
         "race": {
           "title": "Akselererende utvikling",
@@ -57,7 +57,7 @@
         },
         "risk": {
           "title": "Eksistensiell trussel",
-          "description": "Avansert AI kan utgjøre en enestående risiko gjennom feilinnretting med menneskelige verdier."
+          "description": "Avansert AI med mål uforenelig med menneskelige verdier utgjør en hittil uhørt trussel for samfunnet vårt."
         },
         "impact": {
           "title": "Mangel på tilsyn",
@@ -71,7 +71,7 @@
         },
         {
           "title": "Katastrofale risikoer",
-          "description": "Avanserte AI-systemer kan utgjøre eksistensielle trusler gjennom utilsiktede konsekvenser eller feilinnrettede mål."
+          "description": "Avanserte AI-systemer kan utgjøre eksistensielle trusler gjennom uforutsette konsekvenser eller feilinnrettede mål."
         },
         {
           "title": "Mangel på styring",
@@ -83,12 +83,12 @@
       "title": "Hva ledere sier om AI-sikkerhet",
       "items": [
         {
-          "content": "Utvikling av overmennskelig maskinintellekt er sannsynligvis den største trusselen mot menneskehetens fortsatte eksistens.",
+          "content": "Utvikling av overmennskelig kunstig intelligens er sannsynligvis den største trusselen mot menneskehetens fortsatte eksistens.",
           "author": "Sam Altman",
           "title": "Administrerende direktør, OpenAI"
         },
         {
-          "content": "Min vurdering er at sjansen for at noe går virkelig katastrofalt galt på et nivå som truer menneskelig sivilisasjon kan være et sted mellom 10 og 25 prosent.",
+          "content": "Min vurdering er at sjansen for at noe går virkelig katastrofalt galt på et nivå som truer menneskelig sivilisasjon er et sted mellom 10 og 25 prosent.",
           "author": "Dario Amodei",
           "title": "Medgründer og adm. direktør, Anthropic"
         },
@@ -110,11 +110,11 @@
       "points": [
         {
           "title": "Robust regulering",
-          "description": "Arbeider for omfattende regulatoriske rammeverk som sikrer trygghet samtidig som de muliggjør fordelaktig innovasjon."
+          "description": "Arbeider for omfattende regulatoriske rammeverk som sikrer trygghet."
         },
         {
           "title": "Teknisk forskning",
-          "description": "Støtter forskning innen AI-innretting, tolkbarhet og robusthet for å gjøre AI-systemer tryggere."
+          "description": "Støtter forskning innen AI-verdisamsvar, tolkbarhet og kontroll for å gjøre AI-systemer tryggere."
         },
         {
           "title": "Internasjonal koordinering",
@@ -128,7 +128,7 @@
     "subtitle": "Arbeider for å sikre trygg og fordelaktig AI-utvikling gjennom forskning, politikk og samfunnsengasjement",
     "mission": {
       "title": "Vår misjon",
-      "content": "AI Safety Norway ble grunnlagt med misjonen om å redusere katastrofale og eksistensielle risikoer fra stadig mer kraftfulle AI-systemer. Vi samler eksperter fra ulike disipliner for å adressere både de tekniske og styringsmessige utfordringene ved avansert AI."
+      "content": "AI Safety Norway ble grunnlagt med misjonen om å redusere katastrofale og eksistensielle risikoer fra avanserte AI-systemer. Vi samler eksperter fra ulike disipliner for å adressere både de tekniske og styringsmessige utfordringene ved avansert AI."
     },
     "approach": {
       "title": "Vår tilnærming",
