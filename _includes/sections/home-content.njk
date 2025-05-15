@@ -23,7 +23,7 @@
     <div class="problem-overview">
       <div class="problem-highlights">
         <div class="highlight-card">
-          <div class="highlight-icon" aria-hidden="true">🔬</div>
+          <div class="highlight-icon" aria-hidden="true">⚡</div>
           <h3>{{ "home.problem.highlights.race.title" | i18n(currentLanguage) }}</h3>
           <p>{{ "home.problem.highlights.race.description" | i18n(currentLanguage) }}</p>
         </div>
@@ -35,7 +35,7 @@
         </div>
         
         <div class="highlight-card">
-          <div class="highlight-icon" aria-hidden="true">🌐</div>
+          <div class="highlight-icon" aria-hidden="true">🛑</div>
           <h3>{{ "home.problem.highlights.impact.title" | i18n(currentLanguage) }}</h3>
           <p>{{ "home.problem.highlights.impact.description" | i18n(currentLanguage) }}</p>
         </div>
@@ -62,7 +62,7 @@
     <h2 id="quotes-heading">{{ "home.quotes.title" | i18n(currentLanguage) }}</h2>
     
     <div class="quotes-grid">
-      <!-- Fixed quotes access - 3 in a row -->
+      <!-- First row of quotes - 3 in a row -->
       {% if currentLanguage == "en" %}
         {% for quote in [
           {
@@ -73,18 +73,18 @@
             "source": "https://blog.samaltman.com/machine-intelligence-part-1"
           },
           {
-            "content": "My chance that something goes really quite catastrophically wrong on the scale of human civilization might be somewhere between 10 per cent and 25 per cent.",
+            "content": "We must take the risks of AI as seriously as other major global challenges, like climate change [...] It took the international community too long to coordinate an effective global response to this, and we're living with the consequences of that now. We can't afford the same delay with AI.",
+            "author": "Demis Hassabis",
+            "title": "CEO, Google DeepMind; Nobel Prize Winner",
+            "date": "Oct 2023",
+            "source": "https://futurism.com/the-byte/google-ai-boss-existential-threat"
+          },
+          {
+            "content": "My chance that something goes really quite catastrophically wrong on the scale of human civilization might be somewhere between 10% and 25%.",
             "author": "Dario Amodei",
             "title": "Co-founder & CEO, Anthropic",
             "date": "Oct 2023",
             "source": "https://noahpinion.substack.com/p/interview-dario-amodei-ceo-of-anthropic"
-          },
-          {
-            "content": "It's coming, either way it's coming very soon and I'm not sure society's quite ready for that yet.",
-            "author": "Demis Hassabis",
-            "title": "CEO, Google DeepMind; Nobel Prize Winner",
-            "date": "Apr 2024",
-            "source": "https://www.ndtv.com/science/google-deepmind-ceo-on-what-keeps-him-up-at-night-agi-is-coming-societys-not-ready-8245874"
           }
         ] %}
           <blockquote class="quote-card">
@@ -110,18 +110,97 @@
             "source": "https://blog.samaltman.com/machine-intelligence-part-1"
           },
           {
-            "content": "Min vurdering er at sjansen for at noe går virkelig katastrofalt galt på et nivå som truer den menneskelige sivilisasjon, kan være et sted mellom 10 og 25 prosent.",
+            "content": "Vi må ta risikoene ved AI like alvorlig som andre globale utfordringer, som klimaendringer [...] Det tok det internasjonale samfunnet for lang tid å koordinere en effektiv global respons på dette, og vi lever nå med konsekvensene. Vi har ikke råd til samme forsinkelse med AI.",
+            "author": "Demis Hassabis",
+            "title": "Administrerende direktør, Google DeepMind; Nobelprisvinner",
+            "date": "Okt 2023",
+            "source": "https://futurism.com/the-byte/google-ai-boss-existential-threat"
+          },
+          {
+            "content": "Min vurdering er at sjansen for at noe går virkelig katastrofalt galt på et nivå som truer den menneskelige sivilisasjon, kan være et sted mellom 10% og 25%.",
             "author": "Dario Amodei",
             "title": "Medgründer og adm. direktør, Anthropic",
             "date": "Okt 2023",
             "source": "https://noahpinion.substack.com/p/interview-dario-amodei-ceo-of-anthropic"
+          }
+        ] %}
+          <blockquote class="quote-card">
+            <div class="quote-content">
+              <p>{{ quote.content }}</p>
+              <div class="quote-date-source">{{ quote.date }} - <a href="{{ quote.source }}" target="_blank" rel="noopener noreferrer">Kilde</a></div>
+            </div>
+            <footer class="quote-attribution">
+              <div>
+                <cite class="quote-author">{{ quote.author }}</cite>
+                <div class="quote-title">{{ quote.title }}</div>
+              </div>
+            </footer>
+          </blockquote>
+        {% endfor %}
+      {% endif %}
+    </div>
+
+    <!-- Second row of quotes - 3 more quotes -->
+    <div class="quotes-grid" style="margin-top: 30px;">
+      {% if currentLanguage == "en" %}
+        {% for quote in [
+          {
+            "content": "We are as a matter of fact, right now, building creepy, super-capable, amoral, psychopaths that never sleep, think much faster than us, can make copies of themselves and have nothing human about them whatsoever, what could possibly go wrong?",
+            "author": "Max Tegmark",
+            "title": "Professor, MIT; AI Safety Researcher",
+            "date": "Nov 2023",
+            "source": "https://www.facebook.com/futureoflifeinstitute/posts/we-are-right-now-building-creepy-super-capable-amoral-psychopaths-that-never-sle/691751266435495/"
           },
           {
-            "content": "Det kommer, uansett kommer det veldig snart, og jeg er ikke sikker på at samfunnet er helt klar for det ennå.",
-            "author": "Demis Hassabis",
-            "title": "Administrerende direktør, Google DeepMind; Nobelprisvinner",
-            "date": "Apr 2024",
-            "source": "https://www.ndtv.com/science/google-deepmind-ceo-on-what-keeps-him-up-at-night-agi-is-coming-societys-not-ready-8245874"
+            "content": "Mark my words — AI is far more dangerous than nukes.",
+            "author": "Elon Musk",
+            "title": "CEO, Tesla, SpaceX & xAI",
+            "date": "Mar 2018",
+            "source": "https://www.cnbc.com/2018/03/13/elon-musk-at-sxsw-a-i-is-more-dangerous-than-nuclear-weapons.html"
+          },
+          {
+            "content": "while we are racing towards AGI or even ASI, nobody currently knows how such an AGI or ASI could be made to behave morally, or at least behave as intended by its developers and not turn against humans",
+            "author": "Yoshua Bengio",
+            "title": "Deep Learning Pioneer, Turing Award Winner",
+            "date": "Jul 2024",
+            "source": "https://yoshuabengio.org/2024/07/09/reasoning-through-arguments-against-taking-ai-safety-seriously/"
+          }
+        ] %}
+          <blockquote class="quote-card">
+            <div class="quote-content">
+              <p>{{ quote.content }}</p>
+              <div class="quote-date-source">{{ quote.date }} - <a href="{{ quote.source }}" target="_blank" rel="noopener noreferrer">Source</a></div>
+            </div>
+            <footer class="quote-attribution">
+              <div>
+                <cite class="quote-author">{{ quote.author }}</cite>
+                <div class="quote-title">{{ quote.title }}</div>
+              </div>
+            </footer>
+          </blockquote>
+        {% endfor %}
+      {% else %}
+        {% for quote in [
+          {
+            "content": "Vi bygger faktisk, akkurat nå, uhyggelige, superkompetente, amoralske psykopater som aldri sover, tenker mye raskere enn oss, kan lage kopier av seg selv og ikke har noe menneskelig ved seg i det hele tatt. Hva kan vel gå galt?",
+            "author": "Max Tegmark",
+            "title": "Professor, MIT; AI-sikkerhetsforsker",
+            "date": "Nov 2023",
+            "source": "https://www.facebook.com/futureoflifeinstitute/posts/we-are-right-now-building-creepy-super-capable-amoral-psychopaths-that-never-sle/691751266435495/"
+          },
+          {
+            "content": "Merk mine ord — AI er langt farligere enn atomvåpen.",
+            "author": "Elon Musk",
+            "title": "Adm. direktør, Tesla, SpaceX og xAI",
+            "date": "Mar 2018",
+            "source": "https://www.cnbc.com/2018/03/13/elon-musk-at-sxsw-a-i-is-more-dangerous-than-nuclear-weapons.html"
+          },
+          {
+            "content": "mens vi raser mot AGI eller til og med ASI, vet ingen for øyeblikket hvordan en slik AGI eller ASI kan gjøres til å oppføre seg moralsk, eller i det minste oppføre seg som tiltenkt av utviklerne og ikke vende seg mot mennesker",
+            "author": "Yoshua Bengio",
+            "title": "Dyplæringspioner, Turing-prisvinner",
+            "date": "Jul 2024",
+            "source": "https://yoshuabengio.org/2024/07/09/reasoning-through-arguments-against-taking-ai-safety-seriously/"
           }
         ] %}
           <blockquote class="quote-card">

@@ -8,6 +8,7 @@ The website is hosted at [aisafety.no](https://aisafety.no/).
 
 The website has undergone significant improvements:
 
+- **Updated Homepage Content**: Refined "The Challenge We Face" section with more precise messaging about AI risks and international cooperation
 - **Newsletter System**: Implemented a dedicated newsletter section for both languages
 - **Team Information**: Updated team structure with proper contact information
 - **Performance Optimization**: Removed unused CSS code and simplified JavaScript

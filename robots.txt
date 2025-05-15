@@ -2,14 +2,26 @@
 User-agent: *
 Allow: /
 
-# Language-specific RSS feeds
+# Sitemaps
 Sitemap: https://aisafety.no/sitemap-index.xml
 Sitemap: https://aisafety.no/sitemap.xml
+Sitemap: https://aisafety.no/newsletter-sitemap.xml
+
+# Language-specific RSS feeds
 Sitemap: https://aisafety.no/en/feed.xml
 Sitemap: https://aisafety.no/no/feed.xml
+Sitemap: https://aisafety.no/en/newsletter-feed.xml
+Sitemap: https://aisafety.no/no/newsletter-feed.xml
 
-# Optimized crawl rate to prevent server overload
+# Encourage more frequent crawls of newsletter content
+User-agent: Googlebot
 Crawl-delay: 1
+
+User-agent: bingbot
+Crawl-delay: 1
+
+User-agent: *
+Crawl-delay: 3
 
 # Only index the real content, not the redirects
 User-agent: *

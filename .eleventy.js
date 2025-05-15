@@ -83,6 +83,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("img"); // Uncomment if you add an images folder
   eleventyConfig.addPassthroughCopy("site.webmanifest");
   eleventyConfig.addPassthroughCopy("CNAME");
+  eleventyConfig.addPassthroughCopy("google-site-verification.txt");
   // eleventyConfig.addPassthroughCopy("admin"); // Example for Netlify CMS admin folder
 
   // ==================================================================

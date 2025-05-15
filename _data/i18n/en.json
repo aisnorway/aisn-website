@@ -52,30 +52,30 @@
       "description": "AI companies are racing to build Artificial Superintelligence (ASI) - systems more intelligent than all of humanity combined. Currently, no method exists to contain or control smarter-than-human AI systems. If these companies succeed, the consequences would be catastrophic. Top AI scientists, world leaders, and even AI company CEOs themselves warn this could lead to human extinction.",
       "highlights": {
         "race": {
-          "title": "Accelerating Development",
-          "description": "Leading AI labs are rapidly building increasingly powerful systems without adequate safety measures."
+          "title": "The AI Arms Race",
+          "description": "Competition between leading AI labs and nation states is driving a race towards increasingly advanced AI systems at the cost of everyone's safety."
         },
         "risk": {
           "title": "Existential Threat",
-          "description": "Advanced AI could pose unprecedented risks through misalignment with human values."
+          "description": "Top AI scientists and leaders incessantly warn about the catastrophic and existential dangers of advancing AI."
         },
         "impact": {
-          "title": "Lack of Oversight",
-          "description": "Current frameworks are insufficient to govern increasingly powerful AI systems."
+          "title": "The Current Path",
+          "description": "The path we're currently on is not safe and involves unacceptable risks to humanity."
         }
       },
       "points": [
         {
-          "title": "Uncontrolled Development",
-          "description": "Major AI labs are rapidly developing increasingly capable systems without adequate safety measures or oversight."
+          "title": "The AI Arms Race",
+          "description": "Competition between leading AI labs and nation states is driving a race towards increasingly advanced AI systems at the cost of everyone's safety."
         },
         {
-          "title": "Catastrophic Risks",
-          "description": "Advanced AI systems could pose existential threats through unintended consequences or misaligned goals."
+          "title": "Existential Threat",
+          "description": "Top AI scientists and leaders incessantly warn about the catastrophic and existential dangers of increasingly advancing AI."
         },
         {
-          "title": "Lack of Governance",
-          "description": "Current regulatory frameworks are insufficient to address the unique challenges posed by advanced AI."
+          "title": "The Current Path",
+          "description": "The path we're currently on is not safe and involves unacceptable risks to humanity."
         }
       ]
     },
@@ -106,7 +106,7 @@
     },
     "solution": {
       "title": "Our Approach",
-      "description": "We need stronger regulatory frameworks comparable to other high-risk industries to ensure AI development proceeds safely and beneficially.",
+      "description": "We need stronger regulatory frameworks comparable to other high-risk industries to ensure AI development proceeds safely and beneficially. This would eventually involve cooperation between all major nation states to strictly regulate the development and deployment of generally capable AI systems.",
       "points": [
         {
           "title": "Robust Regulation",

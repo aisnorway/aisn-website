@@ -61,6 +61,10 @@
     
     <!-- RSS feed links -->
     <link rel="alternate" type="application/atom+xml" title="AI Safety Norway - {{ "nav.newsletter" | i18n(currentLanguage) }}" href="https://aisafety.no/{{ currentLanguage }}/feed.xml" />
+    <link rel="alternate" type="application/atom+xml" title="AI Safety Norway - {{ "newsletter.title" | i18n(currentLanguage) }}" href="https://aisafety.no/{{ currentLanguage }}/newsletter-feed.xml" />
+    
+    <!-- Additional meta tags for crawling -->
+    <meta name="revisit-after" content="1 day" />
   </head>
   <body {% if pageClass %}class="{{ pageClass }}"{% endif %}>
     <header>

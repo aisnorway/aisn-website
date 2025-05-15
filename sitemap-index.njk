@@ -6,6 +6,26 @@ eleventyExcludeFromCollections: true
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <sitemap>
     <loc>https://aisafety.no/sitemap.xml</loc>
-    <lastmod>2024-08-16T00:00:00Z</lastmod>
+    <lastmod>{{ collections.sitemapPages | getNewestCollectionItemDate | dateToRfc3339 }}</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://aisafety.no/newsletter-sitemap.xml</loc>
+    <lastmod>{{ collections.enNewsletter | getNewestCollectionItemDate | dateToRfc3339 }}</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://aisafety.no/en/feed.xml</loc>
+    <lastmod>{{ collections.enNewsletter | getNewestCollectionItemDate | dateToRfc3339 }}</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://aisafety.no/no/feed.xml</loc>
+    <lastmod>{{ collections.noNewsletter | getNewestCollectionItemDate | dateToRfc3339 }}</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://aisafety.no/en/newsletter-feed.xml</loc>
+    <lastmod>{{ collections.enNewsletter | getNewestCollectionItemDate | dateToRfc3339 }}</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://aisafety.no/no/newsletter-feed.xml</loc>
+    <lastmod>{{ collections.noNewsletter | getNewestCollectionItemDate | dateToRfc3339 }}</lastmod>
   </sitemap>
 </sitemapindex> 

@@ -22,8 +22,13 @@ eleventyExcludeFromCollections: true
     {%- endif %}
     {%- endfor %}
     
-    <changefreq>{{ page.data.sitemapChangefreq | default("monthly") }}</changefreq>
-    <priority>{{ page.data.sitemapPriority | default(0.8) }}</priority>
+    {% if page.url.indexOf('/newsletter/') !== -1 or page.url.indexOf('/nyhetsbrev/') !== -1 %}
+      <changefreq>daily</changefreq>
+      <priority>0.9</priority>
+    {% else %}
+      <changefreq>{{ page.data.sitemapChangefreq | default("monthly") }}</changefreq>
+      <priority>{{ page.data.sitemapPriority | default(0.8) }}</priority>
+    {% endif %}
     
     {%- if page.data.image %}
     <image:image>

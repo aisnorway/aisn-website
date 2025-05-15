@@ -1,0 +1,48 @@
+---
+permalink: 
+  en: /en/feed.xml
+  no: /no/feed.xml
+eleventyExcludeFromCollections: true
+---
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  {% if permalink === '/en/feed.xml' %}
+    {% set siteTitle = "AI Safety Norway - English" %}
+    {% set postslist = collections.posts | getSameLanguagePosts('en') %}
+    {% set lang = 'en' %}
+  {% else %}
+    {% set siteTitle = "AI Safety Norway - Norsk" %}
+    {% set postslist = collections.posts | getSameLanguagePosts('no') %}
+    {% set lang = 'no' %}
+  {% endif %}
+  
+  <title>{{ siteTitle }}</title>
+  <subtitle>{{ "site.description" | i18n(lang) }}</subtitle>
+  <link href="https://aisafety.no{{ permalink }}" rel="self"/>
+  <link href="https://aisafety.no/"/>
+  <updated>{{ collections.posts | getNewestCollectionItemDate | dateToRfc3339 }}</updated>
+  <id>https://aisafety.no/</id>
+  <author>
+    <name>AI Safety Norway</name>
+    <email>contact@aisafety.no</email>
+  </author>
+  
+  {%- for post in postslist | reverse -%}
+  {%- set absolutePostUrl %}https://aisafety.no{{ post.url | url }}{% endset -%}
+  <entry>
+    <title>{{ post.data.title }}</title>
+    <link href="{{ absolutePostUrl }}"/>
+    <updated>{{ post.date | dateToRfc3339 }}</updated>
+    <id>{{ absolutePostUrl }}</id>
+    <content type="html">{{ post.templateContent | htmlToAbsoluteUrls(absolutePostUrl) }}</content>
+    {% if post.data.author %}<author><name>{{ post.data.author }}</name></author>{% endif %}
+    {% if post.data.description %}<summary>{{ post.data.description }}</summary>{% endif %}
+    {% if post.data.keywords %}
+      {% set keywordsList = post.data.keywords | split(',') %}
+      {% for keyword in keywordsList %}
+      <category term="{{ keyword | trim }}" />
+      {% endfor %}
+    {% endif %}
+  </entry>
+  {%- endfor -%}
+</feed> 

@@ -1,0 +1,74 @@
+---
+permalink: /newsletter-sitemap.xml
+eleventyExcludeFromCollections: true
+---
+<?xml version="1.0" encoding="utf-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" 
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <!-- English newsletter articles -->
+  {%- for post in collections.enNewsletter %}
+  <url>
+    <loc>https://aisafety.no{{ post.url | url }}</loc>
+    <lastmod>{{ post.date.toISOString() }}</lastmod>
+    
+    {%- set noUrl = post.url | getAlternateUrl('no') -%}
+    {%- if noUrl %}
+    <xhtml:link 
+      rel="alternate" 
+      hreflang="no" 
+      href="https://aisafety.no{{ noUrl | url }}" 
+    />
+    {%- endif %}
+    <xhtml:link 
+      rel="alternate" 
+      hreflang="en" 
+      href="https://aisafety.no{{ post.url | url }}" 
+    />
+    
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    
+    {%- if post.data.image %}
+    <image:image>
+      <image:loc>https://aisafety.no{{ post.data.image }}</image:loc>
+      <image:title>{{ post.data.title }}</image:title>
+      <image:caption>{{ post.data.description }}</image:caption>
+    </image:image>
+    {%- endif %}
+  </url>
+  {%- endfor %}
+  
+  <!-- Norwegian newsletter articles -->
+  {%- for post in collections.noNewsletter %}
+  <url>
+    <loc>https://aisafety.no{{ post.url | url }}</loc>
+    <lastmod>{{ post.date.toISOString() }}</lastmod>
+    
+    {%- set enUrl = post.url | getAlternateUrl('en') -%}
+    {%- if enUrl %}
+    <xhtml:link 
+      rel="alternate" 
+      hreflang="en" 
+      href="https://aisafety.no{{ enUrl | url }}" 
+    />
+    {%- endif %}
+    <xhtml:link 
+      rel="alternate" 
+      hreflang="no" 
+      href="https://aisafety.no{{ post.url | url }}" 
+    />
+    
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    
+    {%- if post.data.image %}
+    <image:image>
+      <image:loc>https://aisafety.no{{ post.data.image }}</image:loc>
+      <image:title>{{ post.data.title }}</image:title>
+      <image:caption>{{ post.data.description }}</image:caption>
+    </image:image>
+    {%- endif %}
+  </url>
+  {%- endfor %}
+</urlset> 

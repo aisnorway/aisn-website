@@ -52,30 +52,30 @@
       "description": "AI-selskaper konkurrerer om å bygge kunstig superintelligens (ASI) - systemer som er mer intelligente enn hele menneskeheten kombinert. For øyeblikket finnes det ingen metode for å begrense eller kontrollere AI-systemer som er smartere enn mennesker. Hvis disse selskapene lykkes, vil konsekvensene være katastrofale. Ledende AI-forskere, verdensledere og til og med administrerende direktører i AI-selskapene selv, advarer om at dette kan føre til menneskehetens utslettelse.",
       "highlights": {
         "race": {
-          "title": "Akselererende utvikling",
-          "description": "Ledende AI-laboratorier bygger raskt stadig kraftigere systemer uten tilstrekkelige sikkerhetstiltak."
+          "title": "AI-kappløpet",
+          "description": "Konkurranse mellom ledende AI-laboratorier og nasjoner driver et kappløp mot stadig mer avanserte AI-systemer på bekostning av alles sikkerhet."
         },
         "risk": {
           "title": "Eksistensiell trussel",
-          "description": "Avansert AI med mål uforenelig med menneskelige verdier utgjør en hittil uhørt trussel for samfunnet vårt."
+          "description": "Ledende AI-forskere og ledere advarer uopphørlig om de katastrofale og eksistensielle farene ved fremskridende AI."
         },
         "impact": {
-          "title": "Mangel på tilsyn",
-          "description": "Dagens rammeverk er utilstrekkelige for å styre stadig kraftigere AI-systemer."
+          "title": "Den nåværende kursen",
+          "description": "Kursen vi er på nå er ikke trygg og innebærer uakseptable risikoer for menneskeheten."
         }
       },
       "points": [
         {
-          "title": "Ukontrollert utvikling",
-          "description": "Store AI-laboratorier utvikler raskt stadig mer kapable systemer uten tilstrekkelige sikkerhetstiltak eller tilsyn."
+          "title": "AI-kappløpet",
+          "description": "Konkurranse mellom ledende AI-laboratorier og nasjoner driver et kappløp mot stadig mer avanserte AI-systemer på bekostning av alles sikkerhet."
         },
         {
-          "title": "Katastrofale risikoer",
-          "description": "Avanserte AI-systemer kan utgjøre eksistensielle trusler gjennom uforutsette konsekvenser eller feilinnrettede mål."
+          "title": "Eksistensiell trussel",
+          "description": "Ledende AI-forskere og ledere advarer uopphørlig om de katastrofale og eksistensielle farene ved stadig fremskridende AI."
         },
         {
-          "title": "Mangel på styring",
-          "description": "Dagens regulatoriske rammeverk er utilstrekkelige for å adressere de unike utfordringene som avansert AI utgjør."
+          "title": "Den nåværende kursen",
+          "description": "Kursen vi er på nå er ikke trygg og innebærer uakseptable risikoer for menneskeheten."
         }
       ]
     },
@@ -106,7 +106,7 @@
     },
     "solution": {
       "title": "Vår tilnærming",
-      "description": "Vi trenger sterkere regulatoriske rammeverk sammenlignbart med andre høyrisikoindustrier for å sikre at AI-utvikling fortsetter på en trygg og fordelaktig måte.",
+      "description": "Vi trenger sterkere regulatoriske rammeverk sammenlignbart med andre høyrisikoindustrier for å sikre at AI-utvikling fortsetter på en trygg og fordelaktig måte. Dette vil til slutt involvere samarbeid mellom alle store nasjoner for å strengt regulere utviklingen og utplasseringen av generelt kapable AI-systemer.",
       "points": [
         {
           "title": "Robust regulering",
