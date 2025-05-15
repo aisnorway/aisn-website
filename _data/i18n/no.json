@@ -23,6 +23,8 @@
     "getInvolved": "Bli involvert",
     "learnMore": "Lær mer",
     "viewAll": "Vis alle",
+    "share": "Del",
+    "topics": "Emner",
     "missingTranslation": {
       "title": "Siden er ikke tilgjengelig på norsk",
       "message": "Vi beklager, men denne siden er foreløpig ikke tilgjengelig på norsk. Vi jobber med å oversette alt innholdet vårt.",
@@ -165,6 +167,9 @@
     "readMore": "Les mer",
     "backToNewsletter": "Tilbake til nyhetsbrev",
     "by": "Av",
+    "relatedPosts": "Relaterte artikler",
+    "noRelatedPosts": "Ingen relaterte artikler funnet.",
+    "noPostsAvailable": "Ingen artikler tilgjengelig.",
     "example": {
       "title": "Eksempel på nyhetsbrevtittel",
       "date": "1. januar 2024",

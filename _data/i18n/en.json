@@ -23,6 +23,8 @@
     "getInvolved": "Get Involved",
     "learnMore": "Learn more",
     "viewAll": "View all",
+    "share": "Share",
+    "topics": "Topics",
     "missingTranslation": {
       "title": "Page Not Available in English",
       "message": "We're sorry, but this page is not yet available in English. We're working on translating all our content.",
@@ -417,6 +419,9 @@
     "readMore": "Read more",
     "backToNewsletter": "Back to newsletter",
     "by": "By",
+    "relatedPosts": "Related Posts",
+    "noRelatedPosts": "No related posts found.",
+    "noPostsAvailable": "No posts available.",
     "example": {
       "title": "Example Newsletter Title",
       "date": "January 1, 2024",

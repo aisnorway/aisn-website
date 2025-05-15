@@ -14,6 +14,17 @@ The website has undergone significant improvements:
 - **Content Structure**: Better organization of content in both languages
 - **Usability Improvements**: Fixed display issues and improved responsive layout
 - **Deployment**: Set up automatic deployment via GitHub Pages with custom domain aisafety.no
+- **SEO Enhancement**: Implemented comprehensive SEO improvements for better discoverability:
+  - Structured data markup using Schema.org for all content types
+  - Optimized meta tags for both Norwegian and English pages
+  - Improved multilingual support with proper hreflang annotations
+  - Enhanced sitemap with image metadata
+  - RSS feeds for newsletter content
+- **Social Sharing**: Enhanced social media integration:
+  - Improved social sharing buttons with proper branding
+  - Standard SVG icons for Twitter, LinkedIn, and Facebook
+  - Optimized Open Graph and Twitter Card metadata
+  - Better article tagging with relevant topics
 
 ## 📋 Project Structure
 
