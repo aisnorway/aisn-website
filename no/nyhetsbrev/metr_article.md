@@ -1,7 +1,7 @@
 ---
 layout: post.njk
 title: "KI-agenter utfører handlinger over stadig lengre tidshorisonter"
-date: 2025-05-01
+date: 2025-05-14
 author: "William Wale"
 lang: no
 permalink: /no/artikler/metr_article/
