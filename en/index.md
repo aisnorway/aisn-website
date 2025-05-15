@@ -4,7 +4,7 @@ title: "AI Safety Norway - Research Network for Safe AI Development"
 permalink: /en/
 pageClass: home
 lang: en
-description: "Norway's leading organization for AI safety research and advocacy. We work toward responsible and beneficial artificial intelligence through research, policy, and community."
+description: "A Norwegian organization for AI safety research and advocacy. We work toward responsible and beneficial artificial intelligence through research, policy, and community."
 pageType: "website"
 keywords: "AI safety Norway, artificial intelligence safety, AI risks, AI governance, Norwegian AI research, AI alignment, AI policy, AI regulation, AI ethics"
 sitemapPriority: 1.0
