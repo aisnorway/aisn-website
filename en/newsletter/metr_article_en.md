@@ -1,7 +1,7 @@
 ---
 layout: post.njk
 title: "AI agents perform actions over increasingly long time horizons"
-date: 2025-05-01
+date: 2025-05-14
 author: "William Wale"
 lang: en
 permalink: /en/articles/metr_article/
