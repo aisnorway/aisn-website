@@ -1,0 +1,76 @@
+{% macro generateNewsSchema(article, lang) %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "NewsArticle",
+  "headline": "{{ article.title }}",
+  "datePublished": "{{ article.date | toISOString }}",
+  "dateModified": "{{ article.modified | default(article.date) | toISOString }}",
+  "author": {
+    "@type": "Person",
+    "name": "{{ article.author }}"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "AI Safety Norway",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://aisafety.no/img/logo/logo.png",
+      "width": "256",
+      "height": "60"
+    }
+  },
+  "description": "{{ article.description }}",
+  "image": [
+    "{{ article.image | formatSocialImage(article.title) }}"
+  ],
+  "url": "https://aisafety.no{{ article.url }}",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://aisafety.no{{ article.url }}"
+  },
+  "isAccessibleForFree": "True",
+  "inLanguage": "{{ lang }}",
+  "keywords": "{{ article.keywords | default('AI safety, artificial intelligence, AI research, ' + article.title) }}"
+}
+</script>
+{% endmacro %}
+
+{% macro generateNewsListSchema(news, lang) %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "itemListElement": [
+    {% for article in news %}
+    {
+      "@type": "ListItem",
+      "position": {{ loop.index }},
+      "item": {
+        "@type": "NewsArticle",
+        "headline": "{{ article.title }}",
+        "datePublished": "{{ article.date | toISOString }}",
+        "author": {
+          "@type": "Person",
+          "name": "{{ article.author }}"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "AI Safety Norway",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://aisafety.no/img/logo/logo.png",
+            "width": "256",
+            "height": "60"
+          }
+        },
+        "description": "{{ article.description }}",
+        "image": "{{ article.image | formatSocialImage(article.title) }}",
+        "url": "https://aisafety.no{{ article.url }}"
+      }
+    }{% if not loop.last %},{% endif %}
+    {% endfor %}
+  ]
+}
+</script>
+{% endmacro %} 

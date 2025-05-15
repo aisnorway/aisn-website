@@ -1,0 +1,88 @@
+Schema.org Validation Results
+=========================
+
+Validation date: 2025-05-15T10:51:09.664Z
+
+index.html: NO SCHEMA FOUND
+no/index.html: 2 schema blocks
+  - Schema 1: VALID (Type: WebPage)
+  - Schema 2: VALID (Type: Organization)
+
+no/404.html: 2 schema blocks
+  - Schema 1: VALID (Type: WebPage)
+  - Schema 2: VALID (Type: Organization)
+
+no/sitater/index.html: 2 schema blocks
+  - Schema 1: VALID (Type: WebPage)
+  - Schema 2: VALID (Type: Organization)
+
+no/om-oss/index.html: 2 schema blocks
+  - Schema 1: VALID (Type: WebPage)
+  - Schema 2: VALID (Type: Organization)
+
+no/nyhetsbrev/index.html: 2 schema blocks
+  - Schema 1: VALID (Type: WebPage)
+  - Schema 2: VALID (Type: Organization)
+
+no/kontakt/index.html: 2 schema blocks
+  - Schema 1: VALID (Type: WebPage)
+  - Schema 2: VALID (Type: Organization)
+
+no/artikler/metr_article/index.html: 4 schema blocks
+  - Schema 1: VALID (Type: Article)
+  - Schema 2: VALID (Type: WebPage)
+  - Schema 3: VALID (Type: Organization)
+  - Schema 4: VALID (Type: NewsArticle)
+
+newsletter/index.html: 2 schema blocks
+  - Schema 1: VALID (Type: WebPage)
+  - Schema 2: VALID (Type: Organization)
+
+en/index.html: 2 schema blocks
+  - Schema 1: VALID (Type: WebPage)
+  - Schema 2: VALID (Type: Organization)
+
+en/404.html: 2 schema blocks
+  - Schema 1: VALID (Type: WebPage)
+  - Schema 2: VALID (Type: Organization)
+
+en/quotes/index.html: 2 schema blocks
+  - Schema 1: VALID (Type: WebPage)
+  - Schema 2: VALID (Type: Organization)
+
+en/newsletter/index.html: 2 schema blocks
+  - Schema 1: VALID (Type: WebPage)
+  - Schema 2: VALID (Type: Organization)
+
+en/contact/index.html: 2 schema blocks
+  - Schema 1: VALID (Type: WebPage)
+  - Schema 2: VALID (Type: Organization)
+
+en/articles/metr_article/index.html: 4 schema blocks
+  - Schema 1: VALID (Type: Article)
+  - Schema 2: VALID (Type: WebPage)
+  - Schema 3: VALID (Type: Organization)
+  - Schema 4: VALID (Type: NewsArticle)
+
+en/about/index.html: 2 schema blocks
+  - Schema 1: VALID (Type: WebPage)
+  - Schema 2: VALID (Type: Organization)
+
+docs/seo-guide/index.html: NO SCHEMA FOUND
+contact/index.html: 2 schema blocks
+  - Schema 1: VALID (Type: WebPage)
+  - Schema 2: VALID (Type: Organization)
+
+about/index.html: 2 schema blocks
+  - Schema 1: VALID (Type: WebPage)
+  - Schema 2: VALID (Type: Organization)
+
+README/index.html: NO SCHEMA FOUND
+LAUNCH-GUIDE/index.html: NO SCHEMA FOUND
+Summary
+=======
+Total files checked: 21
+Files with schema: 17
+Files without schema: 4
+Valid schema blocks: 38
+Invalid schema blocks: 0

@@ -24,7 +24,11 @@
       "mainEntityOfPage": {
         "@type": "WebPage",
         "@id": "https://aisafety.no{{ page.url }}"
-      }
+      },
+      "wordCount": {{ content | striptags | wordcount }},
+      "timeRequired": "PT{{ content | striptags | readingTime }}M",
+      "keywords": "{{ keywords }}",
+      "inLanguage": "{{ currentLanguage }}"
     }
     </script>
   {% elif type == "faq" %}
@@ -103,23 +107,68 @@
       ]
     }
     </script>
+  {% elif type == "organization" %}
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "AI Safety Norway",
+      "url": "https://aisafety.no",
+      "logo": "https://aisafety.no/img/logo/logo.png",
+      "description": "{{ "site.description" | i18n(currentLanguage) }}",
+      "sameAs": [
+        "https://x.com/AISafetyNorway",
+        "https://www.linkedin.com/company/ai-safety-norway/"
+      ],
+      "foundingDate": "2020",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "Norway",
+        "addressLocality": "Oslo"
+      }
+    }
+    </script>
+  {% elif type == "websitePage" %}
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "{{ title }}",
+      "description": "{{ description }}",
+      "url": "https://aisafety.no{{ page.url }}",
+      "inLanguage": "{{ currentLanguage }}",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "AI Safety Norway",
+        "url": "https://aisafety.no"
+      }
+    }
+    </script>
   {% endif %}
 {% endmacro %}
 
 {% macro generateMetaTags(pagetype='website') %}
   {% set currentUrl = 'https://aisafety.no' + page.url %}
-  {% set pageImage = image | default('https://aisafety.no/img/social-share-image.jpg') %}
+  {% set pageImage = image | formatSocialImage(title) %}
   
   <!-- Basic Meta Tags -->
   <meta name="description" content="{{ description or "site.description" | i18n(currentLanguage) }}">
   <meta name="author" content="{{ author or 'AI Safety Norway' }}">
-  <meta name="robots" content="index, follow">
-  <meta name="keywords" content="{{ keywords or 'AI safety, artificial intelligence risk, Norwegian AI research, AI alignment, AI ethics, existential risk, AI regulation, machine learning safety, AI governance, Norway tech policy' }}">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="keywords" content="{{ keywords or 'AI safety, AI risk, Norwegian AI research, AI alignment, AI governance, AI ethics, existential risk, AI regulation, machine learning safety, Norway AI policy, kunstig intelligens sikkerhet, AI risikohåndtering' }}">
+  
+  <!-- Language, Country and Locale -->
+  <meta name="language" content="{{ currentLanguage }}">
+  <meta name="geo.country" content="NO">
+  <meta name="geo.placename" content="Norway">
   
   <!-- Open Graph Tags -->
   <meta property="og:title" content="{{ title or 'AI Safety Norway' }}{% if title and title != 'AI Safety Norway' %} | AI Safety Norway{% endif %}">
   <meta property="og:description" content="{{ description or "site.description" | i18n(currentLanguage) }}">
   <meta property="og:image" content="{{ pageImage }}">
+  <meta property="og:image:alt" content="{{ title or 'AI Safety Norway' }}">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta property="og:url" content="{{ currentUrl }}">
   <meta property="og:type" content="{{ pagetype }}">
   <meta property="og:locale" content="{% if currentLanguage == 'en' %}en_US{% else %}nb_NO{% endif %}">

@@ -10,6 +10,8 @@
     "clean": "rimraf _site",
     "debug": "DEBUG=Eleventy* eleventy",
     "postinstall": "node scripts/postinstall.js",
+    "validate:schema": "npm run build && node scripts/validate-schema.js",
+    "lighthouse": "node scripts/run-lighthouse.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -29,6 +31,7 @@
     "@11ty/eleventy-plugin-rss": "^1.2.0",
     "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
     "cross-env": "^7.0.3",
+    "glob": "^11.0.2",
     "rimraf": "^5.0.1"
   },
   "dependencies": {

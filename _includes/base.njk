@@ -7,31 +7,25 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ title or "AI Safety Norway" }}{% if title and title != "AI Safety Norway" %} | AI Safety Norway{% endif %}</title>
+    <title>{{ title | generatePageTitle(currentLanguage) }}</title>
     
+    {% block head %}
     <!-- SEO Meta Tags -->
     {{ seo.generateMetaTags(pageType) }}
+    {% endblock %}
     
     <!-- Structured Data -->
     {% if pageType %}
       {{ seo.pageType(pageType) }}
     {% endif %}
     
-    <!-- Schema.org structured data for Organization -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "AI Safety Norway",
-      "url": "https://aisafety.no",
-      "logo": "https://aisafety.no/img/logo/logo.png",
-      "description": "{{ "site.description" | i18n(currentLanguage) }}",
-      "sameAs": [
-        "https://x.com/AISafetyNorway",
-        "https://www.linkedin.com/company/ai-safety-norway/"
-      ]
-    }
-    </script>
+    <!-- Generic WebSite Schema for all pages -->
+    {% if not pageType or pageType != "organization" %}
+      {{ seo.pageType("websitePage") }}
+    {% endif %}
+
+    <!-- Organization Schema -->
+    {{ seo.pageType("organization") }}
     
     <!-- Stylesheets -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@latest/css/pico.min.css" />
@@ -64,6 +58,9 @@
     <link rel="alternate" hreflang="en" href="https://aisafety.no{{ langUtils.getAlternateUrl(page.url, currentLanguage, 'en') }}" />
     <link rel="alternate" hreflang="x-default" href="https://aisafety.no/no/" />
     <link rel="canonical" href="https://aisafety.no{{ page.url }}" />
+    
+    <!-- RSS feed links -->
+    <link rel="alternate" type="application/atom+xml" title="AI Safety Norway - {{ "nav.newsletter" | i18n(currentLanguage) }}" href="https://aisafety.no/{{ currentLanguage }}/feed.xml" />
   </head>
   <body {% if pageClass %}class="{{ pageClass }}"{% endif %}>
     <header>

@@ -163,4 +163,88 @@ module.exports = function(eleventyConfig) {
     // Return the newest item or null if none found
     return sortedItems.length ? sortedItems[0] : null;
   });
+
+  // String manipulation filters
+  eleventyConfig.addFilter("trim", function(string) {
+    return string.trim();
+  });
+
+  eleventyConfig.addFilter("split", function(string, separator) {
+    return string.split(separator);
+  });
+  
+  eleventyConfig.addFilter("lowercase", function(string) {
+    return string.toLowerCase();
+  });
+  
+  eleventyConfig.addFilter("capitalize", function(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  });
+  
+  // Word count for articles
+  eleventyConfig.addFilter("wordcount", function(content) {
+    if (!content) return 0;
+    // Remove HTML tags and count words
+    let text = content.replace(/<\/?[^>]+(>|$)/g, "").trim();
+    return text.split(/\s+/).length;
+  });
+  
+  // URL manipulation
+  eleventyConfig.addFilter("urlencode", function(str) {
+    return encodeURIComponent(str);
+  });
+  
+  // Filter posts by language
+  eleventyConfig.addFilter("getSameLanguagePosts", function(posts, lang) {
+    return posts.filter(post => post.data.lang === lang);
+  });
+  
+  // Find related posts based on tags
+  eleventyConfig.addFilter("related", function(posts, tags, currentUrl, limit = 3) {
+    // Safety check for undefined posts
+    if (!posts || !Array.isArray(posts) || posts.length === 0) {
+      return [];
+    }
+    
+    // Remove empty tags and ensure we have an array
+    const postTags = Array.isArray(tags) ? tags.filter(tag => tag && typeof tag === 'string') : [];
+    
+    if (postTags.length === 0) return [];
+    
+    // Filter out current post and assign relevance score
+    const scored = posts
+      .filter(post => post.url !== currentUrl)
+      .map(post => {
+        const postTagList = post.data && post.data.tags ? post.data.tags : [];
+        
+        // Calculate score based on shared tags
+        let score = 0;
+        for (const tag of postTags) {
+          if (postTagList.includes(tag)) {
+            score++;
+          }
+        }
+        
+        return { post, score };
+      })
+      .filter(item => item.score > 0) // Must have at least one matching tag
+      .sort((a, b) => {
+        // Sort by score first, then by date
+        if (b.score !== a.score) {
+          return b.score - a.score;
+        }
+        // Secondary sort by date
+        return b.post.date - a.post.date;
+      })
+      .map(item => item.post);
+    
+    // Return limited number of posts
+    return scored.slice(0, limit);
+  });
+
+  // Format date in RFC 3339 format for RSS feeds
+  eleventyConfig.addFilter("dateToRfc3339", function(date) {
+    if (!date) return new Date().toISOString();
+    return new Date(date).toISOString();
+  });
 }; 

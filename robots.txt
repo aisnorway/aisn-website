@@ -2,9 +2,17 @@
 User-agent: *
 Allow: /
 
-# Sitemaps
+# Language-specific RSS feeds
 Sitemap: https://aisafety.no/sitemap-index.xml
 Sitemap: https://aisafety.no/sitemap.xml
+Sitemap: https://aisafety.no/en/feed.xml
+Sitemap: https://aisafety.no/no/feed.xml
 
-# Crawl delay to avoid overwhelming the server
-Crawl-delay: 1 
+# Optimized crawl rate to prevent server overload
+Crawl-delay: 1
+
+# Only index the real content, not the redirects
+User-agent: *
+Disallow: /node_modules/
+Disallow: /scripts/
+Disallow: /.github/ 

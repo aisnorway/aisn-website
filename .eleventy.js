@@ -62,6 +62,7 @@ const filtersConfig = require("./_11ty/config/filters-config");
 const collectionsConfig = require("./_11ty/config/collections-config");
 const markdownConfig = require("./_11ty/config/markdown-config");
 const optimizationConfig = require("./_11ty/config/optimization-config");
+const seoConfig = require("./_11ty/config/seo-config");
 
 module.exports = function(eleventyConfig) {
 
@@ -87,26 +88,7 @@ module.exports = function(eleventyConfig) {
   // ==================================================================
   // SEO Specific Configuration
   // ==================================================================
-  // Add custom filter for SEO-friendly slugs
-  eleventyConfig.addFilter("slugify", function(str) {
-    if (!str) return "";
-    return str
-      .toLowerCase()
-      .replace(/[^\w\s-]/g, "")
-      .replace(/[\s_-]+/g, "-")
-      .replace(/^-+|-+$/g, "");
-  });
-
-  // Add custom filter to get the absolute URL
-  eleventyConfig.addFilter("absoluteUrl", function(url) {
-    return `https://aisafety.no${url}`;
-  });
-
-  // Format date for SEO and sitemap purposes
-  eleventyConfig.addFilter("toISOString", function(date) {
-    if (!date) return new Date().toISOString();
-    return new Date(date).toISOString();
-  });
+  seoConfig(eleventyConfig);
 
   // ==================================================================
   // Internationalization (i18n) Configuration
