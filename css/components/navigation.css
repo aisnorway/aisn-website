@@ -533,6 +533,14 @@ header h1 a {
     padding: 0.8rem;
   }
   
+  /* Homepage header needs special treatment on tablets */
+  body.home header {
+    position: static;
+    background-color: rgba(240, 253, 250, 0.95);
+    background-image: none;
+    height: auto;
+  }
+  
   /* Container adjustments */
   header .container {
     flex-direction: row;
@@ -610,11 +618,22 @@ header h1 a {
   /* Reduced padding */
   header {
     padding: 0.6rem;
+    min-height: var(--header-height);
+    height: auto;
   }
   
   /* Tighter spacing */
   header .container {
     gap: 0.5rem;
+  }
+  
+  /* Homepage header needs solid background and static positioning on mobile */
+  body.home header {
+    position: static;
+    background-color: rgba(240, 253, 250, 0.95);
+    background-image: none;
+    padding: 0.6rem;
+    height: auto;
   }
   
   /* Smaller text and padding */

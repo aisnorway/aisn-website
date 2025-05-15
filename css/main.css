@@ -77,4 +77,53 @@ html[lang="en"] {
    
    See the <style> tag in base.njk which fixes the top padding/margin gap
    by setting padding-block-start: 0 !important.
-   ========================================================================== */ 
+   ========================================================================== */
+
+/* Mobile-specific fixes for header/hero overlap */
+@media (max-width: 768px) {
+  body.home main {
+    padding-top: 0; /* Ensure no extra top padding */
+  }
+  
+  body.home header + main section:first-child {
+    margin-top: 0; /* Remove extra top margin */
+  }
+  
+  /* Medium screens (tablets and small laptops) need specific treatment */
+  body.home header {
+    position: relative !important;
+    z-index: 1000;
+    background-color: rgba(240, 253, 250, 0.95);
+    background-image: none;
+  }
+  
+  body.home .hero {
+    margin-top: 0;
+    padding-top: 1.5rem !important;
+  }
+}
+
+/* Specific tweaks for screen sizes between tablet and mobile */
+@media (min-width: 481px) and (max-width: 768px) {
+  body.home .hero {
+    padding-top: 2rem !important;
+  }
+  
+  /* Hide hero gradient overlay since header is now static */
+  body.home .hero::after {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  /* On mobile, make header relative/static and hero adjust accordingly */
+  body.home header {
+    position: relative !important;
+    z-index: 1000;
+  }
+  
+  body.home .hero {
+    margin-top: 0;
+    padding-top: 1rem !important;
+  }
+} 

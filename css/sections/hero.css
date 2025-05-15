@@ -382,9 +382,13 @@
  */
 @media (max-width: 768px) {
   .hero {
-    padding: 6rem 0 6rem;
+    padding: 2rem 0 6rem;
     min-height: 60vh;
     text-align: center;
+  }
+  
+  .hero::after {
+    display: none;
   }
   
   .hero .container {
@@ -406,6 +410,8 @@
     bottom: -12px;
     height: 4px;
     width: 80px;
+    left: 50%;
+    transform: translateX(-50%);
   }
   
   .hero h2::after {
@@ -461,8 +467,12 @@
  */
 @media (max-width: 480px) {
   .hero {
-    padding: 5rem 0 5rem;
+    padding: 2rem 0 5rem;
     min-height: 50vh;
+  }
+  
+  .hero::after {
+    display: none;
   }
   
   .hero .container {
@@ -510,5 +520,12 @@
   .hero-ctas a[role="button"] {
     width: 100%;
     text-align: center;
+  }
+}
+
+/* Ensure proper spacing for very narrow screens */
+@media (max-width: 380px) {
+  .hero {
+    padding: 1.5rem 0 5rem;
   }
 } 
