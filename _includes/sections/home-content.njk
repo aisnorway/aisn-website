@@ -4,13 +4,47 @@
   <div class="orb-large"></div>
   <div class="margin-decoration-left"></div>
   <div class="margin-decoration-right"></div>
+  <div class="hero-bottom-fade"></div>
   <div class="container">
     <div class="hero-text">
       <h1 id="hero-heading">{{ "home.hero.title" | i18n(currentLanguage) }}</h1>
       <p>{{ "home.hero.description" | i18n(currentLanguage) }}</p>
-      <div class="hero-ctas">
-        <a href="{{ langUtils.localizeUrl('about', currentLanguage) }}" role="button" aria-label="{{ "home.hero.aboutButton" | i18n(currentLanguage) }}">{{ "home.hero.aboutButton" | i18n(currentLanguage) }}</a>
-        <a href="{{ langUtils.localizeUrl('contact', currentLanguage) }}" role="button" class="outline" aria-label="{{ "home.hero.involvedButton" | i18n(currentLanguage) }}">{{ "home.hero.involvedButton" | i18n(currentLanguage) }}</a>
+    </div>
+  </div>
+  <div class="scroll-button-container">
+    <a href="#statement-section" class="scroll-button" aria-label="{% if currentLanguage == 'en' %}Scroll to next section{% else %}Bla til neste seksjon{% endif %}">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="7 13 12 18 17 13"></polyline>
+        <polyline points="7 6 12 11 17 6"></polyline>
+      </svg>
+    </a>
+  </div>
+</section>
+
+<!-- AI Safety Statement section -->
+<section id="statement-section" class="statement-section full-width" aria-labelledby="statement-heading">
+  <div class="container">
+    <div class="statement-card">
+      <div class="statement-quote">
+        {% if currentLanguage == "en" %}
+          "Mitigating the risk of extinction from AI should be a global priority alongside other societal-scale risks such as pandemics and nuclear war."
+        {% else %}
+          "Å redusere risikoen for utryddelse fra AI bør være en global prioritet sammen med andre samfunnsmessige risikoer som pandemier og atomkrig."
+        {% endif %}
+      </div>
+      <div class="statement-explanation">
+        {% if currentLanguage == "en" %}
+          Released in May 2023, the statement was endorsed by over 350 experts, including AI leaders like Sam Altman (OpenAI), Demis Hassabis (Google DeepMind), Dario Amodei (Anthropic), and Turing Award winners Geoffrey Hinton and Yoshua Bengio. It aims to highlight the potential existential risks of advanced AI and to encourage global prioritization of AI safety.
+        {% else %}
+          Utgitt i mai 2023, ble erklæringen støttet av over 350 eksperter, inkludert AI-ledere som Sam Altman (OpenAI), Demis Hassabis (Google DeepMind), Dario Amodei (Anthropic), og Turing-prisvinnerne Geoffrey Hinton og Yoshua Bengio. Den tar sikte på å fremheve de potensielle eksistensielle risikoene ved avansert AI og oppfordre til global prioritering av AI-sikkerhet.
+        {% endif %}
+      </div>
+      <div class="statement-source">
+        {% if currentLanguage == "en" %}
+          <a href="https://safe.ai/work/statement-on-ai-risk" target="_blank" rel="noopener noreferrer" class="source-link">Source: Center for AI Safety</a>
+        {% else %}
+          <a href="https://safe.ai/work/statement-on-ai-risk" target="_blank" rel="noopener noreferrer" class="source-link">Kilde: Center for AI Safety</a>
+        {% endif %}
       </div>
     </div>
   </div>

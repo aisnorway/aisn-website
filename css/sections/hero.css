@@ -10,10 +10,10 @@
  */
 .hero {
   position: relative;
-  padding: 7rem 0 8rem;
+  padding: 7rem 0 6rem;
   text-align: left;
   overflow: hidden;
-  min-height: 85vh;
+  min-height: 65vh;
   display: flex;
   align-items: center;
   z-index: 1;
@@ -21,6 +21,7 @@
   background-color: var(--card-tint-4);
   background-image: linear-gradient(135deg, var(--card-tint-3), var(--card-tint-4));
   border-top: none;
+  padding-bottom: 4rem;
 }
 
 /**
@@ -64,6 +65,22 @@
 }
 
 /**
+ * Hero-to-Statement Gradient Transition
+ * 
+ * Creates a smooth transition from hero to statement section
+ */
+.hero-bottom-fade {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 150px;
+  background: linear-gradient(to bottom, transparent 0%, var(--card-tint-1) 100%);
+  z-index: 2;
+}
+
+/**
  * Bottom Curve - Creates a curved transition to the content below
  * 
  * SVG element that creates a gentle curve at the bottom of the hero section,
@@ -88,6 +105,7 @@
   position: relative;
   max-width: 900px;
   margin: 0 auto;
+  margin-top: 2rem;
   z-index: 3;
   padding-left: var(--content-padding-h);
   padding-right: var(--content-padding-h);
@@ -382,8 +400,8 @@
  */
 @media (max-width: 768px) {
   .hero {
-    padding: 2rem 0 6rem;
-    min-height: 60vh;
+    padding: 4rem 0 4rem;
+    min-height: 50vh;
     text-align: center;
   }
   
@@ -394,6 +412,7 @@
   .hero .container {
     text-align: center;
     padding: 0 1.5rem;
+    margin-top: 1.5rem;
   }
   
   .hero .curve-bottom {
@@ -460,6 +479,10 @@
     flex-direction: column;
     gap: 1rem;
   }
+  
+  .hero-bottom-fade {
+    height: 120px;
+  }
 }
 
 /**
@@ -467,8 +490,8 @@
  */
 @media (max-width: 480px) {
   .hero {
-    padding: 2rem 0 5rem;
-    min-height: 50vh;
+    padding: 3rem 0 3.5rem;
+    min-height: 45vh;
   }
   
   .hero::after {
@@ -477,6 +500,7 @@
   
   .hero .container {
     padding: 0 1rem;
+    margin-top: 1rem;
   }
   
   .hero h1 {
@@ -521,11 +545,104 @@
     width: 100%;
     text-align: center;
   }
+  
+  .hero-bottom-fade {
+    height: 100px;
+  }
 }
 
 /* Ensure proper spacing for very narrow screens */
 @media (max-width: 380px) {
   .hero {
     padding: 1.5rem 0 5rem;
+  }
+}
+
+/* Scroll button styles */
+.scroll-button-container {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.scroll-button {
+  width: 48px;
+  height: 48px;
+  background-color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  color: var(--color-accent);
+  transition: all 0.5s ease;
+  border: 2px solid rgba(0, 0, 0, 0.03);
+  animation: smoothScrollButtonPulse 3s ease-in-out infinite;
+}
+
+.scroll-button svg {
+  transition: transform 0.5s ease;
+}
+
+.scroll-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+  color: #0ea5e9;
+}
+
+.scroll-button:hover svg {
+  transform: translateY(3px);
+}
+
+@keyframes smoothScrollButtonPulse {
+  0% {
+    transform: translateY(0);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  }
+  50% {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  }
+  100% {
+    transform: translateY(0);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  }
+}
+
+/* Responsive adjustments for the scroll button */
+@media (max-width: 768px) {
+  .scroll-button-container {
+    bottom: 1rem;
+  }
+  
+  .scroll-button {
+    width: 42px;
+    height: 42px;
+  }
+  
+  .scroll-button svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .scroll-button-container {
+    bottom: 0.75rem;
+  }
+  
+  .scroll-button {
+    width: 36px;
+    height: 36px;
+  }
+  
+  .scroll-button svg {
+    width: 18px;
+    height: 18px;
   }
 } 

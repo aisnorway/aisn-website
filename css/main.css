@@ -22,6 +22,7 @@
 /* === Section Styles === */
 /* Styles for specific page sections */
 @import 'sections/hero.css';
+@import 'sections/statement.css';
 @import 'sections/features.css';
 
 /* === Page-specific Styles === */

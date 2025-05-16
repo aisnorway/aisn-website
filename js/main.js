@@ -253,4 +253,46 @@ const ResponsiveElements = {
       }, {passive: true});
     });
   }
-}; 
+};
+
+// Add smooth scrolling behavior
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      const targetId = this.getAttribute('href');
+      if (targetId !== '#' && document.querySelector(targetId)) {
+        e.preventDefault();
+        
+        // Get the target element and calculate its position
+        const targetElement = document.querySelector(targetId);
+        const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+        const startPosition = window.pageYOffset;
+        const distance = targetPosition - startPosition;
+        
+        // Set up a smoother scrolling animation
+        let startTime = null;
+        const duration = 1000; // Longer duration for smoother scroll (1 second)
+        
+        // Custom easing function for a gentler motion
+        function easeInOutQuad(t) {
+          return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+        }
+        
+        function animation(currentTime) {
+          if (startTime === null) startTime = currentTime;
+          const timeElapsed = currentTime - startTime;
+          const progress = Math.min(timeElapsed / duration, 1);
+          const easedProgress = easeInOutQuad(progress);
+          
+          window.scrollTo(0, startPosition + distance * easedProgress);
+          
+          if (timeElapsed < duration) {
+            requestAnimationFrame(animation);
+          }
+        }
+        
+        requestAnimationFrame(animation);
+      }
+    });
+  });
+}); 
