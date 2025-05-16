@@ -2,7 +2,62 @@
    Home Page Styles
    ========================================== */
 
+/* Common Section Styles */
+.section-title-container {
+  text-align: center;
+  margin-bottom: 3rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.section-title-container::before,
+.section-title-container::after {
+  content: '';
+  height: 2px;
+  width: 60px;
+  background: linear-gradient(90deg, transparent, var(--color-accent));
+  margin: 0 20px;
+  display: inline-block;
+}
+
+.section-title-container::after {
+  background: linear-gradient(90deg, var(--color-accent), transparent);
+}
+
+.section-title-container h2 {
+  font-size: 2.5rem;
+  margin: 0;
+  text-align: center;
+  position: relative;
+  background: linear-gradient(120deg, var(--color-text) 0%, var(--color-accent) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  display: inline-block;
+  padding: 0 1rem;
+  white-space: nowrap;
+}
+
+.section-title-container h2::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--color-accent) 0%, #38bdf8 100%);
+  border-radius: 2px;
+}
+
 /* Problem Section Styles */
+.problem-section {
+  padding-top: 2rem;
+}
+
 .problem-overview {
   margin-bottom: 3rem;
 }
@@ -102,14 +157,18 @@
 
 .solution-section h2 {
   font-size: 2.5rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
   text-align: center;
+  position: relative;
   background: linear-gradient(120deg, var(--color-text) 0%, var(--color-accent) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   text-fill-color: transparent;
-  position: relative;
+  display: inline-block;
+  padding: 0 2rem;
+  z-index: 1;
+  background-color: white;
 }
 
 .solution-section h2::after {
@@ -410,13 +469,30 @@ main > section:nth-of-type(2) h2::after {
     grid-template-columns: 1fr;
   }
   
+  .section-title-container {
+    margin-bottom: 2rem;
+  }
+  
+  .section-title-container::before,
+  .section-title-container::after {
+    width: 40px;
+    margin: 0 15px;
+  }
+  
+  .section-title-container h2 {
+    font-size: 2rem;
+    padding: 0 0.5rem;
+  }
+  
+  .section-title-container h2::after {
+    width: 80px;
+    height: 3px;
+    bottom: -12px;
+  }
+  
   /* Solution Section Responsive */
   .solution-section {
     padding: 2.5rem 0;
-  }
-  
-  .solution-section h2 {
-    font-size: 2rem;
   }
   
   .highlighted-text {
@@ -456,6 +532,29 @@ main > section:nth-of-type(2) h2::after {
     font-size: 1.8rem;
   }
   
+  .section-title-container {
+    margin-bottom: 1.8rem;
+    flex-direction: column;
+  }
+  
+  .section-title-container::before,
+  .section-title-container::after {
+    width: 80px;
+    margin: 10px 0;
+  }
+  
+  .section-title-container h2 {
+    font-size: 1.8rem;
+    padding: 0;
+    margin: 10px 0;
+  }
+  
+  .section-title-container h2::after {
+    width: 60px;
+    height: 3px;
+    bottom: -10px;
+  }
+  
   .highlight-icon {
     width: 60px;
     height: 60px;
@@ -469,10 +568,6 @@ main > section:nth-of-type(2) h2::after {
   /* Solution Section Responsive */
   .solution-section {
     padding: 2rem 0;
-  }
-  
-  .solution-section h2 {
-    font-size: 1.8rem;
   }
   
   .highlighted-text {
@@ -741,4 +836,86 @@ main > section:nth-of-type(2) h2::after {
   .article-excerpt {
     font-size: 0.95rem;
   }
+}
+
+/* Quotes Section Styles */
+.quotes-section {
+  padding: 5rem 0;
+  background: linear-gradient(to bottom, rgba(240, 249, 255, 0.3), white);
+  position: relative;
+}
+
+.quotes-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(circle at 80% 20%, rgba(20, 184, 166, 0.1) 0%, transparent 40%),
+    radial-gradient(circle at 20% 80%, rgba(56, 189, 248, 0.1) 0%, transparent 50%);
+  opacity: 0.7;
+  z-index: 0;
+}
+
+.quotes-section .container {
+  position: relative;
+  z-index: 1;
+}
+
+.quotes-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
+  position: relative;
+  background: linear-gradient(120deg, var(--color-text) 0%, var(--color-accent) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  display: inline-block;
+  padding: 0 2rem;
+  z-index: 1;
+  background-color: white;
+}
+
+.quotes-section h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--color-accent) 0%, #38bdf8 100%);
+  border-radius: 2px;
+}
+
+.quote-card {
+  background-color: white;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  padding: 2rem;
+  margin-bottom: 2rem;
+  transition: all var(--transition-medium);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.quote-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.quote-text {
+  font-size: 1.4rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  color: var(--color-text);
+}
+
+.quote-author {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-accent);
 } 

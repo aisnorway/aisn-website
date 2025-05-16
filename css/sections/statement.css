@@ -7,7 +7,7 @@
   position: relative;
   background: linear-gradient(to bottom, var(--card-tint-1), var(--card-tint-2) 100%);
   overflow: hidden;
-  margin-top: -2.5rem; /* Increase overlap to eliminate gap */
+  margin-top: -4rem; /* Increased negative margin to eliminate the gap */
   z-index: 1;
   filter: drop-shadow(0 -10px 20px rgba(0, 0, 0, 0.03));
 }
@@ -192,7 +192,7 @@
 @media (max-width: 768px) {
   .statement-section {
     padding: 2rem 0 2rem;
-    margin-top: -2rem; /* Keep consistent overlap on tablet */
+    margin-top: -3.5rem; /* Increased overlap on tablet */
   }
   
   .statement-section::after {
@@ -244,8 +244,8 @@
 
 @media (max-width: 480px) {
   .statement-section {
-    padding: 1.5rem 0;
-    margin-top: -1.5rem; /* Keep consistent overlap on mobile */
+    padding: 2rem 0 2rem;
+    margin-top: -3rem; /* Increased overlap on mobile */
   }
   
   .statement-section::after {

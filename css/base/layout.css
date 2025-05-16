@@ -47,7 +47,7 @@ main {
 
 /* Section Styles */
 section {
-  margin-bottom: var(--section-spacing);
+  margin-bottom: 0;
   position: relative;
 }
 

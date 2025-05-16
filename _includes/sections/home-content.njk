@@ -61,7 +61,9 @@
 
 <section class="problem-section full-width" aria-labelledby="problem-heading">
   <div class="container">
-    <h2 id="problem-heading">{{ "home.problem.title" | i18n(currentLanguage) }}</h2>
+    <div class="section-title-container">
+      <h2 id="problem-heading">{{ "home.problem.title" | i18n(currentLanguage) }}</h2>
+    </div>
     
     <div class="problem-overview">
       <div class="problem-highlights">
@@ -102,7 +104,9 @@
 
 <section class="quotes-section full-width" aria-labelledby="quotes-heading">
   <div class="container">
-    <h2 id="quotes-heading">{{ "home.quotes.title" | i18n(currentLanguage) }}</h2>
+    <div class="section-title-container">
+      <h2 id="quotes-heading">{{ "home.quotes.title" | i18n(currentLanguage) }}</h2>
+    </div>
     
     <div class="quotes-grid">
       <!-- First row of quotes - 3 in a row -->
@@ -116,11 +120,11 @@
             "source": "https://blog.samaltman.com/machine-intelligence-part-1"
           },
           {
-            "content": "We must take the risks of AI as seriously as other major global challenges, like climate change [...] It took the international community too long to coordinate an effective global response to this, and we're living with the consequences of that now. We can't afford the same delay with AI.",
-            "author": "Demis Hassabis",
-            "title": "CEO, Google DeepMind; Nobel Prize Winner",
-            "date": "Oct 2023",
-            "source": "https://futurism.com/the-byte/google-ai-boss-existential-threat"
+            "content": "Mark my words — AI is far more dangerous than nukes.",
+            "author": "Elon Musk",
+            "title": "CEO, Tesla, SpaceX & xAI",
+            "date": "Mar 2018",
+            "source": "https://www.cnbc.com/2018/03/13/elon-musk-at-sxsw-a-i-is-more-dangerous-than-nuclear-weapons.html"
           },
           {
             "content": "My chance that something goes really quite catastrophically wrong on the scale of human civilization might be somewhere between 10% and 25%.",
@@ -153,11 +157,11 @@
             "source": "https://blog.samaltman.com/machine-intelligence-part-1"
           },
           {
-            "content": "Vi må ta risikoene ved AI like alvorlig som andre globale utfordringer, som klimaendringer [...] Det tok det internasjonale samfunnet for lang tid å koordinere en effektiv global respons på dette, og vi lever nå med konsekvensene. Vi har ikke råd til samme forsinkelse med AI.",
-            "author": "Demis Hassabis",
-            "title": "Administrerende direktør, Google DeepMind; Nobelprisvinner",
-            "date": "Okt 2023",
-            "source": "https://futurism.com/the-byte/google-ai-boss-existential-threat"
+            "content": "Merk mine ord — AI er langt farligere enn atomvåpen.",
+            "author": "Elon Musk",
+            "title": "Adm. direktør, Tesla, SpaceX og xAI",
+            "date": "Mar 2018",
+            "source": "https://www.cnbc.com/2018/03/13/elon-musk-at-sxsw-a-i-is-more-dangerous-than-nuclear-weapons.html"
           },
           {
             "content": "Min vurdering er at sjansen for at noe går virkelig katastrofalt galt på et nivå som truer den menneskelige sivilisasjon, kan være et sted mellom 10% og 25%.",
@@ -184,7 +188,7 @@
     </div>
 
     <!-- Second row of quotes - 3 more quotes -->
-    <div class="quotes-grid" style="margin-top: 30px;">
+    <div class="quotes-grid no-top-margin">
       {% if currentLanguage == "en" %}
         {% for quote in [
           {
@@ -195,11 +199,11 @@
             "source": "https://www.facebook.com/futureoflifeinstitute/posts/we-are-right-now-building-creepy-super-capable-amoral-psychopaths-that-never-sle/691751266435495/"
           },
           {
-            "content": "Mark my words — AI is far more dangerous than nukes.",
-            "author": "Elon Musk",
-            "title": "CEO, Tesla, SpaceX & xAI",
-            "date": "Mar 2018",
-            "source": "https://www.cnbc.com/2018/03/13/elon-musk-at-sxsw-a-i-is-more-dangerous-than-nuclear-weapons.html"
+            "content": "We must take the risks of AI as seriously as other major global challenges, like climate change [...] It took the international community too long to coordinate an effective global response to this, and we're living with the consequences of that now. We can't afford the same delay with AI.",
+            "author": "Demis Hassabis",
+            "title": "CEO, Google DeepMind; Nobel Prize Winner",
+            "date": "Oct 2023",
+            "source": "https://futurism.com/the-byte/google-ai-boss-existential-threat"
           },
           {
             "content": "while we are racing towards AGI or even ASI, nobody currently knows how such an AGI or ASI could be made to behave morally, or at least behave as intended by its developers and not turn against humans",
@@ -232,11 +236,11 @@
             "source": "https://www.facebook.com/futureoflifeinstitute/posts/we-are-right-now-building-creepy-super-capable-amoral-psychopaths-that-never-sle/691751266435495/"
           },
           {
-            "content": "Merk mine ord — AI er langt farligere enn atomvåpen.",
-            "author": "Elon Musk",
-            "title": "Adm. direktør, Tesla, SpaceX og xAI",
-            "date": "Mar 2018",
-            "source": "https://www.cnbc.com/2018/03/13/elon-musk-at-sxsw-a-i-is-more-dangerous-than-nuclear-weapons.html"
+            "content": "Vi må ta risikoene ved AI like alvorlig som andre globale utfordringer, som klimaendringer [...] Det tok det internasjonale samfunnet for lang tid å koordinere en effektiv global respons på dette, og vi lever nå med konsekvensene. Vi har ikke råd til samme forsinkelse med AI.",
+            "author": "Demis Hassabis",
+            "title": "Administrerende direktør, Google DeepMind; Nobelprisvinner",
+            "date": "Okt 2023",
+            "source": "https://futurism.com/the-byte/google-ai-boss-existential-threat"
           },
           {
             "content": "mens vi raser mot AGI eller til og med ASI, vet ingen for øyeblikket hvordan en slik AGI eller ASI kan gjøres til å oppføre seg moralsk, eller i det minste oppføre seg som tiltenkt av utviklerne og ikke vende seg mot mennesker",
@@ -272,7 +276,9 @@
 
 <section class="solution-section">
   <div class="container">
-    <h2>{{ "home.solution.title" | i18n(currentLanguage) }}</h2>
+    <div class="section-title-container">
+      <h2>{{ "home.solution.title" | i18n(currentLanguage) }}</h2>
+    </div>
     <div class="post-content">
       <p class="highlighted-text">{{ "home.solution.description" | i18n(currentLanguage) }}</p>
     </div>

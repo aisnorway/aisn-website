@@ -1,7 +1,7 @@
 {
   "site": {
-    "title": "AI Safety Norway",
-    "description": "En norsk organisasjon innen sikker kunstig intelligens, risikoreduksjon og etisk AI-utvikling. Bli med i vårt forskningsnettverk for en trygg AI-fremtid."
+    "title": "KI Sikkerhet Norge",
+    "description": "Den ledende norske organisasjonen for KI sikkerhet, kunstig intelligens forskning og risikoreduksjon. Vi arbeider for etisk, trygg og nyttig KI-utvikling for en sikker fremtid."
   },
   "nav": {
     "about": "Om oss",
@@ -42,22 +42,22 @@
   },
   "home": {
     "hero": {
-      "title": "Vi former fremtiden for AI-sikkerhet i Norge",
-      "description": "Vi samler forskere, beslutningstakere og bransjeeksperter for å sikre at kunstig intelligens utvikles på en trygg måte og kommer menneskeheten til gode. Bli med i arbeidet for en fremtid der AI er en positiv kraft for samfunnet.",
+      "title": "Fordi Kunstig Intelligens er en Tikkende Atombombe",
+      "description": "Ledende KI-forskere advarer om at vi raser mot en potensiell katastrofe. Vi samler forskere, beslutningstakere og bransjeeksperter for å sikre at kunstig intelligens (KI) utvikles på en trygg måte og kommer menneskeheten til gode. Bli med i arbeidet for en fremtid der KI er en positiv kraft for samfunnet.",
       "aboutButton": "Vår misjon",
       "involvedButton": "Bli involvert"
     },
     "problem": {
       "title": "Utfordringen vi står overfor",
-      "description": "AI-selskaper konkurrerer om å bygge kunstig superintelligens (ASI) - systemer som er mer intelligente enn hele menneskeheten kombinert. For øyeblikket finnes det ingen metode for å begrense eller kontrollere AI-systemer som er smartere enn mennesker. Hvis disse selskapene lykkes, vil konsekvensene være katastrofale. Ledende AI-forskere, verdensledere og til og med administrerende direktører i AI-selskapene selv, advarer om at dette kan føre til menneskehetens utslettelse.",
+      "description": "KI-selskaper konkurrerer om å bygge kunstig superintelligens (ASI) - systemer som er mer intelligente enn hele menneskeheten kombinert. For øyeblikket finnes det ingen metode for å begrense eller kontrollere KI-systemer som er smartere enn mennesker. Hvis disse selskapene lykkes, vil konsekvensene være katastrofale. Ledende KI-forskere, verdensledere og til og med administrerende direktører i KI-selskapene selv, advarer om at dette kan føre til menneskehetens utslettelse.",
       "highlights": {
         "race": {
-          "title": "AI-kappløpet",
-          "description": "Konkurranse mellom ledende AI-laboratorier og nasjoner driver et kappløp mot stadig mer avanserte AI-systemer på bekostning av alles sikkerhet."
+          "title": "KI-kappløpet",
+          "description": "Konkurranse mellom ledende KI-laboratorier og nasjoner driver et kappløp mot stadig mer avanserte KI-systemer på bekostning av alles sikkerhet."
         },
         "risk": {
           "title": "Eksistensiell trussel",
-          "description": "Ledende AI-forskere og ledere advarer uopphørlig om de katastrofale og eksistensielle farene ved fremskridende AI."
+          "description": "Ledende KI-forskere og ledere advarer uopphørlig om de katastrofale og eksistensielle farene ved fremskridende kunstig intelligens."
         },
         "impact": {
           "title": "Den nåværende kursen",
@@ -66,12 +66,12 @@
       },
       "points": [
         {
-          "title": "AI-kappløpet",
-          "description": "Konkurranse mellom ledende AI-laboratorier og nasjoner driver et kappløp mot stadig mer avanserte AI-systemer på bekostning av alles sikkerhet."
+          "title": "KI-kappløpet",
+          "description": "Konkurranse mellom ledende KI-laboratorier og nasjoner driver et kappløp mot stadig mer avanserte KI-systemer på bekostning av alles sikkerhet."
         },
         {
           "title": "Eksistensiell trussel",
-          "description": "Ledende AI-forskere og ledere advarer uopphørlig om de katastrofale og eksistensielle farene ved stadig fremskridende AI."
+          "description": "Ledende KI-forskere og ledere advarer uopphørlig om de katastrofale og eksistensielle farene ved stadig fremskridende kunstig intelligens."
         },
         {
           "title": "Den nåværende kursen",
@@ -80,7 +80,7 @@
       ]
     },
     "quotes": {
-      "title": "Hva ledere sier om AI-sikkerhet",
+      "title": "Hva ledere sier om KI sikkerhet og kunstig intelligens",
       "items": [
         {
           "content": "Utvikling av overmennskelig kunstig intelligens er sannsynligvis den største trusselen mot menneskehetens fortsatte eksistens.",
@@ -106,37 +106,37 @@
     },
     "solution": {
       "title": "Vår tilnærming",
-      "description": "Vi trenger sterkere regulatoriske rammeverk sammenlignbart med andre høyrisikoindustrier for å sikre at AI-utvikling fortsetter på en trygg og fordelaktig måte. Dette vil til slutt involvere samarbeid mellom alle store nasjoner for å strengt regulere utviklingen og utplasseringen av generelt kapable AI-systemer.",
+      "description": "Vi trenger sterkere regulatoriske rammeverk sammenlignbart med andre høyrisikoindustrier for å sikre at KI-utvikling fortsetter på en trygg og fordelaktig måte. Dette vil til slutt involvere samarbeid mellom alle store nasjoner for å strengt regulere utviklingen og utplasseringen av generelt kapable kunstig intelligens-systemer.",
       "points": [
         {
           "title": "Robust regulering",
-          "description": "Arbeider for omfattende regulatoriske rammeverk som sikrer trygghet."
+          "description": "Arbeider for omfattende regulatoriske rammeverk som sikrer trygghet i KI-utviklingen."
         },
         {
           "title": "Teknisk forskning",
-          "description": "Støtter forskning innen AI-verdisamsvar, tolkbarhet og kontroll for å gjøre AI-systemer tryggere."
+          "description": "Støtter forskning innen kunstig intelligens verdisamsvar, tolkbarhet og kontroll for å gjøre KI-systemer tryggere."
         },
         {
           "title": "Internasjonal koordinering",
-          "description": "Arbeider for å bygge global konsensus og koordinert handling innen AI-sikkerhet og styring."
+          "description": "Arbeider for å bygge global konsensus og koordinert handling innen KI sikkerhet og styring av kunstig intelligens."
         }
       ]
     }
   },
   "about": {
-    "title": "Om AI Safety Norway",
-    "subtitle": "Arbeider for å sikre trygg og fordelaktig AI-utvikling gjennom forskning, politikk og samfunnsengasjement",
+    "title": "Om KI Sikkerhet Norge",
+    "subtitle": "Arbeider for å sikre trygg og fordelaktig kunstig intelligens utvikling gjennom forskning, politikk og samfunnsengasjement",
     "mission": {
       "title": "Vår misjon",
-      "content": "AI Safety Norway ble grunnlagt med misjonen om å redusere katastrofale og eksistensielle risikoer fra avanserte AI-systemer. Vi samler eksperter fra ulike disipliner for å adressere både de tekniske og styringsmessige utfordringene ved avansert AI."
+      "content": "KI Sikkerhet Norge ble grunnlagt med misjonen om å redusere katastrofale og eksistensielle risikoer fra avanserte kunstig intelligens-systemer. Vi samler eksperter fra ulike disipliner for å adressere både de tekniske og styringsmessige utfordringene ved avansert KI."
     },
     "approach": {
       "title": "Vår tilnærming",
-      "content": "Vi mener at arbeidet med AI-sikkerhet krever en tverrfaglig tilnærming som kombinerer grundig teknisk forskning, gjennomtenkt politikkutvikling og bredt samfunnsengasjement. Vårt arbeid er styrt av følgende prinsipper:"
+      "content": "Vi mener at arbeidet med KI sikkerhet krever en tverrfaglig tilnærming som kombinerer grundig teknisk forskning, gjennomtenkt politikkutvikling og bredt samfunnsengasjement. Vårt arbeid er styrt av følgende prinsipper:"
     },
     "team": {
       "title": "Vårt team",
-      "content": "Vårt team samler eksperter som er engasjert i å sikre at AI-systemer utvikles trygt og ansvarlig til nytte for menneskeheten. Ta gjerne direkte kontakt med oss."
+      "content": "Vårt team samler eksperter som er engasjert i å sikre at kunstig intelligens-systemer utvikles trygt og ansvarlig til nytte for menneskeheten. Ta gjerne direkte kontakt med oss."
     },
     "contactButton": "Ta kontakt",
     "values": {
@@ -146,24 +146,24 @@
   "contact": {
     "title": "Kontakt oss",
     "subtitle": "Ta kontakt med vårt team",
-    "description": "Har du spørsmål om AI-sikkerhet eller er interessert i å samarbeide? Vi vil gjerne høre fra deg.",
+    "description": "Har du spørsmål om KI sikkerhet eller kunstig intelligens, eller er interessert i å samarbeide? Vi vil gjerne høre fra deg.",
     "emailGeneral": "kontakt@aisafety.no",
     "emailMedia": "media@aisafety.no",
     "emailCollaboration": "collaborate@aisafety.no",
     "reasons": {
       "title": "Ta kontakt for:",
       "items": [
-        "Informasjon om AI-sikkerhet",
-        "Potensielle samarbeid",
-        "Foredrags- og presentasjonsforespørsler",
-        "Bidragsmuligheter",
-        "Forskningsforespørsler"
+        "Informasjon om KI sikkerhet og kunstig intelligens",
+        "Potensielle samarbeid innen KI-forskning",
+        "Foredrags- og presentasjonsforespørsler om kunstig intelligens",
+        "Bidragsmuligheter til KI sikkerhetsforskning",
+        "Forskningsforespørsler om kunstig intelligens og KI-sikkerhet"
       ]
     }
   },
   "newsletter": {
     "title": "Nyhetsbrev og innsikt",
-    "subtitle": "Perspektiver på AI-sikkerhet, styring og fremtiden for kunstig intelligens",
+    "subtitle": "Perspektiver på KI-sikkerhet, styring og fremtiden for kunstig intelligens",
     "readMore": "Les mer",
     "backToNewsletter": "Tilbake til nyhetsbrev",
     "by": "Av",
@@ -175,7 +175,7 @@
       "date": "1. januar 2024",
       "author": "Forfatternavn",
       "excerpt": "Dette er et kort utdrag fra nyhetsbrevet som oppsummerer hovedpunktene og lokker leserne til å klikke videre for å lese hele nyhetsbrevet.",
-      "content": "Dette er det fullstendige innholdet i nyhetsbrevet. Erstatt dette med det faktiske innholdet i nyhetsbrevet ditt, som kan inkludere flere avsnitt, overskrifter, lenker og andre elementer etter behov.\n\nDu kan formatere dette innholdet med markdown eller HTML avhengig av nettstedets konfigurasjon.\n\nDette er en plassholder for et fullstendig nyhetsbrev som vanligvis ville være flere avsnitt langt og dekke et bestemt emne relatert til AI-sikkerhet, styring, forskning eller politikk.",
+      "content": "Dette er det fullstendige innholdet i nyhetsbrevet. Erstatt dette med det faktiske innholdet i nyhetsbrevet ditt, som kan inkludere flere avsnitt, overskrifter, lenker og andre elementer etter behov.\n\nDu kan formatere dette innholdet med markdown eller HTML avhengig av nettstedets konfigurasjon.\n\nDette er en plassholder for et fullstendig nyhetsbrev som vanligvis ville være flere avsnitt langt og dekke et bestemt emne relatert til KI-sikkerhet, styring, forskning eller politikk.",
       "image": "/img/articles/placeholder.jpg"
     }
   }

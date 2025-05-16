@@ -1,12 +1,12 @@
 ---
 layout: home.njk
-title: "AI Safety Norway - Forskningsnettverk for Sikker AI-utvikling"
+title: "KI Sikkerhet Norge - Forskningsnettverk for Sikker Kunstig Intelligens Utvikling"
 permalink: /no/
 pageClass: home
 lang: no
-description: "En norsk organisasjon for AI-sikkerhetsforskning og -arbeid. Vi jobber for ansvarlig og nyttig kunstig intelligens gjennom forskning, politikk og fellesskap."
+description: "En norsk organisasjon for kunstig intelligens sikkerhetsforskning. Vi jobber med KI sikkerhet for å sikre ansvarlig, trygg og nyttig kunstig intelligens gjennom forskning, politikk og samarbeid."
 pageType: "website"
-keywords: "AI sikkerhet Norge, kunstig intelligens risiko, AI-sikkerhet, AI-styring, norsk AI-forskning, AI-justering, AI-politikk, AI-regulering, AI-etikk, maskinlæring sikkerhet"
+keywords: "KI sikkerhet, kunstig intelligens, AI sikkerhet Norge, kunstig intelligens risiko, KI-forskning, AI-sikkerhet, AI-styring, norsk KI-forskning, AI-justering, KI-politikk, AI-regulering, AI-etikk, maskinlæring sikkerhet, kunstig intelligens sikkerhet"
 sitemapPriority: 1.0
 sitemapChangefreq: "weekly"
 image: "/img/social-share-image.jpg"

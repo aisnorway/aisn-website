@@ -13,7 +13,7 @@
       },
       "publisher": {
         "@type": "Organization",
-        "name": "AI Safety Norway",
+        "name": "{% if currentLanguage == 'no' %}KI Sikkerhet Norge{% else %}AI Safety Norway{% endif %}",
         "logo": {
           "@type": "ImageObject",
           "url": "https://aisafety.no/img/logo/logo.png"
@@ -61,7 +61,7 @@
       "image": "{{ person.image }}",
       "worksFor": {
         "@type": "Organization",
-        "name": "AI Safety Norway"
+        "name": "{% if currentLanguage == 'no' %}KI Sikkerhet Norge{% else %}AI Safety Norway{% endif %}"
       }
     }
     </script>
@@ -85,7 +85,7 @@
       },
       "organizer": {
         "@type": "Organization",
-        "name": "AI Safety Norway",
+        "name": "{% if currentLanguage == 'no' %}KI Sikkerhet Norge{% else %}AI Safety Norway{% endif %}",
         "url": "https://aisafety.no"
       }
     }
@@ -112,7 +112,8 @@
     {
       "@context": "https://schema.org",
       "@type": "Organization",
-      "name": "AI Safety Norway",
+      "name": "{% if currentLanguage == 'no' %}KI Sikkerhet Norge{% else %}AI Safety Norway{% endif %}",
+      "alternateName": ["{% if currentLanguage == 'no' %}Kunstig Intelligens Sikkerhet Norge{% else %}Norwegian AI Safety Organization{% endif %}", "AISN"],
       "url": "https://aisafety.no",
       "logo": "https://aisafety.no/img/logo/logo.png",
       "description": "{{ "site.description" | i18n(currentLanguage) }}",
@@ -125,7 +126,8 @@
         "@type": "PostalAddress",
         "addressCountry": "Norway",
         "addressLocality": "Oslo"
-      }
+      },
+      "keywords": ["{% if currentLanguage == 'no' %}KI sikkerhet, kunstig intelligens, KI forskning, KI risiko{% else %}AI safety, AI risk, AI research, AI alignment, AI ethics{% endif %}"]
     }
     </script>
   {% elif type == "websitePage" %}
@@ -139,7 +141,7 @@
       "inLanguage": "{{ currentLanguage }}",
       "isPartOf": {
         "@type": "WebSite",
-        "name": "AI Safety Norway",
+        "name": "{% if currentLanguage == 'no' %}KI Sikkerhet Norge{% else %}AI Safety Norway{% endif %}",
         "url": "https://aisafety.no"
       }
     }
@@ -153,9 +155,19 @@
   
   <!-- Basic Meta Tags -->
   <meta name="description" content="{{ description or "site.description" | i18n(currentLanguage) }}">
-  <meta name="author" content="{{ author or 'AI Safety Norway' }}">
-  <meta name="robots" content="index, follow, max-image-preview:large">
-  <meta name="keywords" content="{{ keywords or 'AI safety, AI risk, Norwegian AI research, AI alignment, AI governance, AI ethics, existential risk, AI regulation, machine learning safety, Norway AI policy, kunstig intelligens sikkerhet, AI risikohåndtering' }}">
+  <meta name="author" content="{{ author or 'KI Sikkerhet Norge' }}">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+  <meta name="keywords" content="{{ keywords or 'KI sikkerhet, kunstig intelligens, AI safety, AI risk, Norwegian AI research, AI alignment, AI governance, AI ethics, existential risk, AI regulation, machine learning safety, Norway AI policy, kunstig intelligens sikkerhet, KI risikohåndtering' }}">
+  
+  <!-- Additional Norwegian SEO Keywords -->
+  {% if currentLanguage == "no" %}
+  <meta name="news_keywords" content="KI sikkerhet, kunstig intelligens Norge, kunstig intelligens risiko, KI utvikling, KI forskning">
+  <meta property="article:tag" content="KI sikkerhet">
+  <meta property="article:tag" content="kunstig intelligens">
+  <meta property="article:tag" content="kunstig intelligens sikkerhet">
+  <meta property="article:tag" content="KI forskning">
+  <meta property="article:tag" content="KI risiko">
+  {% endif %}
   
   <!-- Language, Country and Locale -->
   <meta name="language" content="{{ currentLanguage }}">
@@ -163,20 +175,20 @@
   <meta name="geo.placename" content="Norway">
   
   <!-- Open Graph Tags -->
-  <meta property="og:title" content="{{ title or 'AI Safety Norway' }}{% if title and title != 'AI Safety Norway' %} | AI Safety Norway{% endif %}">
+  <meta property="og:title" content="{{ title or (currentLanguage == 'no' and 'KI Sikkerhet Norge' or 'AI Safety Norway') }}{% if title and title != 'AI Safety Norway' and title != 'KI Sikkerhet Norge' %} | {% if currentLanguage == 'no' %}KI Sikkerhet Norge{% else %}AI Safety Norway{% endif %}{% endif %}">
   <meta property="og:description" content="{{ description or "site.description" | i18n(currentLanguage) }}">
   <meta property="og:image" content="{{ pageImage }}">
-  <meta property="og:image:alt" content="{{ title or 'AI Safety Norway' }}">
+  <meta property="og:image:alt" content="{{ title or (currentLanguage == 'no' and 'KI Sikkerhet Norge' or 'AI Safety Norway') }}">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:url" content="{{ currentUrl }}">
   <meta property="og:type" content="{{ pagetype }}">
   <meta property="og:locale" content="{% if currentLanguage == 'en' %}en_US{% else %}nb_NO{% endif %}">
-  <meta property="og:site_name" content="AI Safety Norway">
+  <meta property="og:site_name" content="{% if currentLanguage == 'no' %}KI Sikkerhet Norge{% else %}AI Safety Norway{% endif %}">
   
   <!-- Twitter Tags -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="{{ title or 'AI Safety Norway' }}{% if title and title != 'AI Safety Norway' %} | AI Safety Norway{% endif %}">
+  <meta name="twitter:title" content="{{ title or (currentLanguage == 'no' and 'KI Sikkerhet Norge' or 'AI Safety Norway') }}{% if title and title != 'AI Safety Norway' and title != 'KI Sikkerhet Norge' %} | {% if currentLanguage == 'no' %}KI Sikkerhet Norge{% else %}AI Safety Norway{% endif %}{% endif %}">
   <meta name="twitter:description" content="{{ description or "site.description" | i18n(currentLanguage) }}">
   <meta name="twitter:image" content="{{ pageImage }}">
   <meta name="twitter:site" content="@AISafetyNorway">

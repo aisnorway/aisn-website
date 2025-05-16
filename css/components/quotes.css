@@ -35,7 +35,7 @@
 }
 
 .quote-content::before {
-  content: """;
+  content: "\201C"; /* unicode for opening double quote */
   position: absolute;
   left: -0.5rem;
   top: -1rem;
@@ -176,6 +176,15 @@
   margin-top: 3rem;
 }
 
+.quotes-grid.no-top-margin {
+  margin-top: 0;
+}
+
+/* Add space between quote rows */
+.quotes-grid + .quotes-grid {
+  margin-top: 3rem;
+}
+
 /**
  * Quotes CTA Button
  */
@@ -217,6 +226,10 @@
   .quotes-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
+  }
+  
+  .quotes-grid + .quotes-grid {
+    margin-top: 2rem;
   }
   
   .quote-card {

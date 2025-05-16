@@ -71,8 +71,8 @@
       <div class="container">
         <h1 class="site-logo">
           <a href="{{ langUtils.localizeUrl('', currentLanguage) }}">
-            <img src="/img/logo/logo.png" alt="AI Safety Norway" class="logo-image">
-            <span class="logo-text">AI Safety Norway</span>
+            <img src="/img/logo/logo.png" alt="{% if currentLanguage == 'no' %}KI Sikkerhet Norge - Organisasjon for kunstig intelligens sikkerhet{% else %}AI Safety Norway - Organization for artificial intelligence safety{% endif %}" class="logo-image">
+            <span class="logo-text">{% if currentLanguage == 'no' %}KI Sikkerhet Norge{% else %}AI Safety Norway{% endif %}</span>
           </a>
         </h1>
         <nav class="main-nav">
@@ -133,8 +133,8 @@
             </div>
           </div>
           <div>
-            <h5>AI Safety Norway</h5>
-            <p class="copyright">&copy; AI Safety Norway. <br>{{ "footer.copyright" | i18n(currentLanguage) }}</p>
+            <h5>{% if currentLanguage == 'no' %}KI Sikkerhet Norge{% else %}AI Safety Norway{% endif %}</h5>
+            <p class="copyright">&copy; {% if currentLanguage == 'no' %}KI Sikkerhet Norge{% else %}AI Safety Norway{% endif %}. <br>{{ "footer.copyright" | i18n(currentLanguage) }}</p>
           </div>
         </div> 
       </div>

@@ -80,6 +80,35 @@ html[lang="en"] {
    by setting padding-block-start: 0 !important.
    ========================================================================== */
 
+/* Remove gaps between sections on homepage */
+body.home section.full-width {
+  margin-bottom: 0;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+body.home section.full-width + section.full-width {
+  margin-top: 0;
+  padding-top: 4rem;
+}
+
+/* Specific fixes for each section to ensure no visible gaps */
+body.home .statement-section {
+  padding-top: 2rem;
+}
+
+body.home .quotes-section {
+  margin-top: 0;
+}
+
+body.home .solution-section {
+  margin-top: 0;
+}
+
+body.home .latest-newsletter-section {
+  margin-top: 0;
+}
+
 /* Mobile-specific fixes for header/hero overlap */
 @media (max-width: 768px) {
   body.home main {
