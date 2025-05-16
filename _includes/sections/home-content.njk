@@ -25,6 +25,13 @@
 <section id="statement-section" class="statement-section full-width" aria-labelledby="statement-heading">
   <div class="container">
     <div class="statement-card">
+      <div class="statement-date">
+        {% if currentLanguage == "en" %}
+          <span>May 2023</span>
+        {% else %}
+          <span>Mai 2023</span>
+        {% endif %}
+      </div>
       <div class="statement-quote">
         {% if currentLanguage == "en" %}
           "Mitigating the risk of extinction from AI should be a global priority alongside other societal-scale risks such as pandemics and nuclear war."
@@ -34,9 +41,11 @@
       </div>
       <div class="statement-explanation">
         {% if currentLanguage == "en" %}
-          Released in May 2023, the statement was endorsed by over 350 experts, including AI leaders like Sam Altman (OpenAI), Demis Hassabis (Google DeepMind), Dario Amodei (Anthropic), and Turing Award winners Geoffrey Hinton and Yoshua Bengio. It aims to highlight the potential existential risks of advanced AI and to encourage global prioritization of AI safety.
+          <p>The above statement was endorsed by over 350 experts, including AI leaders like <strong>Sam Altman</strong> (OpenAI), <strong>Demis Hassabis</strong> (Google DeepMind), <strong>Dario Amodei</strong> (Anthropic), and Turing Award winners <strong>Geoffrey Hinton</strong> and <strong>Yoshua Bengio</strong>.</p>
+          <p>It aims to highlight the potential existential risks of advanced AI and to encourage global prioritization of AI safety.</p>
         {% else %}
-          Utgitt i mai 2023, ble erklæringen støttet av over 350 eksperter, inkludert AI-ledere som Sam Altman (OpenAI), Demis Hassabis (Google DeepMind), Dario Amodei (Anthropic), og Turing-prisvinnerne Geoffrey Hinton og Yoshua Bengio. Den tar sikte på å fremheve de potensielle eksistensielle risikoene ved avansert AI og oppfordre til global prioritering av AI-sikkerhet.
+          <p>Erklæringen ovenfor ble støttet av over 350 eksperter, inkludert AI-ledere som <strong>Sam Altman</strong> (OpenAI), <strong>Demis Hassabis</strong> (Google DeepMind), <strong>Dario Amodei</strong> (Anthropic), og Turing-prisvinnerne <strong>Geoffrey Hinton</strong> og <strong>Yoshua Bengio</strong>.</p>
+          <p>Den tar sikte på å fremheve de potensielle eksistensielle risikoene ved avansert AI og oppfordre til global prioritering av AI-sikkerhet.</p>
         {% endif %}
       </div>
       <div class="statement-source">

@@ -154,6 +154,40 @@
   transform: translateX(3px);
 }
 
+.statement-date {
+  position: absolute;
+  top: -15px;
+  right: 2rem;
+  z-index: 2;
+}
+
+.statement-date span {
+  display: inline-block;
+  padding: 0.5rem 1.2rem;
+  background: linear-gradient(135deg, var(--color-accent), #38bdf8);
+  color: white;
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  text-transform: uppercase;
+}
+
+.statement-explanation p {
+  margin-bottom: 1rem;
+  line-height: 1.8;
+}
+
+.statement-explanation p:last-child {
+  margin-bottom: 0;
+}
+
+.statement-explanation strong {
+  color: var(--color-text);
+  font-weight: 600;
+}
+
 /* Responsive Adjustments */
 @media (max-width: 768px) {
   .statement-section {
@@ -177,6 +211,20 @@
   
   .statement-explanation {
     font-size: 1rem;
+  }
+  
+  .statement-date {
+    top: -12px;
+    right: 1.5rem;
+  }
+  
+  .statement-date span {
+    padding: 0.4rem 1rem;
+    font-size: 0.8rem;
+  }
+  
+  .statement-explanation p {
+    margin-bottom: 0.8rem;
   }
   
   @keyframes gentleCardRiseTablet {
@@ -217,6 +265,17 @@
   
   .statement-explanation {
     font-size: 0.95rem;
+  }
+  
+  .statement-date {
+    top: -10px;
+    right: 1rem;
+  }
+  
+  .statement-date span {
+    padding: 0.3rem 0.8rem;
+    font-size: 0.75rem;
+    border-radius: 15px;
   }
   
   @keyframes gentleCardRiseMobile {
