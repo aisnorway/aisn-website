@@ -4,7 +4,7 @@
    ========================================== */
 
 .post-container {
-  max-width: 1000px;
+  max-width: 1100px; /* Increased by 10% from 1000px */
   margin: -40px auto 3rem;
   position: relative;
   z-index: 10;

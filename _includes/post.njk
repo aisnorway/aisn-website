@@ -58,7 +58,7 @@
 
       <div class="post-content" itemprop="articleBody">
         <div class="post-content-meta">
-          {% if author %}<span class="post-author">{{ "newsletter.by" | i18n(currentLanguage, "By") }} <span itemprop="author">{{ author }}</span></span>{% endif %}
+          {% if author %}<span class="post-author"><span itemprop="author">{{ author }}</span></span>{% endif %}
           <span class="post-date"><time itemprop="datePublished" datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time></span>
         </div>
         
