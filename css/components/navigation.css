@@ -341,7 +341,8 @@ header h1 a {
  * 
  * Shows dropdown on hover with smooth animation.
  */
-.main-nav .nav-item:hover .dropdown {
+.main-nav .nav-item:hover .dropdown,
+.main-nav .nav-item.active .dropdown {
   display: block;
   animation: fadeInDown 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
 }
