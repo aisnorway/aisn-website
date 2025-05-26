@@ -170,7 +170,6 @@ const Navigation = {
   },
   
   setupMobileNavigation() {
-    // Only apply mobile navigation enhancements on mobile devices
     if (!this.isMobile) return;
     
     this.navItems.forEach(item => {
@@ -178,11 +177,8 @@ const Navigation = {
       const dropdown = item.querySelector('.dropdown');
       
       if (navLink && dropdown) {
-        let touchStarted = false;
-        
-        // Handle touch events for immediate response
-        const handleTouchStart = (e) => {
-          touchStarted = true;
+        // Use touchend instead of touchstart for better mobile experience
+        const handleTouch = (e) => {
           e.preventDefault();
           e.stopPropagation();
           
@@ -197,30 +193,24 @@ const Navigation = {
           item.classList.toggle('active');
         };
         
-        // Handle click events (fallback)
-        const handleClick = (e) => {
-          if (!touchStarted) {
-            e.preventDefault();
-            e.stopPropagation();
-            
-            // Close all other dropdowns
-            this.navItems.forEach(otherItem => {
-              if (otherItem !== item && otherItem.querySelector('.dropdown')) {
-                otherItem.classList.remove('active');
-              }
-            });
-            
-            // Toggle active class
-            item.classList.toggle('active');
-          }
-          
-          // Reset touch flag
-          setTimeout(() => { touchStarted = false; }, 300);
-        };
+        // Add touchend event listener
+        navLink.addEventListener('touchend', handleTouch, {passive: false});
         
-        // Add event listeners
-        navLink.addEventListener('touchstart', handleTouchStart, {passive: false});
-        navLink.addEventListener('click', handleClick);
+        // Fallback click handler for non-touch devices
+        navLink.addEventListener('click', (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          
+          // Close all other dropdowns
+          this.navItems.forEach(otherItem => {
+            if (otherItem !== item && otherItem.querySelector('.dropdown')) {
+              otherItem.classList.remove('active');
+            }
+          });
+          
+          // Toggle active class
+          item.classList.toggle('active');
+        });
       }
     });
     
@@ -233,7 +223,7 @@ const Navigation = {
       }
     };
     
-    document.addEventListener('touchstart', closeDropdowns, {passive: true});
+    document.addEventListener('touchend', closeDropdowns, {passive: true});
     document.addEventListener('click', closeDropdowns);
   }
 };
