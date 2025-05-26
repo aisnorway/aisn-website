@@ -177,7 +177,7 @@ const Navigation = {
       const dropdown = item.querySelector('.dropdown');
       
       if (navLink && dropdown) {
-        // Use touchend instead of touchstart for better mobile experience
+        // Improved touch event handling
         const handleTouch = (e) => {
           e.preventDefault();
           e.stopPropagation();
@@ -193,24 +193,9 @@ const Navigation = {
           item.classList.toggle('active');
         };
         
-        // Add touchend event listener
-        navLink.addEventListener('touchend', handleTouch, {passive: false});
-        
-        // Fallback click handler for non-touch devices
-        navLink.addEventListener('click', (e) => {
-          e.preventDefault();
-          e.stopPropagation();
-          
-          // Close all other dropdowns
-          this.navItems.forEach(otherItem => {
-            if (otherItem !== item && otherItem.querySelector('.dropdown')) {
-              otherItem.classList.remove('active');
-            }
-          });
-          
-          // Toggle active class
-          item.classList.toggle('active');
-        });
+        // Use both touchstart and click for better compatibility
+        navLink.addEventListener('touchstart', handleTouch, {passive: false});
+        navLink.addEventListener('click', handleTouch);
       }
     });
     
@@ -223,7 +208,8 @@ const Navigation = {
       }
     };
     
-    document.addEventListener('touchend', closeDropdowns, {passive: true});
+    // Use touchstart for immediate response on mobile
+    document.addEventListener('touchstart', closeDropdowns, {passive: true});
     document.addEventListener('click', closeDropdowns);
   }
 };
