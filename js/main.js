@@ -117,16 +117,13 @@ const Navigation = {
   init() {
     this.header = document.querySelector('header');
     this.navItems = document.querySelectorAll('.nav-item');
-    this.isMobile = window.innerWidth <= 768;
     
     // Set up event listeners
     this.setupScrollEffect();
-    this.setupMobileNavigation();
-    this.setupResponsiveCheck();
+    this.setupDropdownNavigation();
   },
   
   setupScrollEffect() {
-    // Function to add/remove scrolled class based on scroll position
     const toggleScrollClass = () => {
       if (window.scrollY > 20) {
         this.header.classList.add('scrolled');
@@ -135,52 +132,22 @@ const Navigation = {
       }
     };
     
-    // Add scroll event listener
     window.addEventListener('scroll', toggleScrollClass);
-    
-    // Run initially to set correct state on page load
     toggleScrollClass();
   },
 
-  setupResponsiveCheck() {
-    // Re-check mobile status on window resize
-    window.addEventListener('resize', () => {
-      const wasMobile = this.isMobile;
-      this.isMobile = window.innerWidth <= 768;
-      
-      // If switching between mobile and desktop, reset navigation
-      if (wasMobile !== this.isMobile) {
-        this.resetNavigation();
-        this.setupMobileNavigation();
-      }
-    });
-  },
-
-  resetNavigation() {
-    // Remove all active states and event listeners
-    this.navItems.forEach(item => {
-      item.classList.remove('active');
-      const navLink = item.querySelector('.nav-link');
-      if (navLink) {
-        // Clone and replace to remove all event listeners
-        const newNavLink = navLink.cloneNode(true);
-        navLink.parentNode.replaceChild(newNavLink, navLink);
-      }
-    });
-  },
-  
-  setupMobileNavigation() {
-    if (!this.isMobile) return;
-    
+  setupDropdownNavigation() {
     this.navItems.forEach(item => {
       const navLink = item.querySelector('.nav-link');
       const dropdown = item.querySelector('.dropdown');
       
       if (navLink && dropdown) {
-        // Improved touch event handling
-        const handleTouch = (e) => {
+        // Handle all interactions - both desktop and mobile
+        const handleInteraction = (e) => {
           e.preventDefault();
           e.stopPropagation();
+          
+          console.log('Navigation interaction detected:', e.type); // Debug log
           
           // Close all other dropdowns
           this.navItems.forEach(otherItem => {
@@ -191,15 +158,26 @@ const Navigation = {
           
           // Toggle active class
           item.classList.toggle('active');
+          
+          console.log('Active class toggled, item now has active:', item.classList.contains('active')); // Debug log
         };
         
-        // Use both touchstart and click for better compatibility
-        navLink.addEventListener('touchstart', handleTouch, {passive: false});
-        navLink.addEventListener('click', handleTouch);
+        // Add event listeners for all interaction types
+        navLink.addEventListener('touchstart', handleInteraction, {passive: false});
+        navLink.addEventListener('click', handleInteraction);
+        
+        // Also handle touchend as fallback
+        navLink.addEventListener('touchend', (e) => {
+          e.preventDefault();
+          // Only handle if touchstart didn't already handle it
+          if (!item.classList.contains('active')) {
+            handleInteraction(e);
+          }
+        }, {passive: false});
       }
     });
     
-    // Close dropdowns when touching/clicking outside
+    // Close dropdowns when clicking/touching outside
     const closeDropdowns = (e) => {
       if (!e.target.closest('.nav-item')) {
         this.navItems.forEach(item => {
@@ -208,9 +186,11 @@ const Navigation = {
       }
     };
     
-    // Use touchstart for immediate response on mobile
     document.addEventListener('touchstart', closeDropdowns, {passive: true});
     document.addEventListener('click', closeDropdowns);
+    
+    // Debug: Log when module is initialized
+    console.log('Dropdown navigation initialized for', this.navItems.length, 'items');
   }
 };
 

@@ -388,6 +388,44 @@ header h1 a {
   box-shadow: 0 2px 8px rgba(20, 184, 166, 0.1);
 }
 
+/**
+ * Active state dropdown visibility (mobile)
+ */
+.main-nav .nav-item.active .dropdown {
+  display: block !important;
+  animation: fadeInDown 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+/**
+ * Active state arrow animation 
+ */
+.main-nav .nav-item.active .nav-link::after {
+  transform: rotate(180deg);
+  opacity: 1;
+}
+
+/**
+ * Active state link styling
+ */
+.main-nav .nav-item.active .nav-link {
+  color: var(--color-accent);
+  background-color: rgba(20, 184, 166, 0.04);
+}
+
+/**
+ * Dropdown fade-in animation
+ */
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* ==========================================================================
    Contact Button
    ========================================================================== */
