@@ -122,6 +122,7 @@ const Navigation = {
     // Set up event listeners
     this.setupScrollEffect();
     this.setupMobileNavigation();
+    this.setupResponsiveCheck();
   },
   
   setupScrollEffect() {
@@ -140,6 +141,33 @@ const Navigation = {
     // Run initially to set correct state on page load
     toggleScrollClass();
   },
+
+  setupResponsiveCheck() {
+    // Re-check mobile status on window resize
+    window.addEventListener('resize', () => {
+      const wasMobile = this.isMobile;
+      this.isMobile = window.innerWidth <= 768;
+      
+      // If switching between mobile and desktop, reset navigation
+      if (wasMobile !== this.isMobile) {
+        this.resetNavigation();
+        this.setupMobileNavigation();
+      }
+    });
+  },
+
+  resetNavigation() {
+    // Remove all active states and event listeners
+    this.navItems.forEach(item => {
+      item.classList.remove('active');
+      const navLink = item.querySelector('.nav-link');
+      if (navLink) {
+        // Clone and replace to remove all event listeners
+        const newNavLink = navLink.cloneNode(true);
+        navLink.parentNode.replaceChild(newNavLink, navLink);
+      }
+    });
+  },
   
   setupMobileNavigation() {
     // Only apply mobile navigation enhancements on mobile devices
@@ -150,9 +178,13 @@ const Navigation = {
       const dropdown = item.querySelector('.dropdown');
       
       if (navLink && dropdown) {
-        // Convert hover behavior to click on mobile
-        navLink.addEventListener('click', (e) => {
+        let touchStarted = false;
+        
+        // Handle touch events for immediate response
+        const handleTouchStart = (e) => {
+          touchStarted = true;
           e.preventDefault();
+          e.stopPropagation();
           
           // Close all other dropdowns
           this.navItems.forEach(otherItem => {
@@ -163,18 +195,46 @@ const Navigation = {
           
           // Toggle active class
           item.classList.toggle('active');
-        });
+        };
+        
+        // Handle click events (fallback)
+        const handleClick = (e) => {
+          if (!touchStarted) {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            // Close all other dropdowns
+            this.navItems.forEach(otherItem => {
+              if (otherItem !== item && otherItem.querySelector('.dropdown')) {
+                otherItem.classList.remove('active');
+              }
+            });
+            
+            // Toggle active class
+            item.classList.toggle('active');
+          }
+          
+          // Reset touch flag
+          setTimeout(() => { touchStarted = false; }, 300);
+        };
+        
+        // Add event listeners
+        navLink.addEventListener('touchstart', handleTouchStart, {passive: false});
+        navLink.addEventListener('click', handleClick);
       }
     });
     
-    // Close dropdowns when clicking outside
-    document.addEventListener('click', (e) => {
+    // Close dropdowns when touching/clicking outside
+    const closeDropdowns = (e) => {
       if (!e.target.closest('.nav-item')) {
         this.navItems.forEach(item => {
           item.classList.remove('active');
         });
       }
-    });
+    };
+    
+    document.addEventListener('touchstart', closeDropdowns, {passive: true});
+    document.addEventListener('click', closeDropdowns);
   }
 };
 
