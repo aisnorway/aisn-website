@@ -253,6 +253,9 @@ header h1 a {
   border-radius: var(--radius-md);
   line-height: 1;
   height: 2.2rem; /* Consistent height matching other elements */
+  -webkit-touch-callout: none;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
 }
 
 /**
@@ -393,7 +396,7 @@ header h1 a {
  */
 .main-nav .nav-item.active .dropdown {
   display: block !important;
-  animation: fadeInDown 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  animation: fadeInDown 0.2s ease-out forwards;
 }
 
 /**
@@ -695,4 +698,50 @@ header h1 a {
   .main-nav .contact-button-item {
     margin-left: 0.4rem; /* Slightly reduced spacing for mobile */
   }
+}
+
+/* Reset button styling to look like original spans */
+.main-nav .nav-link[type="button"] {
+  /* Remove all default button styling */
+  background: none;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  
+  /* Inherit text styling from parent */
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  color: inherit;
+  text-align: inherit;
+  line-height: inherit;
+  
+  /* Remove button-specific styling */
+  outline: none;
+  box-shadow: none;
+  
+  /* Keep the cursor pointer for better UX */
+  cursor: pointer;
+  
+  /* Ensure it behaves like the original span */
+  display: inline;
+  vertical-align: baseline;
+}
+
+/* Ensure hover states work the same */
+.main-nav .nav-link[type="button"]:hover {
+  background-color: transparent;
+}
+
+/* Remove focus outline that might appear */
+.main-nav .nav-link[type="button"]:focus {
+  outline: none;
+  background-color: transparent;
+}
+
+/* Remove any active state styling */
+.main-nav .nav-link[type="button"]:active {
+  background-color: transparent;
+  transform: none;
 } 

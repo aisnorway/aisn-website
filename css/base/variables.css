@@ -12,17 +12,17 @@
 :root {
   /* --- Colors --- */
   --color-text: #1e293b;           /* Slate-800 for better readability */
-  --color-background: #ffffff;     /* Page background */
+  --color-background: #fafafa;     /* Changed from #ffffff to slightly darker */
   --color-accent: #0d9488;         /* Teal-600 for primary accent */
   --color-accent-hover: #0f766e;   /* Teal-700 for hover states */
   --color-accent-light: #5eead4;   /* Teal-300 for subtle accents */
-  --color-muted: #f8fafc;          /* Slate-50 for backgrounds */
+  --color-muted: #f4f4f5;          /* Changed from #f8fafc to slightly darker */
   --color-border: #e2e8f0;         /* Slate-200 for borders */
   --color-primary-inverse: #ffffff; /* Text color for on-accent elements */
 
   /* --- Card Tints --- */
-  --card-tint-1: #f8fafc;          /* Slate-50 */
-  --card-tint-2: #f1f5f9;          /* Slate-100 */
+  --card-tint-1: #f4f4f5;          /* Changed from #f8fafc to slightly darker */
+  --card-tint-2: #e4e4e7;          /* Changed from #f1f5f9 to slightly darker */
   --card-tint-3: #ecfdf5;          /* Teal-50 */
   --card-tint-4: #f0f9ff;          /* Sky-50 */
 

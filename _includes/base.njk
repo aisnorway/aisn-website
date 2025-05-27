@@ -78,13 +78,13 @@
         <nav class="main-nav">
           <ul>
             <li class="nav-item">
-              <span class="nav-link">{{ "nav.about" | i18n(currentLanguage) }}</span>
+              <button type="button" class="nav-link" aria-expanded="false">{{ "nav.about" | i18n(currentLanguage) }}</button>
               <div class="dropdown">
                 <a href="{{ langUtils.localizeUrl('about', currentLanguage) }}">{{ "nav.aboutUs" | i18n(currentLanguage) }}</a>
               </div>
             </li>
             <li class="nav-item">
-              <span class="nav-link">{{ "nav.resources" | i18n(currentLanguage) }}</span>
+              <button type="button" class="nav-link" aria-expanded="false">{{ "nav.resources" | i18n(currentLanguage) }}</button>
               <div class="dropdown">
                 <a href="{{ langUtils.localizeUrl('newsletter', currentLanguage) }}">{{ "nav.newsletter" | i18n(currentLanguage) }}</a>
                 <a href="{{ langUtils.localizeUrl('quotes', currentLanguage) }}">{% if currentLanguage == "en" %}Expert Quotes{% else %}Ekspertuttalelser{% endif %}</a>

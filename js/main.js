@@ -142,51 +142,43 @@ const Navigation = {
       const dropdown = item.querySelector('.dropdown');
       
       if (navLink && dropdown) {
-        // Handle touch devices (iOS and Android)
-        let touchStarted = false;
+        // Add cursor pointer for better UX
+        navLink.style.cursor = 'pointer';
         
+        // For iOS Safari, we need to use a different approach
+        // iOS Safari requires actual clickable elements for proper touch handling
+        navLink.addEventListener('click', (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          
+          console.log('Click/tap detected on:', item); // Debug log
+          
+          // Close all other dropdowns
+          this.navItems.forEach(otherItem => {
+            if (otherItem !== item && otherItem.querySelector('.dropdown')) {
+              otherItem.classList.remove('active');
+            }
+          });
+          
+          // Toggle active class
+          item.classList.toggle('active');
+          
+          console.log('Active toggled, now active:', item.classList.contains('active')); // Debug log
+        });
+        
+        // For better touch responsiveness on iOS, also handle touchstart
+        // but don't prevent default - let iOS handle it naturally
         navLink.addEventListener('touchstart', (e) => {
-          touchStarted = true;
-          // Don't prevent default on touchstart for iOS
+          console.log('Touch start detected'); // Debug log
+          // Just add a class to indicate touch started, but don't prevent default
+          navLink.classList.add('touching');
         }, {passive: true});
         
         navLink.addEventListener('touchend', (e) => {
-          if (touchStarted) {
-            e.preventDefault();
-            e.stopPropagation();
-            
-            // Close all other dropdowns
-            this.navItems.forEach(otherItem => {
-              if (otherItem !== item && otherItem.querySelector('.dropdown')) {
-                otherItem.classList.remove('active');
-              }
-            });
-            
-            // Toggle active class
-            item.classList.toggle('active');
-            
-            touchStarted = false;
-          }
-        }, {passive: false});
-        
-        // Handle desktop click events
-        navLink.addEventListener('click', (e) => {
-          // Only handle click if it wasn't a touch event
-          if (!touchStarted) {
-            e.preventDefault();
-            e.stopPropagation();
-            
-            // Close all other dropdowns
-            this.navItems.forEach(otherItem => {
-              if (otherItem !== item && otherItem.querySelector('.dropdown')) {
-                otherItem.classList.remove('active');
-              }
-            });
-            
-            // Toggle active class
-            item.classList.toggle('active');
-          }
-        });
+          console.log('Touch end detected'); // Debug log
+          navLink.classList.remove('touching');
+          // The click event will handle the actual dropdown toggle
+        }, {passive: true});
       }
     });
     
@@ -199,10 +191,10 @@ const Navigation = {
       }
     };
     
-    document.addEventListener('touchend', closeDropdowns, {passive: true});
+    // Use both events to catch all interaction types
     document.addEventListener('click', closeDropdowns);
+    document.addEventListener('touchstart', closeDropdowns, {passive: true});
     
-    // Debug: Log when module is initialized
     console.log('Dropdown navigation initialized for', this.navItems.length, 'items');
   }
 };
