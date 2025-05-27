@@ -142,38 +142,51 @@ const Navigation = {
       const dropdown = item.querySelector('.dropdown');
       
       if (navLink && dropdown) {
-        // Handle all interactions - both desktop and mobile
-        const handleInteraction = (e) => {
-          e.preventDefault();
-          e.stopPropagation();
-          
-          console.log('Navigation interaction detected:', e.type); // Debug log
-          
-          // Close all other dropdowns
-          this.navItems.forEach(otherItem => {
-            if (otherItem !== item && otherItem.querySelector('.dropdown')) {
-              otherItem.classList.remove('active');
-            }
-          });
-          
-          // Toggle active class
-          item.classList.toggle('active');
-          
-          console.log('Active class toggled, item now has active:', item.classList.contains('active')); // Debug log
-        };
+        // Handle touch devices (iOS and Android)
+        let touchStarted = false;
         
-        // Add event listeners for all interaction types
-        navLink.addEventListener('touchstart', handleInteraction, {passive: false});
-        navLink.addEventListener('click', handleInteraction);
+        navLink.addEventListener('touchstart', (e) => {
+          touchStarted = true;
+          // Don't prevent default on touchstart for iOS
+        }, {passive: true});
         
-        // Also handle touchend as fallback
         navLink.addEventListener('touchend', (e) => {
-          e.preventDefault();
-          // Only handle if touchstart didn't already handle it
-          if (!item.classList.contains('active')) {
-            handleInteraction(e);
+          if (touchStarted) {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            // Close all other dropdowns
+            this.navItems.forEach(otherItem => {
+              if (otherItem !== item && otherItem.querySelector('.dropdown')) {
+                otherItem.classList.remove('active');
+              }
+            });
+            
+            // Toggle active class
+            item.classList.toggle('active');
+            
+            touchStarted = false;
           }
         }, {passive: false});
+        
+        // Handle desktop click events
+        navLink.addEventListener('click', (e) => {
+          // Only handle click if it wasn't a touch event
+          if (!touchStarted) {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            // Close all other dropdowns
+            this.navItems.forEach(otherItem => {
+              if (otherItem !== item && otherItem.querySelector('.dropdown')) {
+                otherItem.classList.remove('active');
+              }
+            });
+            
+            // Toggle active class
+            item.classList.toggle('active');
+          }
+        });
       }
     });
     
@@ -186,7 +199,7 @@ const Navigation = {
       }
     };
     
-    document.addEventListener('touchstart', closeDropdowns, {passive: true});
+    document.addEventListener('touchend', closeDropdowns, {passive: true});
     document.addEventListener('click', closeDropdowns);
     
     // Debug: Log when module is initialized
