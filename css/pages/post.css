@@ -10,6 +10,8 @@
   z-index: 10;
 }
 
+
+
 .post {
   background-color: white;
   border-radius: var(--radius-lg);
@@ -34,6 +36,30 @@
   padding: 2.5rem 3.5rem;
   max-width: 100%;
   margin: 0 auto;
+}
+
+/**
+ * Mobile-specific content padding overrides
+ * 
+ * Progressive reduction of content padding across breakpoints to maximize
+ * readable content width while maintaining proper typography spacing.
+ */
+@media (max-width: 768px) {
+  .post-content {
+    padding: 2rem 1.5rem; /* Tablet: Reduced horizontal padding */
+  }
+}
+
+@media (max-width: 480px) {
+  .post-content {
+    padding: 1.5rem 1rem; /* Mobile: Further reduced for better space utilization */
+  }
+}
+
+@media (max-width: 320px) {
+  .post-content {
+    padding: 1.25rem 0.75rem; /* Very small screens: Minimal padding */
+  }
 }
 
 .post-content-meta {
@@ -364,26 +390,28 @@
   transform: translateX(-4px);
 }
 
-/* Responsive Adjustments */
+/**
+ * Responsive Adjustments
+ * 
+ * Progressive layout optimizations for different screen sizes,
+ * focusing on maximizing content readability and mobile usability.
+ */
 @media (max-width: 1200px) {
   .post-container {
-    max-width: 90%;
+    max-width: 90%; /* Large screens: Slight width reduction */
   }
 }
 
+/* Tablet optimizations */
 @media (max-width: 768px) {
   .post-container {
     margin-top: -35px;
-    padding: 0 1.5rem;
+    padding: 0 0.5rem; /* Reduced container padding for tablets */
     max-width: 100%;
   }
   
-  .post-content {
-    padding: 2rem;
-  }
-  
   .post-content h2 {
-    font-size: 1.6rem;
+    font-size: 1.6rem; /* Slightly smaller headings for tablet */
   }
   
   .post-content h3 {
@@ -391,8 +419,9 @@
   }
   
   .post-footer,
-  .related-posts {
-    padding: 1.5rem 2rem;
+  .related-posts,
+  .post-tags-section {
+    padding: 1.5rem 1.5rem; /* Consistent section padding */
   }
 
   .share-buttons {
@@ -405,22 +434,19 @@
   }
   
   .related-posts-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* Single column layout */
   }
 }
 
+/* Mobile optimizations */
 @media (max-width: 480px) {
   .post-container {
     margin-top: -30px;
-    padding: 0 1rem;
-  }
-  
-  .post-content {
-    padding: 1.5rem;
+    padding: 0 0.25rem; /* Minimal container padding for mobile */
   }
   
   .post-content h2 {
-    font-size: 1.4rem;
+    font-size: 1.4rem; /* Mobile-optimized heading sizes */
     margin-top: 2rem;
   }
   
@@ -430,23 +456,25 @@
   
   .post-content p {
     font-size: 1rem;
-    text-align: left;
+    text-align: left; /* Left-aligned for better mobile readability */
     hyphens: none;
   }
   
   .post-footer,
-  .related-posts {
-    padding: 1.25rem 1.5rem;
+  .related-posts,
+  .post-tags-section {
+    padding: 1.25rem 1rem; /* Reduced section padding */
   }
   
   .post-share h3,
-  .related-posts h3 {
+  .related-posts h3,
+  .post-tags-section h3 {
     font-size: 1.2rem;
   }
   
   .share-buttons {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* Stacked share buttons for mobile */
     gap: 0.5rem;
   }
   
@@ -457,5 +485,18 @@
   .post-tag {
     font-size: 0.8rem;
     padding: 0.3rem 0.7rem;
+  }
+}
+
+/* Very small screen optimizations */
+@media (max-width: 320px) {
+  .post-container {
+    padding: 0 0.125rem; /* Ultra-minimal padding for very small screens */
+  }
+  
+  .post-footer,
+  .related-posts,
+  .post-tags-section {
+    padding: 1rem 0.75rem; /* Compact section padding */
   }
 } 

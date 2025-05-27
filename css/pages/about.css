@@ -97,8 +97,7 @@
   background-color: white;
   margin-bottom: 0;
   margin-top: -40px;
-  position: relative;
-  z-index: 10;
+  z-index: 1;
 }
 
 .mission-section::before {
@@ -161,6 +160,9 @@
   text-fill-color: transparent;
   position: relative;
   display: inline-block;
+  word-wrap: break-word;
+  hyphens: auto;
+  max-width: 100%;
 }
 
 .mission-text h2::after {
@@ -186,6 +188,10 @@
   position: relative;
   background: linear-gradient(to bottom, white, rgba(236, 253, 245, 0.3));
   margin-bottom: 0;
+  min-height: auto;
+  overflow: visible;
+  z-index: 2;
+  clear: both;
 }
 
 .values-section::before {
@@ -200,11 +206,12 @@
     radial-gradient(circle at 90% 80%, rgba(240, 249, 255, 0.6) 0%, transparent 40%);
   opacity: 0.7;
   z-index: 0;
+  pointer-events: none;
 }
 
 .values-section .container {
   position: relative;
-  z-index: 2;
+  z-index: 3;
 }
 
 .values-section h2 {
@@ -246,9 +253,9 @@
   box-shadow: var(--shadow-md);
   border: none;
   position: relative;
-  overflow: hidden;
+  overflow: visible;
   transition: all var(--transition-medium);
-  z-index: 1;
+  z-index: 4;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -724,10 +731,18 @@
   .mission-section {
     margin-top: -35px;
     padding: 4rem 0;
+    z-index: 1;
   }
   
   .mission-section::before {
     top: 35px;
+  }
+  
+  .values-section {
+    z-index: 2;
+    position: relative;
+    clear: both;
+    margin-top: 0;
   }
   
   .visual-element {
@@ -760,6 +775,9 @@
   .approach-text h2,
   .team-header h2 {
     font-size: 2rem;
+    word-wrap: break-word;
+    hyphens: auto;
+    line-height: 1.2;
   }
   
   .principles-list {
@@ -770,6 +788,21 @@
   .team-grid {
     grid-template-columns: 1fr;
     gap: 2rem;
+  }
+  
+  .value-card {
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .value-card h3 {
+    font-size: 1.2rem;
+    line-height: 1.3;
+  }
+  
+  .value-card p {
+    font-size: 0.95rem;
+    line-height: 1.6;
   }
   
   .team-member-image {
@@ -792,10 +825,18 @@
   .mission-section {
     margin-top: -30px;
     padding: 3rem 0;
+    z-index: 1;
   }
   
   .mission-section::before {
     top: 30px;
+  }
+  
+  .values-section {
+    z-index: 2;
+    position: relative;
+    clear: both;
+    margin-top: 0;
   }
   
   .visual-element {
@@ -814,6 +855,9 @@
   .approach-text h2,
   .team-header h2 {
     font-size: 1.8rem;
+    word-wrap: break-word;
+    hyphens: auto;
+    line-height: 1.2;
   }
   
   .mission-text p,
@@ -851,5 +895,59 @@
   .approach-section,
   .team-section {
     padding: 3rem 0;
+  }
+  
+  .value-card {
+    padding: 1.2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .value-card h3 {
+    font-size: 1.1rem;
+    line-height: 1.3;
+    margin-bottom: 0.8rem;
+  }
+  
+  .value-card p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+}
+
+/* Extra small screens (320px and below) */
+@media (max-width: 320px) {
+  .values-section {
+    padding: 2.5rem 0;
+    z-index: 2;
+    position: relative;
+    clear: both;
+    margin-top: 0;
+  }
+  
+  .values-section h2 {
+    font-size: 1.6rem;
+    padding: 0 0.5rem;
+    line-height: 1.2;
+  }
+  
+  .values-grid {
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+  
+  .value-card {
+    padding: 1rem;
+    margin-bottom: 0.8rem;
+  }
+  
+  .value-card h3 {
+    font-size: 1rem;
+    line-height: 1.2;
+    margin-bottom: 0.6rem;
+  }
+  
+  .value-card p {
+    font-size: 0.85rem;
+    line-height: 1.4;
   }
 } 

@@ -3,26 +3,16 @@
    ========================================== */
 
 .statement-section {
-  padding: 3rem 0 3rem;
+  padding: 4rem 0 3rem;
   position: relative;
-  background: linear-gradient(to bottom, var(--card-tint-1), var(--card-tint-2) 100%);
-  overflow: hidden;
-  margin-top: -4rem; /* Increased negative margin to eliminate the gap */
+  background: transparent;
+  overflow: visible;
+  margin-top: 0;
   z-index: 1;
-  filter: drop-shadow(0 -10px 20px rgba(0, 0, 0, 0.03));
 }
 
 .statement-section::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: 
-    radial-gradient(circle at 20% 30%, rgba(240, 249, 255, 0.8) 0%, transparent 50%),
-    radial-gradient(circle at 80% 70%, rgba(236, 253, 245, 0.6) 0%, transparent 50%);
-  z-index: 0;
+  content: none;
 }
 
 .statement-section .container {
@@ -38,50 +28,32 @@
 .statement-card {
   background-color: white;
   border-radius: var(--radius-lg);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08), 0 5px 15px rgba(0, 0, 0, 0.04); /* Softer shadow */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
   padding: 2.5rem;
   position: relative;
-  border: 1px solid rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.03);
   overflow: hidden;
   transition: all var(--transition-medium);
-  transform: translateY(-15px); /* Reduced upward shift */
-  animation: gentleCardRise 1.2s ease-out forwards; /* Slower, smoother animation */
+  transform: none;
+  animation: none;
 }
 
-@keyframes gentleCardRise {
-  0% {
-    opacity: 0;
-    transform: translateY(10px); /* Reduced distance */
-  }
-  20% {
-    opacity: 0.2;
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(-15px); /* Reduced final position */
-  }
-}
+
 
 .statement-card::before {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
-  width: 4px;
+  width: 3px;
   height: 100%;
-  background: linear-gradient(to bottom, var(--color-accent), #38bdf8);
+  background: var(--color-accent);
+  opacity: 0.6;
 }
 
-/* Add subtle glow effect */
+/* Remove glow effect for smoother integration */
 .statement-card::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(circle at 85% 15%, rgba(14, 165, 233, 0.15) 0%, transparent 60%);
-  z-index: -1;
+  content: none;
 }
 
 .statement-quote {
@@ -191,8 +163,8 @@
 /* Responsive Adjustments */
 @media (max-width: 768px) {
   .statement-section {
-    padding: 2rem 0 2rem;
-    margin-top: -3.5rem; /* Increased overlap on tablet */
+    padding: 3rem 0 2rem;
+    margin-top: 0;
   }
   
   .statement-section::after {
@@ -201,8 +173,8 @@
   
   .statement-card {
     padding: 1.8rem;
-    transform: translateY(-10px);
-    animation: gentleCardRiseTablet 1.2s ease-out forwards;
+    transform: none;
+    animation: none;
   }
   
   .statement-quote {
@@ -227,25 +199,13 @@
     margin-bottom: 0.8rem;
   }
   
-  @keyframes gentleCardRiseTablet {
-    0% {
-      opacity: 0;
-      transform: translateY(8px);
-    }
-    20% {
-      opacity: 0.2;
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(-10px);
-    }
-  }
+
 }
 
 @media (max-width: 480px) {
   .statement-section {
-    padding: 2rem 0 2rem;
-    margin-top: -3rem; /* Increased overlap on mobile */
+    padding: 2.5rem 0 2rem;
+    margin-top: 0;
   }
   
   .statement-section::after {
@@ -254,8 +214,8 @@
   
   .statement-card {
     padding: 1.5rem;
-    transform: translateY(-8px);
-    animation: gentleCardRiseMobile 1.2s ease-out forwards;
+    transform: none;
+    animation: none;
   }
   
   .statement-quote {
@@ -278,19 +238,7 @@
     border-radius: 15px;
   }
   
-  @keyframes gentleCardRiseMobile {
-    0% {
-      opacity: 0;
-      transform: translateY(5px);
-    }
-    20% {
-      opacity: 0.2;
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(-8px);
-    }
-  }
+
   
   .source-tag {
     font-size: 0.8rem;

@@ -28,7 +28,13 @@
 }
 
 /* --- Responsive Breakpoints --- */
-/* Tablet (768px and below) */
+
+/**
+ * Tablet Breakpoint (768px and below)
+ * 
+ * Optimized for tablet devices and smaller laptops.
+ * Reduces container padding to provide more content space while maintaining readability.
+ */
 @media (max-width: 768px) {
   .hide-on-tablet {
     display: none !important;
@@ -38,20 +44,26 @@
     display: inherit !important;
   }
   
-  /* Container padding adjustments */
-  .container {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
+  /* Container padding: Reduced from 1.5rem to 1rem for better space utilization */
+  .container,
+  .default-container {
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
   
-  /* Reduce section spacing */
+  /* Section spacing: Slightly reduced for tablet layout */
   section {
     margin-bottom: calc(var(--section-spacing) * 0.8);
     padding: 2.5rem 0;
   }
 }
 
-/* Mobile (480px and below) */
+/**
+ * Mobile Breakpoint (480px and below)
+ * 
+ * Optimized for mobile phones. Significantly reduces padding to maximize
+ * content width while maintaining proper touch targets and readability.
+ */
 @media (max-width: 480px) {
   .hide-on-mobile {
     display: none !important;
@@ -61,13 +73,14 @@
     display: inherit !important;
   }
   
-  /* Container padding adjustments */
-  .container {
-    padding-left: 1rem;
-    padding-right: 1rem;
+  /* Container padding: Significantly reduced to 0.5rem for mobile optimization */
+  .container,
+  .default-container {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
   }
   
-  /* Further reduce section spacing */
+  /* Section spacing: Further reduced for mobile layout */
   section {
     margin-bottom: calc(var(--section-spacing) * 0.6);
     padding: 2rem 0;
@@ -152,5 +165,20 @@
   
   .flex-row-mobile {
     flex-direction: row !important;
+  }
+}
+
+/**
+ * Very Small Screens Breakpoint (320px and below)
+ * 
+ * Optimized for very small mobile devices and older phones.
+ * Uses minimal padding to maximize content space on constrained screens.
+ */
+@media (max-width: 320px) {
+  /* Container padding: Minimal padding for very small screens */
+  .container,
+  .default-container {
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
   }
 } 

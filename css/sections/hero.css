@@ -130,6 +130,8 @@
   animation: fadeInUp 0.8s ease forwards;
   text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
   letter-spacing: -0.03em;
+  word-wrap: break-word;
+  hyphens: auto;
 }
 
 /**
@@ -423,6 +425,9 @@
   .hero h1 {
     font-size: 2.5rem;
     margin-bottom: 2rem;
+    word-wrap: break-word;
+    hyphens: auto;
+    line-height: 1.2;
   }
   
   .hero h1::after {
@@ -507,6 +512,8 @@
     font-size: 2rem;
     line-height: 1.2;
     margin-bottom: 1.8rem;
+    word-wrap: break-word;
+    hyphens: auto;
   }
   
   .hero p {

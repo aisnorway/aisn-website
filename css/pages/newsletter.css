@@ -151,7 +151,7 @@ main.default-container h1 {
 /* Newsletter List Grid - Responsive grid layout for newsletter cards */
 .newsletter-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 2rem;
   margin: 0.5rem 0 2rem;
   max-width: 1200px;
@@ -344,6 +344,12 @@ main.default-container h1 {
   margin-bottom: 0.5rem;
 }
 
+/**
+ * Tablet Responsive Styles (768px and below)
+ * 
+ * Optimizes newsletter layout for tablet devices with single-column grid
+ * and reduced padding for better content utilization.
+ */
 @media (max-width: 768px) {
   .newsletter-content-section,
   .post-container {
@@ -353,12 +359,13 @@ main.default-container h1 {
   
   main.default-container h1 {
     margin-top: 2rem;
-    font-size: 2rem;
+    font-size: 2rem; /* Reduced heading size for tablet */
   }
   
   .newsletter-grid {
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: 1fr; /* Single column layout for tablets */
     gap: 1.5rem;
+    padding: 0 0.5rem; /* Reduced grid padding */
   }
   
   .newsletter-intro {
@@ -368,7 +375,7 @@ main.default-container h1 {
   }
   
   .newsletter-content {
-    padding: 1.5rem;
+    padding: 1.8rem;
   }
   
   .newsletter-content h3 {
@@ -401,6 +408,12 @@ main.default-container h1 {
   }
 }
 
+/**
+ * Mobile Responsive Styles (480px and below)
+ * 
+ * Mobile-first optimization with minimal padding to maximize content width
+ * while maintaining readability and proper touch targets.
+ */
 @media (max-width: 480px) {
   .newsletter-content-section,
   .post-container {
@@ -410,13 +423,13 @@ main.default-container h1 {
   
   main.default-container h1 {
     margin-top: 1.5rem;
-    font-size: 1.8rem;
+    font-size: 1.8rem; /* Mobile-optimized heading size */
   }
   
   .newsletter-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* Single column for mobile */
     gap: 1.5rem;
-    padding: 0 1rem;
+    padding: 0 0.25rem; /* Minimal grid padding for mobile */
   }
   
   .newsletter-image {
@@ -424,16 +437,16 @@ main.default-container h1 {
   }
   
   .newsletter-content {
-    padding: 1.2rem;
+    padding: 2rem;
   }
   
   .newsletter-content h3 {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
   }
   
   .newsletter-excerpt {
-    font-size: 0.9rem;
-    line-height: 1.5;
+    font-size: 0.95rem;
+    line-height: 1.6;
   }
   
   .newsletter-header h2 {
@@ -459,5 +472,25 @@ main.default-container h1 {
   
   .post-content h3 {
     font-size: 1.2rem;
+  }
+}
+
+/**
+ * Very Small Screen Optimizations (320px and below)
+ * 
+ * Ultra-compact layout for very small mobile devices and older phones.
+ * Uses absolute minimal padding while preserving content readability.
+ */
+@media (max-width: 320px) {
+  .newsletter-grid {
+    padding: 0 0.125rem; /* Ultra-minimal grid padding */
+  }
+  
+  .newsletter-content {
+    padding: 1.5rem; /* Maintains readable content padding */
+  }
+  
+  .newsletter-content h3 {
+    font-size: 1.1rem; /* Compact heading size */
   }
 } 
