@@ -4,7 +4,7 @@
 
 /* Newsletter Content Section - Main content container for newsletter pages */
 .newsletter-content-section {
-  padding: 0 0 5rem;
+  padding: 1.5rem 0 5rem;
   background-color: white;
   margin-top: -40px; /* Creates overlap with header section for smooth transition */
   position: relative;
@@ -13,7 +13,7 @@
 
 /* Post container - Main container for individual post pages */
 .post-container {
-  padding: 0 0 5rem;
+  padding: 1.5rem 0 5rem;
   background-color: white;
   margin-top: -40px; /* Creates overlap with header section for smooth transition */
   position: relative;
@@ -272,7 +272,7 @@ main.default-container h1 {
 /* Newsletter Page Intro Text */
 .newsletter-intro {
   max-width: 850px;
-  margin: 0 auto 2.5rem;
+  margin: 0 auto 4rem;
   text-align: center;
   font-size: 1.1rem;
   line-height: 1.7;
@@ -353,7 +353,7 @@ main.default-container h1 {
 @media (max-width: 768px) {
   .newsletter-content-section,
   .post-container {
-    padding: 0 0 3rem;
+    padding: 1.2rem 0 3rem;
     margin-top: -30px;
   }
   
@@ -370,7 +370,7 @@ main.default-container h1 {
   
   .newsletter-intro {
     font-size: 1rem;
-    margin-bottom: 2rem;
+    margin-bottom: 3rem; /* Increased from 2rem to 3rem */
     padding: 0 1rem;
   }
   
@@ -417,7 +417,7 @@ main.default-container h1 {
 @media (max-width: 480px) {
   .newsletter-content-section,
   .post-container {
-    padding: 0 0 2rem;
+    padding: 1rem 0 2rem;
     margin-top: -25px;
   }
   
@@ -459,6 +459,7 @@ main.default-container h1 {
   
   .newsletter-intro {
     font-size: 0.95rem;
+    margin-bottom: 3rem; /* Added explicit margin for mobile consistency */
   }
   
   .post-content {
@@ -492,5 +493,72 @@ main.default-container h1 {
   
   .newsletter-content h3 {
     font-size: 1.1rem; /* Compact heading size */
+  }
+}
+
+/* Page Header - Newsletter header section with title and subtitle */
+.page-header {
+  padding: 2rem 0 5.5rem;
+  background: linear-gradient(135deg, rgba(236, 253, 245, 0.8), rgba(240, 249, 255, 0.8));
+  position: relative;
+  text-align: center;
+  overflow: hidden;
+  margin-bottom: 0;
+}
+
+/* Remove decorative curve */
+.page-header::after {
+  display: none;
+}
+
+/* Background decoration */
+.page-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(circle at 20% 30%, rgba(20, 184, 166, 0.15) 0%, transparent 40%),
+    radial-gradient(circle at 80% 70%, rgba(56, 189, 248, 0.15) 0%, transparent 50%);
+  z-index: 1;
+}
+
+/* Page header container positioning */
+.page-header .container {
+  position: relative;
+  z-index: 2;
+}
+
+/* Page header title styling */
+.page-header h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  color: var(--color-text);
+  background: linear-gradient(120deg, #0f172a 0%, var(--color-accent) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+/* Page header subtitle styling */
+.page-header p {
+  font-size: 1.4rem;
+  color: var(--color-text);
+  max-width: 700px;
+  margin: 0 auto;
+  animation: fadeIn 1s ease-out 0.2s both;
+}
+
+@keyframes fadeIn {
+  from { 
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to { 
+    opacity: 1;
+    transform: translateY(0);
   }
 } 

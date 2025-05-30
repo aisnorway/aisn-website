@@ -496,6 +496,11 @@
   height: 100%;
   object-fit: cover;
   transition: transform var(--transition-medium);
+  /* Improve image scaling quality */
+  image-rendering: high-quality;
+  image-rendering: -webkit-optimize-contrast;
+  backface-visibility: hidden;
+  transform: translateZ(0);
 }
 
 .team-member:hover .team-member-image img {
@@ -719,6 +724,11 @@
   
   .mission-section::before {
     top: 35px;
+  }
+  
+  .team-member-image {
+    padding-bottom: 100%; /* Maintain 1:1 aspect ratio instead of fixed height */
+    height: auto; /* Remove the fixed height */
   }
 }
 

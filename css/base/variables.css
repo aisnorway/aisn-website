@@ -21,7 +21,7 @@
   --color-primary-inverse: #ffffff; /* Text color for on-accent elements */
 
   /* --- Card Tints --- */
-  --card-tint-1: #f4f4f5;          /* Changed from #f8fafc to slightly darker */
+  --card-tint-1: #f4f4f5;          /* Changed from #f8fafc to: slightly darker */
   --card-tint-2: #e4e4e7;          /* Changed from #f1f5f9 to slightly darker */
   --card-tint-3: #ecfdf5;          /* Teal-50 */
   --card-tint-4: #f0f9ff;          /* Sky-50 */
